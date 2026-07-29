@@ -92,7 +92,7 @@ export function EmptyFeatureCards({
                 )}
                 <div
                   className={`relative ${mediaAspect} w-full overflow-hidden rounded-3xl ${
-                    float ? "flex justify-center pt-[11%]" : "transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                    float ? "flex items-start justify-center pt-[11%]" : "transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                   } ${panelClass}`}
                 >
                   {c.img &&

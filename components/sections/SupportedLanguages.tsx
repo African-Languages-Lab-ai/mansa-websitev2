@@ -12,8 +12,8 @@ import { asset } from "@/lib/assets";
 // wider than the globe (w-[60%]) so labels sit just outside the sphere with
 // short connectors while still fitting within the section horizontally.
 // NOTE: r is a fraction of the container WIDTH — offset from centre = r * width.
-// The sphere (globe div w-[74%]) has radius 0.37 * width, so labels hug just past that.
-const R_GLOBE = 0.37; // connector line start, right at the sphere edge (sphere radius = 0.74 / 2)
+// The sphere (globe div w-[84%]) has radius 0.42 * width, so labels hug just past that.
+const R_GLOBE = 0.42; // connector line start, right at the sphere edge (sphere radius = 0.84 / 2)
 const R_LINE_END = 0.49; // where labels anchor — just outside the sphere
 
 function polar(angleDeg: number, r: number) {
@@ -106,10 +106,10 @@ export function SupportedLanguages() {
             </svg>
 
             {/* Soft glow behind the globe */}
-            <div className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(232,177,92,0.55),rgba(194,87,31,0.25)_55%,rgba(122,42,29,0)_72%)] blur-2xl" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(232,177,92,0.55),rgba(194,87,31,0.25)_55%,rgba(122,42,29,0)_72%)] blur-2xl" />
 
             {/* Clean sphere (pre-cropped from the source, no baked labels) */}
-            <div className="absolute left-1/2 top-1/2 aspect-square w-[74%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full shadow-[0_20px_60px_-15px_rgba(122,42,29,0.55)]">
+            <div className="absolute left-1/2 top-1/2 aspect-square w-[84%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full shadow-[0_20px_60px_-15px_rgba(122,42,29,0.55)]">
               <Image
                 src={asset("/assets/globe-sphere.webp")}
                 alt="A golden globe highlighting Africa"

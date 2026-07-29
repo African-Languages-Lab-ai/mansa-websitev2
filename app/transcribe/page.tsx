@@ -41,14 +41,14 @@ export default function TranscribePage() {
               body: "Convert spoken language into clear, readable text in seconds.",
               img: asset("/assets/transcribe-ui-2.webp"),
               imgWidth: 326,
-              imgHeight: 490,
+              imgHeight: 524,
             },
             {
               title: "Upload Audio to Text",
               body: "Convert uploaded audio into clear, readable text in seconds.",
               img: asset("/assets/transcribe-ui-1.webp"),
               imgWidth: 326,
-              imgHeight: 524,
+              imgHeight: 488,
             },
           ]}
         />

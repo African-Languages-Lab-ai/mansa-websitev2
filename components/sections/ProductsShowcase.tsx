@@ -19,15 +19,15 @@ const productImages: Record<string, string> = {
   asr: asset("/assets/product-transcribe.webp"),
 };
 
-// The product's app UI floated over the art (asr is coming soon). Width/height
-// are each image's native size — mismatched values here stretch the screenshot
-// off its real aspect ratio, which reads as blur.
+// The product's app UI floated over the art. Width/height are each image's
+// native size — mismatched values here stretch the screenshot off its real
+// aspect ratio, which reads as blur.
 const productUIs: Record<string, { src: string; width: number; height: number; gif?: boolean } | null> = {
   agent: { src: asset("/assets/agent-section-ui.webp"), width: 394, height: 807, gif: true },
-  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 807 },
-  translate: { src: asset("/assets/translate-ui-1.webp"), width: 326, height: 468 },
-  transcribe: { src: asset("/assets/transcribe-ui-2.webp"), width: 326, height: 490 },
-  asr: null,
+  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 790 },
+  translate: { src: asset("/assets/translate-section-ui.webp"), width: 394, height: 793 },
+  transcribe: { src: asset("/assets/transcribe-section-ui.webp"), width: 394, height: 798 },
+  asr: { src: asset("/assets/asr-section-ui.webp"), width: 394, height: 785 },
 };
 
 function Body({ text }: { text: string }) {
