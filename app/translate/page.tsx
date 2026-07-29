@@ -39,16 +39,16 @@ export default function TranslatePage() {
             {
               title: "Conceptualized Machine Translation",
               body: "Preserves meaning, intent, and cultural context instead of translating word for word.",
-              img: asset("/assets/translate-ui-2.webp"),
+              img: asset("/assets/translate-ui-1.webp"),
               imgWidth: 326,
-              imgHeight: 466,
+              imgHeight: 499,
             },
             {
               title: "Translate between over 30 African Languages",
               body: "Translate text accurately across 30+ African languages while preserving meaning, context, and cultural nuance.",
-              img: asset("/assets/translate-ui-1.webp"),
+              img: asset("/assets/translate-ui-2.webp"),
               imgWidth: 326,
-              imgHeight: 499,
+              imgHeight: 466,
             },
           ]}
         />
