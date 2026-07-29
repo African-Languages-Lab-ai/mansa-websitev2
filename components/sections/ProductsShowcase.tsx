@@ -19,12 +19,14 @@ const productImages: Record<string, string> = {
   asr: asset("/assets/product-transcribe.webp"),
 };
 
-// The product's app UI floated over the art (asr is coming soon).
-const productUIs: Record<string, { src: string; gif?: boolean } | null> = {
-  agent: { src: asset("/assets/agent-section-ui.webp"), gif: true },
-  ai: { src: asset("/assets/ai-oneforevery.webp") },
-  translate: { src: asset("/assets/translate-ui-1.webp") },
-  transcribe: { src: asset("/assets/transcribe-ui-2.webp") },
+// The product's app UI floated over the art (asr is coming soon). Width/height
+// are each image's native size — mismatched values here stretch the screenshot
+// off its real aspect ratio, which reads as blur.
+const productUIs: Record<string, { src: string; width: number; height: number; gif?: boolean } | null> = {
+  agent: { src: asset("/assets/agent-section-ui.webp"), width: 394, height: 807, gif: true },
+  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 807 },
+  translate: { src: asset("/assets/translate-ui-1.webp"), width: 326, height: 468 },
+  transcribe: { src: asset("/assets/transcribe-ui-2.webp"), width: 326, height: 490 },
   asr: null,
 };
 
@@ -145,8 +147,8 @@ export function ProductsShowcase() {
                   <Image
                     src={activeUI.src}
                     alt=""
-                    width={394}
-                    height={807}
+                    width={activeUI.width}
+                    height={activeUI.height}
                     unoptimized={activeUI.gif}
                     className="absolute left-1/2 top-1/2 h-auto w-[52%] max-w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl transition-transform duration-300 ease-out group-hover:scale-105"
                   />
