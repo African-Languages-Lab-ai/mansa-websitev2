@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* --font-open-runde is defined by next/font (see lib/fonts.ts) via the
+     variable class on <html>. Do NOT hardcode it here or the self-hosted
+     face is bypassed. */
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-family: var(--font-open-runde), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: #7a2a1d;
+    color: #fbf8f2;
+  }
+}
+
+@layer components {
+  /* Shared horizontal page gutter — used identically by every section */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16;
+  }
+
+  /* Edge fade mask for the logo marquee */
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

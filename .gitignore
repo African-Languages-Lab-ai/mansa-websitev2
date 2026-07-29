@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+
+# next.js / build output
+/.next
+/out
+next-env.d.ts
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+.vercel
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env*.local
+
+# original source assets (working copies live in public/assets)
+/mansa assets
