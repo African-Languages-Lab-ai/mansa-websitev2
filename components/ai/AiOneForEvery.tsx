@@ -20,7 +20,7 @@ const tabs: Record<string, Tab> = {
   Students: {
     title: "Learn faster with an AI study partner.",
     body: "Get explanations, summarize notes, prepare for exams, solve assignments, and understand complex topics in simple language.",
-    img: asset("/assets/ai-oneforevery.png"),
+    img: asset("/assets/ai-oneforevery.webp"),
     prompt: "Explain how the law of aerodynamics works in simple terms, like I'm new to it.",
   },
   Professionals: {
@@ -57,7 +57,7 @@ function MansaChatCard({ prompt }: { prompt: string }) {
         <span aria-hidden>✎</span>
       </div>
       <div className="mt-6 flex flex-col items-center text-center">
-        <Image src={asset("/assets/logo-mark.png")} alt="" width={44} height={38} className="h-10 w-auto" />
+        <Image src={asset("/assets/logo-mark.webp")} alt="" width={44} height={38} className="h-10 w-auto" />
         <p className="mt-3 text-xl font-bold text-ink">Hi, Anita</p>
         <p className="mt-1 text-sm text-ink-muted">Start with a thought, question, or task.</p>
       </div>

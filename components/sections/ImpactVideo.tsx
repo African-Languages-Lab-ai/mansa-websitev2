@@ -29,7 +29,7 @@ export function ImpactVideo() {
     <section ref={ref} className="relative overflow-hidden py-24 md:py-32">
       {/* Illustrated golden savanna backdrop (parallax) */}
       <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-8">
-        <Image src={asset("/assets/impact-bg.png")} alt="" fill className="object-cover" sizes="100vw" />
+        <Image src={asset("/assets/impact-bg.webp")} alt="" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-cream/25" />
       </motion.div>
 
@@ -41,7 +41,7 @@ export function ImpactVideo() {
           viewport={viewportOnce}
           className="flex flex-col items-center"
         >
-          <Image src={asset("/assets/logo-mark.png")} alt="" width={34} height={30} className="h-8 w-auto" />
+          <Image src={asset("/assets/logo-mark.webp")} alt="" width={34} height={30} className="h-8 w-auto" />
           <h2 className="mt-5 max-w-2xl text-3xl font-bold tracking-tight text-ink drop-shadow-sm sm:text-4xl">
             How Mansa is Making Real Impact
           </h2>

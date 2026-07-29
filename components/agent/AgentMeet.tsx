@@ -39,7 +39,7 @@ export function AgentMeet() {
           className="relative flex justify-center overflow-hidden rounded-3xl p-6 md:p-8"
         >
           <Image
-            src={asset("/assets/mansa-agent-bg.png")}
+            src={asset("/assets/mansa-agent-bg.webp")}
             alt=""
             fill
             className="object-cover"
@@ -48,7 +48,7 @@ export function AgentMeet() {
           <div className="absolute inset-0 bg-espresso/30" />
           <div className="group relative w-full max-w-[280px] overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src={asset("/assets/agent-section-ui.gif")}
+              src={asset("/assets/agent-section-ui.webp")}
               alt="Mansa Agent app interface"
               width={394}
               height={807}

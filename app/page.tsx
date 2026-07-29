@@ -21,7 +21,7 @@ export default function Home() {
         <Hero />
 
         <SunsetBand
-          bgSrc={asset("/assets/sunset-band-bg.png")}
+          bgSrc={asset("/assets/sunset-band-bg.webp")}
           title="Your AI partner in thinking for Africa."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
@@ -39,7 +39,7 @@ export default function Home() {
 
         {/* Final CTA reuses the sunset band with different copy */}
         <SunsetBand
-          bgSrc={asset("/assets/final-cta-bg.png")}
+          bgSrc={asset("/assets/final-cta-bg.webp")}
           title="Unlock the power of African language AI"
           buttons={["appstore", "playstore"]}
         />

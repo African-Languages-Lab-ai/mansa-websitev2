@@ -23,7 +23,7 @@ export function Pill({ children, className = "" }: PillProps) {
       }
     >
       <Image
-        src={asset("/assets/accordion-icon.png")}
+        src={asset("/assets/accordion-icon.webp")}
         alt=""
         width={10}
         height={18}

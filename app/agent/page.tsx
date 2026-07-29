@@ -34,7 +34,7 @@ export default function AgentPage() {
         <AgentSecurity />
         <AgentFAQ />
         <SunsetBand
-          bgSrc={asset("/assets/final-cta-bg.png")}
+          bgSrc={asset("/assets/final-cta-bg.webp")}
           title="Let your AI do more than answer questions."
           buttons={["appstore", "playstore"]}
         />

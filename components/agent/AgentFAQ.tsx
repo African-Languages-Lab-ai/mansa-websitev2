@@ -35,7 +35,7 @@ export function AgentFAQ() {
   return (
     <section className="relative overflow-hidden bg-espresso py-24 md:py-28">
       <div className="absolute inset-0">
-        <Image src={asset("/assets/agent-faq-bg.png")} alt="" fill className="object-cover object-top" sizes="100vw" />
+        <Image src={asset("/assets/agent-faq-bg.webp")} alt="" fill className="object-cover object-top" sizes="100vw" />
         <div className="absolute inset-0 bg-maroon-dark/50" />
         {/* fade the bottom into the section so it doesn't clash with the CTA below */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-espresso to-transparent" />

@@ -22,7 +22,7 @@ export default function TranslatePage() {
       <Navbar solid />
       <main>
         <ProductHero
-          bgSrc={asset("/assets/hero-translate.png")}
+          bgSrc={asset("/assets/hero-translate.webp")}
           eyebrow="Mansa Translate"
           title="Conceptualized Machine Translation for African Languages."
           subtitle="Translate across 30+ African languages with AI that understands meaning, context, and culture."
@@ -33,18 +33,22 @@ export default function TranslatePage() {
         <EmptyFeatureCards
           heading="Built for African language understanding."
           subheading="More than translation."
-          mediaAspect="aspect-[3/4]"
-          fit="cover"
+          mediaAspect="aspect-[551/523]"
+          fit="float"
           cards={[
             {
               title: "Conceptualized Machine Translation",
               body: "Preserves meaning, intent, and cultural context instead of translating word for word.",
-              img: asset("/assets/translate-ui-1.png"),
+              img: asset("/assets/translate-ui-2.webp"),
+              imgWidth: 326,
+              imgHeight: 468,
             },
             {
               title: "Translate between over 30 African Languages",
               body: "Translate text accurately across 30+ African languages while preserving meaning, context, and cultural nuance.",
-              img: asset("/assets/translate-ui-1.png"),
+              img: asset("/assets/translate-ui-1.webp"),
+              imgWidth: 326,
+              imgHeight: 468,
             },
           ]}
         />
@@ -71,7 +75,7 @@ export default function TranslatePage() {
         <FAQ />
 
         <SunsetBand
-          bgSrc={asset("/assets/sunset-band-bg.png")}
+          bgSrc={asset("/assets/sunset-band-bg.webp")}
           title="Translate with AI that understands African languages."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}

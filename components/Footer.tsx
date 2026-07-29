@@ -45,7 +45,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2">
-              <Image src={asset("/assets/logo-mark-white.png")} alt="" width={30} height={26} className="h-[26px] w-auto" />
+              <Image src={asset("/assets/logo-mark-white.webp")} alt="" width={30} height={26} className="h-[26px] w-auto" />
               <span className="text-xl font-bold tracking-tight text-offwhite">mansa</span>
             </div>
             <p className="mt-4 max-w-[16rem] text-sm leading-relaxed text-offwhite/50">

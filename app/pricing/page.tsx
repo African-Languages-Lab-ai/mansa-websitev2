@@ -46,7 +46,7 @@ export default function PricingPage() {
         <FAQ />
 
         <SunsetBand
-          bgSrc={asset("/assets/final-cta-bg.png")}
+          bgSrc={asset("/assets/final-cta-bg.webp")}
           title="Unlock the power of African language AI"
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}

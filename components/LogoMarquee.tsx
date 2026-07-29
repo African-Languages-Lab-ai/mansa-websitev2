@@ -6,10 +6,10 @@ import { asset } from "@/lib/assets";
 
 const logos = [
   // Phrase reads a touch small at a uniform height, so give it slightly more.
-  { src: asset("/assets/partner-phrase.png"), alt: "Phrase", h: "h-9" },
-  { src: asset("/assets/partner-blackbird.png"), alt: "Blackbird.io", h: "h-8" },
-  { src: asset("/assets/partner-african-languages-lab.png"), alt: "African Languages Lab", h: "h-8" },
-  { src: asset("/assets/partner-base.png"), alt: "Base", h: "h-8" },
+  { src: asset("/assets/partner-phrase.webp"), alt: "Phrase", h: "h-9" },
+  { src: asset("/assets/partner-blackbird.webp"), alt: "Blackbird.io", h: "h-8" },
+  { src: asset("/assets/partner-african-languages-lab.webp"), alt: "African Languages Lab", h: "h-8" },
+  { src: asset("/assets/partner-base.webp"), alt: "Base", h: "h-8" },
 ];
 
 function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {

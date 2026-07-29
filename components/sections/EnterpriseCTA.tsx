@@ -12,7 +12,7 @@ export function EnterpriseCTA() {
     <section className="relative overflow-hidden bg-espresso py-20 md:py-24">
       {/* Full-bleed backdrop */}
       <div className="absolute inset-0">
-        <Image src={asset("/assets/enterprise-cta-bg.png")} alt="" fill className="object-cover opacity-40" sizes="100vw" />
+        <Image src={asset("/assets/enterprise-cta-bg.webp")} alt="" fill className="object-cover opacity-40" sizes="100vw" />
         <div className="absolute inset-0 bg-espresso/60" />
       </div>
 

@@ -12,19 +12,19 @@ import { asset } from "@/lib/assets";
 
 // Landscape art shown behind the UI, swapped with the open accordion item.
 const productImages: Record<string, string> = {
-  agent: asset("/assets/product-agent.png"),
-  ai: asset("/assets/product-ai.png"),
-  translate: asset("/assets/product-translate.png"),
-  transcribe: asset("/assets/product-transcribe.png"),
-  asr: asset("/assets/product-transcribe.png"),
+  agent: asset("/assets/product-agent.webp"),
+  ai: asset("/assets/product-ai.webp"),
+  translate: asset("/assets/product-translate.webp"),
+  transcribe: asset("/assets/product-transcribe.webp"),
+  asr: asset("/assets/product-transcribe.webp"),
 };
 
 // The product's app UI floated over the art (asr is coming soon).
 const productUIs: Record<string, { src: string; gif?: boolean } | null> = {
-  agent: { src: asset("/assets/agent-section-ui.gif"), gif: true },
-  ai: { src: asset("/assets/ai-oneforevery.png") },
-  translate: { src: asset("/assets/translate-ui-1.png") },
-  transcribe: { src: asset("/assets/transcribe-ui-2.png") },
+  agent: { src: asset("/assets/agent-section-ui.webp"), gif: true },
+  ai: { src: asset("/assets/ai-oneforevery.webp") },
+  translate: { src: asset("/assets/translate-ui-1.webp") },
+  transcribe: { src: asset("/assets/transcribe-ui-2.webp") },
   asr: null,
 };
 

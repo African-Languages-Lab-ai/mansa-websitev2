@@ -12,7 +12,7 @@ export function AgentHero() {
       {/* Silhouette + glowing staff backdrop */}
       <div className="absolute inset-0">
         <Image
-          src={asset("/assets/mansa-agent-bg.png")}
+          src={asset("/assets/mansa-agent-bg.webp")}
           alt=""
           fill
           priority

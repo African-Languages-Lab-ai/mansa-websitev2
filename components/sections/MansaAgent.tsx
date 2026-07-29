@@ -24,7 +24,7 @@ export function MansaAgent() {
       {/* Silhouette background (per reference) with overlays for legibility */}
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src={asset("/assets/mansa-agent-bg.png")}
+          src={asset("/assets/mansa-agent-bg.webp")}
           alt=""
           fill
           className="object-cover object-center"
@@ -74,7 +74,7 @@ export function MansaAgent() {
         >
           <div className="group w-full max-w-[300px] overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src={asset("/assets/agent-section-ui.gif")}
+              src={asset("/assets/agent-section-ui.webp")}
               alt="Mansa Agent app interface"
               width={394}
               height={807}

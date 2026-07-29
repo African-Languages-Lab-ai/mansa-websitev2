@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
-type Card = { title: string; body: string; img?: string };
+type Card = { title: string; body: string; img?: string; imgWidth?: number; imgHeight?: number };
 
 type Props = {
   eyebrow?: string;
@@ -20,8 +20,9 @@ type Props = {
   glow?: boolean;
   /** aspect ratio of the media panel */
   mediaAspect?: string;
-  /** how the UI fills the panel — "cover" fills edge-to-edge, "contain" letterboxes */
-  fit?: "cover" | "contain";
+  /** how the UI sits in the panel — "cover" fills edge-to-edge, "contain" letterboxes,
+   *  "float" shows the UI at its native aspect ratio, top-anchored on the panel background */
+  fit?: "cover" | "contain" | "float";
 };
 
 /**
@@ -41,6 +42,7 @@ export function EmptyFeatureCards({
   fit = "contain",
 }: Props) {
   const dark = theme === "dark";
+  const float = fit === "float";
   const imgClass =
     fit === "cover" ? "object-cover object-top" : "object-contain object-center p-4";
   const panelClass =
@@ -89,17 +91,28 @@ export function EmptyFeatureCards({
                   <div className="pointer-events-none absolute inset-8 rounded-full bg-[radial-gradient(circle,rgba(232,177,92,0.4),transparent_70%)] blur-2xl" />
                 )}
                 <div
-                  className={`relative ${mediaAspect} w-full overflow-hidden rounded-3xl transition-transform duration-300 ease-out group-hover:scale-[1.03] ${panelClass}`}
+                  className={`relative ${mediaAspect} w-full overflow-hidden rounded-3xl ${
+                    float ? "flex justify-center pt-[11%]" : "transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                  } ${panelClass}`}
                 >
-                  {c.img && (
-                    <Image
-                      src={c.img}
-                      alt=""
-                      fill
-                      className={imgClass}
-                      sizes="(max-width: 768px) 100vw, 480px"
-                    />
-                  )}
+                  {c.img &&
+                    (float ? (
+                      <Image
+                        src={c.img}
+                        alt=""
+                        width={c.imgWidth ?? 326}
+                        height={c.imgHeight ?? 468}
+                        className="h-auto w-[59%] rounded-2xl shadow-2xl transition-transform duration-300 ease-out group-hover:scale-105"
+                      />
+                    ) : (
+                      <Image
+                        src={c.img}
+                        alt=""
+                        fill
+                        className={imgClass}
+                        sizes="(max-width: 768px) 100vw, 480px"
+                      />
+                    ))}
                 </div>
               </div>
               <h3 className={`mt-6 text-center text-xl font-semibold ${dark ? "text-offwhite" : "text-ink"}`}>
