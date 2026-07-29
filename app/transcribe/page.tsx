@@ -48,7 +48,7 @@ export default function TranscribePage() {
               body: "Convert uploaded audio into clear, readable text in seconds.",
               img: asset("/assets/transcribe-ui-1.webp"),
               imgWidth: 326,
-              imgHeight: 488,
+              imgHeight: 524,
             },
           ]}
         />

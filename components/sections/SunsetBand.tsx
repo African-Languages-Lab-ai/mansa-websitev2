@@ -30,7 +30,7 @@ export function SunsetBand({ bgSrc, title, subtitle, buttons, className = "" }: 
     <section ref={ref} className={`relative overflow-hidden ${className}`}>
       {/* Parallax background — rendered at native sharpness */}
       <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-8">
-        <Image src={bgSrc} alt="" fill priority className="object-cover" sizes="100vw" />
+        <Image src={bgSrc} alt="" fill className="object-cover" sizes="100vw" loading="lazy" />
       </motion.div>
 
       {/* Content */}
