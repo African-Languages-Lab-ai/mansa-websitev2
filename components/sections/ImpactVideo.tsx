@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { Button } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { APP_URL, CONTACT_MAILTO } from "@/lib/links";
+import { asset } from "@/lib/assets";
 
 export function ImpactVideo() {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,7 +29,7 @@ export function ImpactVideo() {
     <section ref={ref} className="relative overflow-hidden py-24 md:py-32">
       {/* Illustrated golden savanna backdrop (parallax) */}
       <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-8">
-        <Image src="/assets/impact-bg.png" alt="" fill className="object-cover" sizes="100vw" />
+        <Image src={asset("/assets/impact-bg.png")} alt="" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-cream/25" />
       </motion.div>
 
@@ -40,7 +41,7 @@ export function ImpactVideo() {
           viewport={viewportOnce}
           className="flex flex-col items-center"
         >
-          <Image src="/assets/logo-mark.png" alt="" width={34} height={30} className="h-8 w-auto" />
+          <Image src={asset("/assets/logo-mark.png")} alt="" width={34} height={30} className="h-8 w-auto" />
           <h2 className="mt-5 max-w-2xl text-3xl font-bold tracking-tight text-ink drop-shadow-sm sm:text-4xl">
             How Mansa is Making Real Impact
           </h2>
@@ -60,7 +61,7 @@ export function ImpactVideo() {
           {/* #t forces the first frame to render as a poster without an extra asset */}
           <video
             ref={videoRef}
-            src="/assets/impact-video.mp4#t=0.5"
+            src={asset("/assets/impact-video.mp4#t=0.5")}
             preload="metadata"
             playsInline
             controls={playing}

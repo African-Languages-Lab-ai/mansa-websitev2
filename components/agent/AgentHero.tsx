@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { APP_URL } from "@/lib/links";
+import { asset } from "@/lib/assets";
 
 export function AgentHero() {
   return (
@@ -11,7 +12,7 @@ export function AgentHero() {
       {/* Silhouette + glowing staff backdrop */}
       <div className="absolute inset-0">
         <Image
-          src="/assets/mansa-agent-bg.png"
+          src={asset("/assets/mansa-agent-bg.png")}
           alt=""
           fill
           priority

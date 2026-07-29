@@ -8,6 +8,7 @@ import { EmptyFeatureCards } from "@/components/product/EmptyFeatureCards";
 import { StatsStrip } from "@/components/product/StatsStrip";
 import { ResearchDriven } from "@/components/product/ResearchDriven";
 import { BuiltForTeams } from "@/components/product/BuiltForTeams";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Mansa Transcribe — Automatic speech recognition for African languages",
@@ -21,7 +22,7 @@ export default function TranscribePage() {
       <Navbar solid />
       <main>
         <ProductHero
-          bgSrc="/assets/hero-transcribe.png"
+          bgSrc={asset("/assets/hero-transcribe.png")}
           eyebrow="Mansa Transcribe"
           title="Accurate Automatic Speech Recognition"
           subtitle="Convert spoken language into clear, readable text with AI-powered transcription."
@@ -35,8 +36,8 @@ export default function TranscribePage() {
           mediaAspect="aspect-[3/4]"
           fit="cover"
           cards={[
-            { title: "Accurate Speech-to-Text", body: "Convert spoken language into clear, readable text in seconds.", img: "/assets/transcribe-ui-2.png" },
-            { title: "Upload Audio to Text", body: "Convert uploaded audio into clear, readable text in seconds.", img: "/assets/transcribe-ui-1.png" },
+            { title: "Accurate Speech-to-Text", body: "Convert spoken language into clear, readable text in seconds.", img: asset("/assets/transcribe-ui-2.png") },
+            { title: "Upload Audio to Text", body: "Convert uploaded audio into clear, readable text in seconds.", img: asset("/assets/transcribe-ui-1.png") },
           ]}
         />
 
@@ -62,7 +63,7 @@ export default function TranscribePage() {
         <FAQ />
 
         <SunsetBand
-          bgSrc="/assets/sunset-band-bg.png"
+          bgSrc={asset("/assets/sunset-band-bg.png")}
           title="Transcribe with AI that understands African languages."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}

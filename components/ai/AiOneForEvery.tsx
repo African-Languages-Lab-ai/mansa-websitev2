@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { APP_URL } from "@/lib/links";
+import { asset } from "@/lib/assets";
 
 type Tab = {
   title: string;
@@ -19,7 +20,7 @@ const tabs: Record<string, Tab> = {
   Students: {
     title: "Learn faster with an AI study partner.",
     body: "Get explanations, summarize notes, prepare for exams, solve assignments, and understand complex topics in simple language.",
-    img: "/assets/ai-oneforevery.png",
+    img: asset("/assets/ai-oneforevery.png"),
     prompt: "Explain how the law of aerodynamics works in simple terms, like I'm new to it.",
   },
   Professionals: {
@@ -56,7 +57,7 @@ function MansaChatCard({ prompt }: { prompt: string }) {
         <span aria-hidden>✎</span>
       </div>
       <div className="mt-6 flex flex-col items-center text-center">
-        <Image src="/assets/logo-mark.png" alt="" width={44} height={38} className="h-10 w-auto" />
+        <Image src={asset("/assets/logo-mark.png")} alt="" width={44} height={38} className="h-10 w-auto" />
         <p className="mt-3 text-xl font-bold text-ink">Hi, Anita</p>
         <p className="mt-1 text-sm text-ink-muted">Start with a thought, question, or task.</p>
       </div>

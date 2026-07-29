@@ -11,6 +11,7 @@ import { ImpactVideo } from "@/components/sections/ImpactVideo";
 import { EnterpriseCTA } from "@/components/sections/EnterpriseCTA";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/Footer";
+import { asset } from "@/lib/assets";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         <Hero />
 
         <SunsetBand
-          bgSrc="/assets/sunset-band-bg.png"
+          bgSrc={asset("/assets/sunset-band-bg.png")}
           title="Your AI partner in thinking for Africa."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
@@ -38,7 +39,7 @@ export default function Home() {
 
         {/* Final CTA reuses the sunset band with different copy */}
         <SunsetBand
-          bgSrc="/assets/final-cta-bg.png"
+          bgSrc={asset("/assets/final-cta-bg.png")}
           title="Unlock the power of African language AI"
           buttons={["appstore", "playstore"]}
         />

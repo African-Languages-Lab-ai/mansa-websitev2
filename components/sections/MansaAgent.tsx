@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
+import { asset } from "@/lib/assets";
 
 const features = [
   "Persistent memory",
@@ -23,7 +24,7 @@ export function MansaAgent() {
       {/* Silhouette background (per reference) with overlays for legibility */}
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/assets/mansa-agent-bg.png"
+          src={asset("/assets/mansa-agent-bg.png")}
           alt=""
           fill
           className="object-cover object-center"
@@ -73,7 +74,7 @@ export function MansaAgent() {
         >
           <div className="group w-full max-w-[300px] overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src="/assets/agent-section-ui.gif"
+              src={asset("/assets/agent-section-ui.gif")}
               alt="Mansa Agent app interface"
               width={394}
               height={807}

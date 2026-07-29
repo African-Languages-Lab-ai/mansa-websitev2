@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
+import { asset } from "@/lib/assets";
 
 const logos = [
   // Phrase reads a touch small at a uniform height, so give it slightly more.
-  { src: "/assets/partner-phrase.png", alt: "Phrase", h: "h-9" },
-  { src: "/assets/partner-blackbird.png", alt: "Blackbird.io", h: "h-8" },
-  { src: "/assets/partner-african-languages-lab.png", alt: "African Languages Lab", h: "h-8" },
-  { src: "/assets/partner-base.png", alt: "Base", h: "h-8" },
+  { src: asset("/assets/partner-phrase.png"), alt: "Phrase", h: "h-9" },
+  { src: asset("/assets/partner-blackbird.png"), alt: "Blackbird.io", h: "h-8" },
+  { src: asset("/assets/partner-african-languages-lab.png"), alt: "African Languages Lab", h: "h-8" },
+  { src: asset("/assets/partner-base.png"), alt: "Base", h: "h-8" },
 ];
 
 function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {

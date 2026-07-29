@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { asset } from "@/lib/assets";
 
 type PillProps = {
   children: ReactNode;
@@ -22,7 +23,7 @@ export function Pill({ children, className = "" }: PillProps) {
       }
     >
       <Image
-        src="/assets/accordion-icon.png"
+        src={asset("/assets/accordion-icon.png")}
         alt=""
         width={10}
         height={18}

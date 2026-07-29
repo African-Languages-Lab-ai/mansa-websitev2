@@ -7,12 +7,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useScrollNav } from "@/lib/useScrollNav";
 import { Button, ArrowGlyph } from "@/components/ui/Button";
 import { APP_URL } from "@/lib/links";
+import { asset } from "@/lib/assets";
 
 const products = [
-  { name: "Mansa Agent", href: "/agent", img: "/assets/product-agent.png" },
-  { name: "Mansa AI", href: "/ai", img: "/assets/product-ai.png" },
-  { name: "Mansa Transcribe", href: "/transcribe", img: "/assets/product-transcribe.png" },
-  { name: "Mansa Translate", href: "/translate", img: "/assets/product-translate.png" },
+  { name: "Mansa Agent", href: "/agent", img: asset("/assets/product-agent.png") },
+  { name: "Mansa AI", href: "/ai", img: asset("/assets/product-ai.png") },
+  { name: "Mansa Transcribe", href: "/transcribe", img: asset("/assets/product-transcribe.png") },
+  { name: "Mansa Translate", href: "/translate", img: asset("/assets/product-translate.png") },
 ];
 
 export function Navbar({ solid = false }: { solid?: boolean }) {
@@ -54,7 +55,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
       <nav className="container-page flex h-[72px] items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2" aria-label="Mansa home">
-          <Image src="/assets/logo-mark.png" alt="" width={34} height={30} className="h-[30px] w-auto" priority />
+          <Image src={asset("/assets/logo-mark.png")} alt="" width={34} height={30} className="h-[30px] w-auto" priority />
           <span className="flex flex-col leading-none">
             <span className="text-2xl font-bold tracking-tight text-ink">mansa</span>
             <span className="text-[9px] font-normal tracking-wide text-ink-muted">

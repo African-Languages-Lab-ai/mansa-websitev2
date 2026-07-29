@@ -11,6 +11,7 @@ import { AgentGetStarted } from "@/components/agent/AgentGetStarted";
 import { AgentUsing } from "@/components/agent/AgentUsing";
 import { AgentSecurity } from "@/components/agent/AgentSecurity";
 import { AgentFAQ } from "@/components/agent/AgentFAQ";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Mansa Agent — Your autonomous AI assistant",
@@ -33,7 +34,7 @@ export default function AgentPage() {
         <AgentSecurity />
         <AgentFAQ />
         <SunsetBand
-          bgSrc="/assets/final-cta-bg.png"
+          bgSrc={asset("/assets/final-cta-bg.png")}
           title="Let your AI do more than answer questions."
           buttons={["appstore", "playstore"]}
         />

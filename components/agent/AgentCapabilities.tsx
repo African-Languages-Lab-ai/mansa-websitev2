@@ -4,35 +4,36 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { asset } from "@/lib/assets";
 
 const caps = [
   {
-    img: "/assets/agent-cap-google.png",
+    img: asset("/assets/agent-cap-google.png"),
     title: "Connect your Google Workspace",
     body: "Connect your Google Workspace to manage emails, schedule meetings, and create or edit documents with AI.",
   },
   {
-    img: "/assets/agent-cap-github.png",
+    img: asset("/assets/agent-cap-github.png"),
     title: "Collaborate on GitHub",
     body: "Review repositories, create issues, manage pull requests, check CI status, and help you ship code faster.",
   },
   {
-    img: "/assets/agent-cap-research.png",
+    img: asset("/assets/agent-cap-research.png"),
     title: "Research the Web",
     body: "Search the web, analyze webpages, extract information from PDFs, and explore academic papers with cited results.",
   },
   {
-    img: "/assets/agent-cap-automate.png",
+    img: asset("/assets/agent-cap-automate.png"),
     title: "Automate Repetitive Work",
     body: "Schedule recurring tasks like daily inbox summaries, GitHub digests, or weekly reports that continue running even when the app is closed.",
   },
   {
-    img: "/assets/agent-cap-goals.png",
+    img: asset("/assets/agent-cap-goals.png"),
     title: "Complete Long-Term Goals",
     body: "Assign ongoing objectives and let Mansa Agent keep working until the task is complete.",
   },
   {
-    img: "/assets/agent-cap-teach.png",
+    img: asset("/assets/agent-cap-teach.png"),
     title: "Teach Your Agent",
     body: "Upload PDFs, documents, spreadsheets, or images and ask questions about their contents.",
   },

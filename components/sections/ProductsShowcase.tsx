@@ -8,22 +8,23 @@ import { Button } from "@/components/ui/Button";
 import { Accordion, type AccordionItem } from "@/components/ui/Accordion";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { APP_URL } from "@/lib/links";
+import { asset } from "@/lib/assets";
 
 // Landscape art shown behind the UI, swapped with the open accordion item.
 const productImages: Record<string, string> = {
-  agent: "/assets/product-agent.png",
-  ai: "/assets/product-ai.png",
-  translate: "/assets/product-translate.png",
-  transcribe: "/assets/product-transcribe.png",
-  asr: "/assets/product-transcribe.png",
+  agent: asset("/assets/product-agent.png"),
+  ai: asset("/assets/product-ai.png"),
+  translate: asset("/assets/product-translate.png"),
+  transcribe: asset("/assets/product-transcribe.png"),
+  asr: asset("/assets/product-transcribe.png"),
 };
 
 // The product's app UI floated over the art (asr is coming soon).
 const productUIs: Record<string, { src: string; gif?: boolean } | null> = {
-  agent: { src: "/assets/agent-section-ui.gif", gif: true },
-  ai: { src: "/assets/ai-oneforevery.png" },
-  translate: { src: "/assets/translate-ui-1.png" },
-  transcribe: { src: "/assets/transcribe-ui-2.png" },
+  agent: { src: asset("/assets/agent-section-ui.gif"), gif: true },
+  ai: { src: asset("/assets/ai-oneforevery.png") },
+  translate: { src: asset("/assets/translate-ui-1.png") },
+  transcribe: { src: asset("/assets/transcribe-ui-2.png") },
   asr: null,
 };
 

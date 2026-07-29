@@ -6,6 +6,7 @@ import { SunsetBand } from "@/components/sections/SunsetBand";
 import { FAQ } from "@/components/sections/FAQ";
 import { PricingPlans } from "@/components/pricing/PricingPlans";
 import { AgentTestimonial } from "@/components/agent/AgentTestimonial";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Pricing — Mansa",
@@ -45,7 +46,7 @@ export default function PricingPage() {
         <FAQ />
 
         <SunsetBand
-          bgSrc="/assets/final-cta-bg.png"
+          bgSrc={asset("/assets/final-cta-bg.png")}
           title="Unlock the power of African language AI"
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}

@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { Button, ArrowGlyph } from "@/components/ui/Button";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { APP_URL } from "@/lib/links";
+import { asset } from "@/lib/assets";
 
 const inputPills = [
   { icon: "◎", label: "Transcribe" },
@@ -86,7 +87,7 @@ export function Hero() {
             {/* Parallax background art */}
             <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-6">
               <Image
-                src="/assets/hero-bg.png"
+                src={asset("/assets/hero-bg.png")}
                 alt="Illustrated African landscape at sunset"
                 fill
                 priority
@@ -98,7 +99,7 @@ export function Hero() {
 
             {/* Floating app UIs (middle behind, left + right overlapping in front) */}
             <Image
-              src="/assets/hero-ui-middle.gif"
+              src={asset("/assets/hero-ui-middle.gif")}
               alt=""
               width={390}
               height={792}
@@ -106,7 +107,7 @@ export function Hero() {
               className="absolute left-1/2 top-[58%] z-10 h-auto w-[44%] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-xl"
             />
             <Image
-              src="/assets/hero-ui-left.gif"
+              src={asset("/assets/hero-ui-left.gif")}
               alt="Mansa Agent app interface"
               width={381}
               height={500}
@@ -114,7 +115,7 @@ export function Hero() {
               className="absolute bottom-[8%] left-[6%] z-20 h-auto w-[46%] rounded-2xl shadow-2xl"
             />
             <Image
-              src="/assets/hero-ui-right.gif"
+              src={asset("/assets/hero-ui-right.gif")}
               alt="Mansa Translate app interface"
               width={382}
               height={423}

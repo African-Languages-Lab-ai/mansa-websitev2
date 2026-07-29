@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { languages, type Language } from "@/lib/languages";
 import { fadeUp, viewportOnce } from "@/lib/motion";
+import { asset } from "@/lib/assets";
 
 // Ring radii as a fraction of the globe wrapper's half-size. The container is
 // wider than the globe (w-[60%]) so labels sit just outside the sphere with
@@ -110,7 +111,7 @@ export function SupportedLanguages() {
             {/* Clean sphere (pre-cropped from the source, no baked labels) */}
             <div className="absolute left-1/2 top-1/2 aspect-square w-[74%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full shadow-[0_20px_60px_-15px_rgba(122,42,29,0.55)]">
               <Image
-                src="/assets/globe-sphere.png"
+                src={asset("/assets/globe-sphere.png")}
                 alt="A golden globe highlighting Africa"
                 fill
                 className="object-cover"
@@ -163,7 +164,7 @@ export function SupportedLanguages() {
         <div className="mt-12 flex flex-col items-center lg:hidden">
           <div className="relative aspect-square w-[240px] overflow-hidden rounded-full shadow-[0_20px_60px_-15px_rgba(122,42,29,0.45)]">
             <Image
-              src="/assets/globe-sphere.png"
+              src={asset("/assets/globe-sphere.png")}
               alt="A golden globe highlighting Africa"
               fill
               className="object-cover"

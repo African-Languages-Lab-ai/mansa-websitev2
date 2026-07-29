@@ -8,6 +8,7 @@ import { EmptyFeatureCards } from "@/components/product/EmptyFeatureCards";
 import { StatsStrip } from "@/components/product/StatsStrip";
 import { ResearchDriven } from "@/components/product/ResearchDriven";
 import { BuiltForTeams } from "@/components/product/BuiltForTeams";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Mansa Translate — Machine translation for African languages",
@@ -21,7 +22,7 @@ export default function TranslatePage() {
       <Navbar solid />
       <main>
         <ProductHero
-          bgSrc="/assets/hero-translate.png"
+          bgSrc={asset("/assets/hero-translate.png")}
           eyebrow="Mansa Translate"
           title="Conceptualized Machine Translation for African Languages."
           subtitle="Translate across 30+ African languages with AI that understands meaning, context, and culture."
@@ -38,12 +39,12 @@ export default function TranslatePage() {
             {
               title: "Conceptualized Machine Translation",
               body: "Preserves meaning, intent, and cultural context instead of translating word for word.",
-              img: "/assets/translate-ui-1.png",
+              img: asset("/assets/translate-ui-1.png"),
             },
             {
               title: "Translate between over 30 African Languages",
               body: "Translate text accurately across 30+ African languages while preserving meaning, context, and cultural nuance.",
-              img: "/assets/translate-ui-1.png",
+              img: asset("/assets/translate-ui-1.png"),
             },
           ]}
         />
@@ -70,7 +71,7 @@ export default function TranslatePage() {
         <FAQ />
 
         <SunsetBand
-          bgSrc="/assets/sunset-band-bg.png"
+          bgSrc={asset("/assets/sunset-band-bg.png")}
           title="Translate with AI that understands African languages."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
