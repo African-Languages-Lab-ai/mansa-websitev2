@@ -9,7 +9,7 @@ import { AiWhatAsk } from "@/components/ai/AiWhatAsk";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Mansa AI — Chat with AI that understands Africa",
+  title: "Mansa AI: Chat with AI that understands Africa",
   description:
     "Ask questions, solve problems, write better, and learn faster with an AI assistant built on Africa's leading multilingual language technology.",
 };

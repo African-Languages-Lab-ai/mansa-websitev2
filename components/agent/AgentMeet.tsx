@@ -10,7 +10,7 @@ import { asset } from "@/lib/assets";
 
 export function AgentMeet() {
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-24 md:py-28">
       <div className="container-page grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left copy */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>

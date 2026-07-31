@@ -17,17 +17,19 @@ const productImages: Record<string, string> = {
   translate: asset("/assets/product-translate.webp"),
   transcribe: asset("/assets/product-transcribe.webp"),
   asr: asset("/assets/product-transcribe.webp"),
+  interpret: asset("/assets/product-translate.webp"),
 };
 
 // The product's app UI floated over the art. Width/height are each image's
-// native size — mismatched values here stretch the screenshot off its real
+// native size: mismatched values here stretch the screenshot off its real
 // aspect ratio, which reads as blur.
 const productUIs: Record<string, { src: string; width: number; height: number; gif?: boolean } | null> = {
   agent: { src: asset("/assets/agent-section-ui.webp"), width: 394, height: 807, gif: true },
-  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 790 },
+  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 753 },
   translate: { src: asset("/assets/translate-section-ui.webp"), width: 394, height: 793 },
   transcribe: { src: asset("/assets/transcribe-section-ui.webp"), width: 394, height: 798 },
-  asr: { src: asset("/assets/asr-section-ui.webp"), width: 394, height: 785 },
+  asr: { src: asset("/assets/asr-section-ui.webp"), width: 394, height: 786 },
+  interpret: null,
 };
 
 function Body({ text }: { text: string }) {
@@ -44,40 +46,57 @@ function Body({ text }: { text: string }) {
   );
 }
 
+function ComingSoonBadge() {
+  return (
+    <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-offwhite/70">
+      Coming soon
+    </span>
+  );
+}
+
 const items: AccordionItem[] = [
   {
     id: "agent",
     title: "Mansa Agent",
-    content: <Body text="An autonomous assistant that takes action across your tools — research, email, calendar, and more — in African languages." />,
+    content: (
+      <Body text="An autonomous assistant that takes action across your tools. Research, manage email, calendars, and more." />
+    ),
   },
   {
     id: "ai",
     title: "Mansa AI",
-    content: <Body text="Your everyday AI assistant for learning, writing, brainstorming, coding, and answering questions in African languages." />,
+    content: (
+      <Body text="Your everyday AI assistant for learning, writing, brainstorming, coding, and answering questions in English and 30+ African languages." />
+    ),
   },
   {
     id: "translate",
     title: "Mansa Translate",
-    content: <Body text="Fast, natural translation across dozens of African languages, tuned for local nuance and context." />,
+    content: <Body text="Fast, natural translation across 30+ African languages, tuned for local nuance and context." />,
   },
   {
     id: "transcribe",
     title: "Mansa Transcribe",
-    content: <Body text="Turn speech into accurate text across African accents and dialects, ready to search, edit, and share." />,
+    content: (
+      <Body text="Turn speech from English and 30+ African languages into accurate text, recognizing African accents and dialects." />
+    ),
   },
   {
     id: "asr",
+    title: "Mansa ASR",
+    content: (
+      <Body text="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects." />
+    ),
+  },
+  {
+    id: "interpret",
     title: (
       <span className="flex items-center gap-2">
-        Mansa ASR
-        <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-offwhite/70">
-          Coming soon
-        </span>
+        Mansa Interpret
+        <ComingSoonBadge />
       </span>
     ),
-    content: (
-      <p>Production-grade automatic speech recognition for African languages — coming soon.</p>
-    ),
+    content: <p>Real-time voice interpretation across African languages, coming soon.</p>,
   },
 ];
 

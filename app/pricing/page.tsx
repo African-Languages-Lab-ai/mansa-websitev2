@@ -9,7 +9,7 @@ import { AgentTestimonial } from "@/components/agent/AgentTestimonial";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Pricing — Mansa",
+  title: "Mansa Pricing",
   description:
     "Simple pricing. Powerful AI. Start using Mansa AI for free and upgrade to Mansa Agent when you're ready.",
 };

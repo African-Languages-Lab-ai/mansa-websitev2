@@ -14,7 +14,7 @@ import { AgentFAQ } from "@/components/agent/AgentFAQ";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Mansa Agent — Your autonomous AI assistant",
+  title: "Mansa Agent: Your autonomous AI assistant",
   description:
     "Mansa Agent remembers, researches, and gets work done. Connect your tools, automate repetitive work, and complete tasks across African languages.",
 };

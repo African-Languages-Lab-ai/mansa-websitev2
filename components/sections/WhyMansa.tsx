@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { LAB_ABOUT } from "@/lib/links";
 
 const cards = [
   {
@@ -24,7 +25,7 @@ const cards = [
 
 const stats = [
   { value: "30+", label: "African Languages" },
-  { value: "19B+", label: "African Language Tokens" },
+  { value: "100B+", label: "African Language Tokens" },
   { value: "98%", label: "API Integration Success Rate" },
   { value: "100%", label: "Research Backed" },
 ];
@@ -68,7 +69,15 @@ export function WhyMansa() {
           </h2>
           <p className="mt-3 max-w-2xl text-lg text-ink-muted">
             Mansa, developed by{" "}
-            <span className="font-semibold text-maroon">the African Languages Lab</span>, natively
+            <a
+              href={LAB_ABOUT}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-maroon underline decoration-maroon/30 underline-offset-2 transition-colors hover:text-maroon-dark"
+            >
+              the African Languages Lab
+            </a>
+            , natively
             understands African languages, dialects, and cultural contexts, unlike most AI models
             that treat them as an afterthought.
           </p>

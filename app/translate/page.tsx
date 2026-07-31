@@ -11,7 +11,7 @@ import { BuiltForTeams } from "@/components/product/BuiltForTeams";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Mansa Translate — Machine translation for African languages",
+  title: "Mansa Translate: Machine translation for African languages",
   description:
     "Translate across 30+ African languages with AI that understands meaning, context, and culture.",
 };
@@ -24,7 +24,7 @@ export default function TranslatePage() {
         <ProductHero
           bgSrc={asset("/assets/hero-translate.webp")}
           eyebrow="Mansa Translate"
-          title="Conceptualized Machine Translation for African Languages."
+          title="Contextualized Machine Translation for African Languages."
           subtitle="Translate across 30+ African languages with AI that understands meaning, context, and culture."
           cta="Try Mansa Translate"
           objectPosition="center 30%"
@@ -37,7 +37,7 @@ export default function TranslatePage() {
           fit="float"
           cards={[
             {
-              title: "Conceptualized Machine Translation",
+              title: "Contextualized Machine Translation",
               body: "Preserves meaning, intent, and cultural context instead of translating word for word.",
               img: asset("/assets/translate-ui-1.webp"),
               imgWidth: 326,

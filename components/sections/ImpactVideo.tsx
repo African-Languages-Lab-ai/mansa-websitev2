@@ -26,7 +26,7 @@ export function ImpactVideo() {
   };
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-24 md:py-32">
+    <section ref={ref} className="relative overflow-hidden py-24 md:py-28">
       {/* Illustrated golden savanna backdrop (parallax) */}
       <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-8">
         <Image src={asset("/assets/impact-bg.webp")} alt="" fill className="object-cover" sizes="100vw" />

@@ -21,42 +21,35 @@ const tabs: Tab[] = [
     label: "Support",
     headline: "Deliver multilingual support that feels local.",
     body: "Resolve customer conversations in the languages your users actually speak, with responses that respect local nuance and tone.",
-    img: asset("/assets/teams-6.webp"),
+    img: asset("/assets/usecases-support.webp"),
   },
   {
     id: "localization",
     label: "Localization",
     headline: "Localize products for the whole continent.",
     body: "Translate interfaces, docs, and content across dozens of African languages while keeping meaning and context intact.",
-    img: asset("/assets/teams-1.webp"),
+    img: asset("/assets/usecases-localization.webp"),
   },
   {
     id: "research",
     label: "Research",
     headline: "Accelerate research grounded in African data.",
     body: "Analyze interviews, transcripts, and field notes across languages to surface insights faster than ever.",
-    img: asset("/assets/teams-2.webp"),
-  },
-  {
-    id: "development",
-    label: "Development",
-    headline: "Build language-aware apps with one API.",
-    body: "Ship chat, translation, and speech features for African languages using a single, well-documented API.",
-    img: asset("/assets/teams-3.webp"),
+    img: asset("/assets/usecases-research.webp"),
   },
   {
     id: "education",
     label: "Education",
     headline: "Make learning accessible in every language.",
     body: "Give students tutoring, explanations, and study help in their mother tongue, at any level.",
-    img: asset("/assets/teams-4.webp"),
+    img: asset("/assets/usecases-education.webp"),
   },
   {
     id: "operations",
     label: "Operations",
     headline: "Run operations that speak your team's language.",
     body: "Automate internal workflows, briefs, and reporting across the languages your teams work in every day.",
-    img: asset("/assets/teams-5.webp"),
+    img: asset("/assets/usecases-operations.webp"),
   },
 ];
 
@@ -65,7 +58,7 @@ export function UseCases() {
   const active = tabs.find((t) => t.id === activeId)!;
 
   return (
-    <section className="bg-cream-dark py-24 md:py-32">
+    <section className="bg-cream-dark py-24 md:py-28">
       <div className="container-page">
         <motion.div
           variants={fadeUp}
@@ -122,13 +115,13 @@ export function UseCases() {
                 </p>
               </div>
 
-              {/* App screenshot for the active use case */}
-              <div className="group mx-auto w-full max-w-[300px] overflow-hidden rounded-3xl bg-cream shadow-soft ring-1 ring-black/5">
+              {/* Web app screenshot for the active use case */}
+              <div className="group mx-auto w-full overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-black/5">
                 <Image
                   src={active.img}
                   alt={active.headline}
-                  width={326}
-                  height={430}
+                  width={1200}
+                  height={558}
                   className="h-auto w-full transition-transform duration-300 ease-out group-hover:scale-[1.04]"
                 />
               </div>

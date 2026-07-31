@@ -35,7 +35,7 @@ const caps = [
   {
     img: asset("/assets/agent-cap-teach.webp"),
     title: "Teach Your Agent",
-    body: "Upload PDFs, documents, spreadsheets, or images and ask questions about their contents.",
+    body: "Give your agent specific instructions and tell it exactly how it should behave.",
   },
 ];
 

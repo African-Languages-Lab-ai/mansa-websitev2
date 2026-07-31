@@ -15,7 +15,7 @@ type Plan = {
   cta: string;
 };
 
-const mutedValues = new Set(["Not included", "None", "—"]);
+const mutedValues = new Set(["Not included", "None", "-"]);
 
 const plans: Plan[] = [
   {
@@ -30,7 +30,7 @@ const plans: Plan[] = [
       { label: "Deep research", value: "Not included" },
       { label: "Delegation", value: "Not included" },
       { label: "Active automations", value: "None" },
-      { label: "Agent workspace", value: "—" },
+      { label: "Agent workspace", value: "-" },
       { label: "After credit", value: "Chat can use All Lab balance when overflow is on" },
     ],
   },

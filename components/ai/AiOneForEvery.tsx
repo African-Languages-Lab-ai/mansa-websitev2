@@ -83,7 +83,7 @@ export function AiOneForEvery() {
   const active = tabs[tab];
 
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-24 md:py-28">
       <div className="container-page">
         <motion.div
           variants={fadeUp}

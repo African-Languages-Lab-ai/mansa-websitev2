@@ -4,7 +4,7 @@ import { useReducedMotion } from "framer-motion";
 
 const stats = [
   { value: "30+", label: "African Languages" },
-  { value: "19B+", label: "African Language Tokens" },
+  { value: "100B+", label: "African Language Tokens" },
   { value: "98%", label: "API Integration Success Rate" },
   { value: "100%", label: "Research Backed" },
 ];

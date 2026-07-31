@@ -14,6 +14,8 @@ const products = [
   { name: "Mansa AI", href: "/ai", img: asset("/assets/product-ai.webp") },
   { name: "Mansa Transcribe", href: "/transcribe", img: asset("/assets/product-transcribe.webp") },
   { name: "Mansa Translate", href: "/translate", img: asset("/assets/product-translate.webp") },
+  { name: "Mansa ASR", href: "/asr", img: asset("/assets/product-ai.webp") },
+  { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-ai.webp") },
 ];
 
 export function Navbar({ solid = false }: { solid?: boolean }) {
@@ -121,7 +123,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             onMouseLeave={scheduleClose}
             className="absolute inset-x-0 top-full hidden border-t border-ink/10 bg-cream/95 backdrop-blur-md md:block"
           >
-            <div className="container-page grid grid-cols-4 gap-5 py-6">
+            <div className="container-page grid grid-cols-3 gap-5 py-6">
               {products.map((p) => (
                 <Link
                   key={p.name}
@@ -134,7 +136,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
                     alt=""
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 1280px) 25vw, 300px"
+                    sizes="(max-width: 1280px) 33vw, 320px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
                   <span className="absolute left-4 top-3 text-lg font-semibold text-offwhite drop-shadow">

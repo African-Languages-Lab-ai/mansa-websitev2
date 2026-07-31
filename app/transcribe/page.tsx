@@ -11,7 +11,7 @@ import { BuiltForTeams } from "@/components/product/BuiltForTeams";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Mansa Transcribe — Automatic speech recognition for African languages",
+  title: "Mansa Transcribe: Automatic speech recognition for African languages",
   description:
     "Convert spoken language into clear, readable text with AI-powered transcription built for African languages.",
 };

@@ -97,30 +97,14 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark/30 via-transparent to-transparent" />
             </motion.div>
 
-            {/* Floating app UIs (middle behind, left + right overlapping in front) */}
+            {/* Floating app UI */}
             <Image
-              src={asset("/assets/hero-ui-middle.webp")}
-              alt=""
-              width={390}
-              height={792}
+              src={asset("/assets/hero-section-ui.webp")}
+              alt="Mansa app interface"
+              width={398}
+              height={799}
               unoptimized
-              className="absolute left-1/2 top-[68%] z-10 h-auto w-[44%] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-xl"
-            />
-            <Image
-              src={asset("/assets/hero-ui-left.webp")}
-              alt="Mansa Agent app interface"
-              width={381}
-              height={500}
-              unoptimized
-              className="absolute bottom-[8%] left-[6%] z-20 h-auto w-[46%] rounded-2xl shadow-2xl"
-            />
-            <Image
-              src={asset("/assets/hero-ui-right.webp")}
-              alt="Mansa Translate app interface"
-              width={382}
-              height={423}
-              unoptimized
-              className="absolute right-[5%] top-[12%] z-20 h-auto w-[42%] rounded-2xl shadow-2xl"
+              className="absolute left-1/2 top-1/2 z-10 h-auto w-[48%] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl"
             />
           </div>
         </motion.div>

@@ -16,7 +16,7 @@ const steps = [
 
 export function AppSteps() {
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-24 md:py-28">
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.6fr] lg:gap-16">
         {/* Left: heading + store badges */}
         <motion.div
