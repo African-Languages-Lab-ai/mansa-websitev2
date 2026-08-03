@@ -48,11 +48,10 @@ export function AgentMeet() {
           <div className="absolute inset-0 bg-espresso/30" />
           <div className="group relative w-full max-w-[280px] overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src={asset("/assets/agent-section-ui.webp")}
+              src={asset("/assets/agent-section-ui-static.webp")}
               alt="Mansa Agent app interface"
               width={394}
               height={807}
-              unoptimized
               className="h-auto w-full transition-transform duration-300 ease-out group-hover:scale-[1.04]"
             />
           </div>

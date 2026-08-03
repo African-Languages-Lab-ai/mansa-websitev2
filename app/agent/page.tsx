@@ -10,6 +10,7 @@ import { AgentTestimonial } from "@/components/agent/AgentTestimonial";
 import { AgentGetStarted } from "@/components/agent/AgentGetStarted";
 import { AgentUsing } from "@/components/agent/AgentUsing";
 import { AgentSecurity } from "@/components/agent/AgentSecurity";
+import { PluginsSection } from "@/components/product/PluginsSection";
 import { AgentFAQ } from "@/components/agent/AgentFAQ";
 import { asset } from "@/lib/assets";
 
@@ -31,6 +32,7 @@ export default function AgentPage() {
         <AgentTestimonial />
         <AgentGetStarted />
         <AgentUsing />
+        <PluginsSection />
         <AgentSecurity />
         <AgentFAQ />
         <SunsetBand

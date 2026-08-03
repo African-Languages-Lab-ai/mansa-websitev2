@@ -33,7 +33,7 @@ export default function AsrPage() {
         <EmptyFeatureCards
           heading="Speech recognition built for African languages."
           subheading="Clear, accurate, and true to how people actually speak."
-          mediaAspect="aspect-[551/523]"
+          mediaAspect="aspect-[4/5]"
           fit="float"
           cards={[
             {
@@ -41,7 +41,7 @@ export default function AsrPage() {
               body: "Convert spoken language into clear, accurate text with AI tuned for real-world audio.",
               img: asset("/assets/asr-ui-1.webp"),
               imgWidth: 326,
-              imgHeight: 390,
+              imgHeight: 557,
             },
             {
               title: "Built for African Languages",

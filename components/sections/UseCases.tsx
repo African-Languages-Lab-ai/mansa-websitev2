@@ -120,8 +120,8 @@ export function UseCases() {
                 <Image
                   src={active.img}
                   alt={active.headline}
-                  width={1200}
-                  height={558}
+                  width={1310}
+                  height={615}
                   className="h-auto w-full transition-transform duration-300 ease-out group-hover:scale-[1.04]"
                 />
               </div>

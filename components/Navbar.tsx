@@ -10,12 +10,12 @@ import { APP_URL } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 const products = [
-  { name: "Mansa Agent", href: "/agent", img: asset("/assets/product-agent.webp") },
-  { name: "Mansa AI", href: "/ai", img: asset("/assets/product-ai.webp") },
-  { name: "Mansa Transcribe", href: "/transcribe", img: asset("/assets/product-transcribe.webp") },
-  { name: "Mansa Translate", href: "/translate", img: asset("/assets/product-translate.webp") },
-  { name: "Mansa ASR", href: "/asr", img: asset("/assets/product-ai.webp") },
-  { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-ai.webp") },
+  { name: "Mansa Agent", desc: "Autonomous AI agent for tasks", href: "/agent", img: asset("/assets/product-agent.webp") },
+  { name: "Mansa AI", desc: "Multilingual chat assistant", href: "/ai", img: asset("/assets/product-ai.webp") },
+  { name: "Mansa Transcribe", desc: "Speech to text transcription", href: "/transcribe", img: asset("/assets/product-transcribe.webp") },
+  { name: "Mansa Translate", desc: "Translate across African languages", href: "/translate", img: asset("/assets/product-translate.webp") },
+  { name: "Mansa ASR", desc: "Automatic speech recognition", href: "/asr", img: asset("/assets/product-ai.webp") },
+  { name: "Mansa Interpret", desc: "Real-time voice interpretation", href: "/interpret", img: asset("/assets/product-ai.webp") },
 ];
 
 export function Navbar({ solid = false }: { solid?: boolean }) {
@@ -56,14 +56,15 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
     >
       <nav className="container-page flex h-[72px] items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" aria-label="Mansa home">
-          <Image src={asset("/assets/logo-mark.webp")} alt="" width={34} height={30} className="h-[30px] w-auto" priority />
-          <span className="flex flex-col leading-none">
-            <span className="text-2xl font-bold tracking-tight text-ink">mansa</span>
-            <span className="text-[9px] font-normal tracking-wide text-ink-muted">
-              by African Languages Lab
-            </span>
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Mansa home">
+          <Image
+            src={asset("/assets/nav-logo-lockup.webp")}
+            alt="Mansa, by African Languages Lab"
+            width={1696}
+            height={449}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
@@ -123,24 +124,20 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             onMouseLeave={scheduleClose}
             className="absolute inset-x-0 top-full hidden border-t border-ink/10 bg-cream/95 backdrop-blur-md md:block"
           >
-            <div className="container-page grid grid-cols-3 gap-5 py-6">
+            <div className="container-page grid grid-cols-2 gap-1 py-4">
               {products.map((p) => (
                 <Link
                   key={p.name}
                   href={p.href}
                   onClick={() => setProductsOpen(false)}
-                  className="group relative aspect-[5/4] overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+                  className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
                 >
-                  <Image
-                    src={p.img}
-                    alt=""
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 1280px) 33vw, 320px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
-                  <span className="absolute left-4 top-3 text-lg font-semibold text-offwhite drop-shadow">
-                    {p.name}
+                  <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg ring-1 ring-black/5">
+                    <Image src={p.img} alt="" fill className="object-cover" sizes="44px" />
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-sm font-semibold text-ink">{p.name}</span>
+                    <span className="text-xs text-ink-muted">{p.desc}</span>
                   </span>
                 </Link>
               ))}

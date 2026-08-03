@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { StoreButton } from "@/components/ui/StoreButton";
-import { LAB_ABOUT, LAB_RESEARCH, ALL_LAB_PORTAL } from "@/lib/links";
+import { LAB_ABOUT, LAB_RESEARCH } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 type FooterLink = { label: string; href: string };
@@ -27,7 +26,7 @@ const columns: { heading: string; links: FooterLink[] }[] = [
   },
   {
     heading: "Resources",
-    links: [{ label: "Documentation", href: ALL_LAB_PORTAL }],
+    links: [{ label: "Documentation", href: "/docs" }],
   },
   {
     heading: "API Platform",
@@ -93,12 +92,6 @@ export function Footer() {
               ))}
             </ul>
           </div>
-        </div>
-
-        {/* Store badges */}
-        <div className="flex flex-col items-center gap-4 py-8 sm:flex-row sm:justify-center">
-          <StoreButton store="appstore" variant="outline" onDark />
-          <StoreButton store="playstore" variant="filled" />
         </div>
 
         {/* Bottom bar */}

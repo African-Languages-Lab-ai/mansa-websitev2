@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Button, ArrowGlyph } from "@/components/ui/Button";
 import { LogoMarquee } from "@/components/LogoMarquee";
+import { TypewriterTagline } from "@/components/sections/TypewriterTagline";
 import { APP_URL } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
@@ -36,6 +37,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col"
         >
+          <TypewriterTagline />
           <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
             The AI built for African languages.
           </h1>
@@ -104,7 +106,7 @@ export function Hero() {
               width={398}
               height={799}
               unoptimized
-              className="absolute left-1/2 top-1/2 z-10 h-auto w-[48%] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl"
+              className="absolute left-1/2 top-[8%] z-10 h-auto w-[42%] -translate-x-1/2 rounded-2xl shadow-2xl"
             />
           </div>
         </motion.div>

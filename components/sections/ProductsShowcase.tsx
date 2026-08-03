@@ -23,8 +23,8 @@ const productImages: Record<string, string> = {
 // The product's app UI floated over the art. Width/height are each image's
 // native size: mismatched values here stretch the screenshot off its real
 // aspect ratio, which reads as blur.
-const productUIs: Record<string, { src: string; width: number; height: number; gif?: boolean } | null> = {
-  agent: { src: asset("/assets/agent-section-ui.webp"), width: 394, height: 807, gif: true },
+const productUIs: Record<string, { src: string; width: number; height: number } | null> = {
+  agent: { src: asset("/assets/agent-section-ui-static.webp"), width: 394, height: 807 },
   ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 753 },
   translate: { src: asset("/assets/translate-section-ui.webp"), width: 394, height: 793 },
   transcribe: { src: asset("/assets/transcribe-section-ui.webp"), width: 394, height: 798 },
@@ -168,7 +168,6 @@ export function ProductsShowcase() {
                     alt=""
                     width={activeUI.width}
                     height={activeUI.height}
-                    unoptimized={activeUI.gif}
                     className="absolute left-1/2 top-1/2 h-auto w-[52%] max-w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl transition-transform duration-300 ease-out group-hover:scale-105"
                   />
                 ) : (

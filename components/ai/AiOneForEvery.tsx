@@ -11,7 +11,6 @@ import { asset } from "@/lib/assets";
 type Tab = {
   title: string;
   body: string;
-  /** provided screenshot (first tab); others use a generated card */
   img?: string;
   prompt: string;
 };
@@ -20,7 +19,6 @@ const tabs: Record<string, Tab> = {
   Students: {
     title: "Learn faster with an AI study partner.",
     body: "Get explanations, summarize notes, prepare for exams, solve assignments, and understand complex topics in simple language.",
-    img: asset("/assets/ai-oneforevery.webp"),
     prompt: "Explain how the law of aerodynamics works in simple terms, like I'm new to it.",
   },
   Professionals: {
@@ -47,7 +45,7 @@ const tabs: Record<string, Tab> = {
 
 const tabNames = Object.keys(tabs);
 
-/** Generated Mansa chat card matching the provided Students screenshot. */
+/** Generated Mansa chat card used for each persona's example prompt. */
 function MansaChatCard({ prompt }: { prompt: string }) {
   return (
     <div className="mx-auto w-full max-w-[300px] rounded-[2rem] bg-white p-5 shadow-xl">
