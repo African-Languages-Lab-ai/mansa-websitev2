@@ -35,6 +35,7 @@ export default function AiPage() {
           panel="surface"
           columns={3}
           glow
+          fadeToClass="from-transparent to-cream"
           cards={[
             { title: "Multilingual by design.", body: "Communicate naturally across English and 30+ African languages with AI built for Africa.", img: asset("/assets/ai-engineered-multilingual.webp") },
             { title: "Have natural conversations.", body: "Understand complex questions, plan, generate thoughtful responses, and solve problems.", img: asset("/assets/ai-engineered-3.webp") },
@@ -42,9 +43,9 @@ export default function AiPage() {
           ]}
         />
 
+        <PluginsSection />
         <AiOneForEvery />
         <AiWhatAsk />
-        <PluginsSection />
 
         <CtaBand
           bgSrc={asset("/assets/hero-ai.webp")}

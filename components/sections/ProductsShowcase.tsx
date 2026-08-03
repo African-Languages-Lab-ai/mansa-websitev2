@@ -16,7 +16,7 @@ const productImages: Record<string, string> = {
   ai: asset("/assets/product-ai.webp"),
   translate: asset("/assets/product-translate.webp"),
   transcribe: asset("/assets/product-transcribe.webp"),
-  asr: asset("/assets/product-transcribe.webp"),
+  asr: asset("/assets/product-asr.webp"),
   interpret: asset("/assets/product-translate.webp"),
 };
 

@@ -2,6 +2,7 @@
 
 import { forwardRef, type ReactNode } from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
+import { basePath } from "@/lib/assets";
 
 type Variant = "filled" | "outline" | "ghost" | "light";
 type Size = "sm" | "default" | "lg";
@@ -67,9 +68,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (href) {
       const external = /^(https?:|mailto:)/.test(href);
+      // Internal routes need the GitHub Pages basePath prefix — next/link
+      // handles this automatically, but this renders a plain <a>.
+      const resolvedHref = external || href.startsWith("#") ? href : `${basePath}${href}`;
       return (
         <motion.a
-          href={href}
+          href={resolvedHref}
           target={external && href.startsWith("http") ? "_blank" : undefined}
           rel={external && href.startsWith("http") ? "noopener noreferrer" : undefined}
           className={cls}

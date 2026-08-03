@@ -6,7 +6,6 @@ import { AgentHero } from "@/components/agent/AgentHero";
 import { AgentMeet } from "@/components/agent/AgentMeet";
 import { AgentWhy } from "@/components/agent/AgentWhy";
 import { AgentCapabilities } from "@/components/agent/AgentCapabilities";
-import { AgentTestimonial } from "@/components/agent/AgentTestimonial";
 import { AgentGetStarted } from "@/components/agent/AgentGetStarted";
 import { AgentUsing } from "@/components/agent/AgentUsing";
 import { AgentSecurity } from "@/components/agent/AgentSecurity";
@@ -29,11 +28,10 @@ export default function AgentPage() {
         <AgentMeet />
         <AgentWhy />
         <AgentCapabilities />
-        <AgentTestimonial />
-        <AgentGetStarted />
-        <AgentUsing />
         <PluginsSection />
+        <AgentUsing />
         <AgentSecurity />
+        <AgentGetStarted />
         <AgentFAQ />
         <SunsetBand
           bgSrc={asset("/assets/final-cta-bg.webp")}

@@ -4,10 +4,13 @@ import { useMemo, useState } from "react";
 import { docGroups } from "@/lib/docs-content";
 import { CostCalculator } from "@/components/docs/CostCalculator";
 
+const startingHeading = docGroups.find((g) => g.pages.some((p) => p.id === "overview"))?.heading ?? "";
+
 export function DocsShell() {
   const [activeId, setActiveId] = useState("overview");
   const [query, setQuery] = useState("");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [openGroups, setOpenGroups] = useState<Set<string>>(() => new Set([startingHeading]));
 
   const active = useMemo(() => {
     for (const g of docGroups) {
@@ -29,8 +32,20 @@ export function DocsShell() {
       .filter((g) => g.pages.length > 0);
   }, [query]);
 
-  const select = (id: string) => {
+  const searching = query.trim().length > 0;
+
+  const toggleGroup = (heading: string) => {
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(heading)) next.delete(heading);
+      else next.add(heading);
+      return next;
+    });
+  };
+
+  const select = (id: string, heading: string) => {
     setActiveId(id);
+    setOpenGroups((prev) => new Set(prev).add(heading));
     setMobileNavOpen(false);
   };
 
@@ -45,28 +60,43 @@ export function DocsShell() {
           className="w-full rounded-full border border-ink/15 bg-white px-4 py-2 text-sm text-ink placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-maroon"
         />
       </div>
-      {filteredGroups.map((g) => (
-        <div key={g.heading} className="mb-5">
-          <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">{g.heading}</p>
-          <ul className="space-y-0.5">
-            {g.pages.map((p) => (
-              <li key={p.id}>
-                <button
-                  type="button"
-                  onClick={() => select(p.id)}
-                  className={`block w-full rounded-lg px-2.5 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
-                    p.id === activeId
-                      ? "bg-maroon/10 font-medium text-maroon"
-                      : "text-ink-muted hover:bg-black/5 hover:text-ink"
-                  }`}
-                >
-                  {p.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {filteredGroups.map((g) => {
+        const isOpen = searching || openGroups.has(g.heading);
+        return (
+          <div key={g.heading} className="mb-1">
+            <button
+              type="button"
+              onClick={() => toggleGroup(g.heading)}
+              aria-expanded={isOpen}
+              className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink-muted transition-colors hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+            >
+              {g.heading}
+              <span aria-hidden className={`text-[10px] transition-transform ${isOpen ? "rotate-180" : ""}`}>
+                ▾
+              </span>
+            </button>
+            {isOpen && (
+              <ul className="mb-3 space-y-0.5">
+                {g.pages.map((p) => (
+                  <li key={p.id}>
+                    <button
+                      type="button"
+                      onClick={() => select(p.id, g.heading)}
+                      className={`block w-full rounded-lg px-2.5 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
+                        p.id === activeId
+                          ? "bg-maroon/10 font-medium text-maroon"
+                          : "text-ink-muted hover:bg-black/5 hover:text-ink"
+                      }`}
+                    >
+                      {p.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        );
+      })}
     </nav>
   );
 

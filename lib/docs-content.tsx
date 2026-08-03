@@ -200,7 +200,7 @@ export const docGroups: DocGroup[] = [
 }`}
             />
             <P>
-              The jobId can be used to check status and retrieve results — see Async Job Status &amp;
+              The jobId can be used to check status and retrieve results - see Async Job Status &amp;
               Result.
             </P>
             <H3>Python</H3>
@@ -380,14 +380,14 @@ while True:
             <H3>Check Job Status</H3>
             <Endpoint method="GET" path="/api/translate/async/[jobId]/status" />
             <P>For file translation jobs, use: <code className="rounded bg-cream-dark px-1.5 py-0.5 font-mono text-[13px]">/api/translate/file/async/[jobId]/status</code></P>
-            <P>Query parameter: <code className="rounded bg-cream-dark px-1.5 py-0.5 font-mono text-[13px]">token</code> (required) — can also be provided via the Authorization header.</P>
+            <P>Query parameter: <code className="rounded bg-cream-dark px-1.5 py-0.5 font-mono text-[13px]">token</code> (required) - can also be provided via the Authorization header.</P>
             <H3>Response</H3>
             <CodeBlock label="JSON" code={`{\n  "status": "running" | "done" | "failed" | "cancelled"\n}`} />
             <P>For file translation jobs, the response also includes <code className="rounded bg-cream-dark px-1.5 py-0.5 font-mono text-[13px]">fileType</code>.</P>
             <H3>Get Job Result (Batch Jobs)</H3>
             <Endpoint method="GET" path="/api/translate/async/[jobId]/result" />
-            <CodeBlock label="JSON — when done" code={`{\n  "segments": [\n    { "text": "Hello", "translatedText": "Hujambo", "id": "1" }\n  ]\n}`} />
-            <CodeBlock label="JSON — still running (202)" code={`{\n  "status": "running"\n}`} />
+            <CodeBlock label="JSON - when done" code={`{\n  "segments": [\n    { "text": "Hello", "translatedText": "Hujambo", "id": "1" }\n  ]\n}`} />
+            <CodeBlock label="JSON - still running (202)" code={`{\n  "status": "running"\n}`} />
             <H3>Download Translated File (File Jobs)</H3>
             <Endpoint method="GET" path="/api/translate/file/async/[jobId]/download" />
             <P>Returns the translated file as a downloadable attachment. Only available once the job status is &quot;done&quot;.</P>
@@ -805,7 +805,7 @@ async function transcribeAudio(file) {
         node: (
           <>
             <P>Mansa connects with the tools your team already uses. Select an integration below to get started.</P>
-            <List items={["Phrase — TMS & Portal integration (2 guides)", "More integrations coming soon"]} />
+            <List items={["Phrase - TMS & Portal integration (2 guides)", "More integrations coming soon"]} />
           </>
         ),
       },
@@ -829,11 +829,11 @@ async function transcribeAudio(file) {
             <H3>Steps</H3>
             <OrderedList
               items={[
-                <>Access Language AI Settings — log in to your Phrase Dashboard and navigate to TMS.</>,
+                <>Access Language AI Settings - log in to your Phrase Dashboard and navigate to TMS.</>,
                 <>Navigate to Language AI in the sidebar.</>,
-                <>Add MT Profile — open the MT profiles tab and click Add MT profile (or New profile).</>,
-                <>Name and Create — give your profile a name (e.g. &quot;Mansa - African Languages&quot;) and click Create.</>,
-                <>Add More Engines — under Fully managed, click Add more engines.</>,
+                <>Add MT Profile - open the MT profiles tab and click Add MT profile (or New profile).</>,
+                <>Name and Create - give your profile a name (e.g. &quot;Mansa - African Languages&quot;) and click Create.</>,
+                <>Add More Engines - under Fully managed, click Add more engines.</>,
                 <>Select BYO Engine from the &quot;Choose MT engine to add&quot; list.</>,
                 <>
                   Enter API Credentials under Edit BYO Engine:
@@ -843,8 +843,8 @@ async function transcribeAudio(file) {
                     <li>Authorization token: your Mansa API token</li>
                   </ul>
                 </>,
-                <>Validate Connection — click Validate connection and confirm all statuses turn green.</>,
-                <>Save and Finish — click Add. Your Mansa MT profile is now ready to use.</>,
+                <>Validate Connection - click Validate connection and confirm all statuses turn green.</>,
+                <>Save and Finish - click Add. Your Mansa MT profile is now ready to use.</>,
               ]}
             />
           </>
@@ -860,12 +860,12 @@ async function transcribeAudio(file) {
             <H3>Steps</H3>
             <OrderedList
               items={[
-                <>Navigate to Portals — in Phrase TMS, go to Setup → Portals.</>,
-                <>Create New Portal — click Create New.</>,
-                <>General Settings — enter the Name and Description for your portal.</>,
-                <>Select MT Profile — under Languages and resources, select the Mansa MT Profile you created earlier.</>,
-                <>Languages and Access — choose supported languages and configure access settings.</>,
-                <>Publish — click Save &amp; share or Publish.</>,
+                <>Navigate to Portals - in Phrase TMS, go to Setup → Portals.</>,
+                <>Create New Portal - click Create New.</>,
+                <>General Settings - enter the Name and Description for your portal.</>,
+                <>Select MT Profile - under Languages and resources, select the Mansa MT Profile you created earlier.</>,
+                <>Languages and Access - choose supported languages and configure access settings.</>,
+                <>Publish - click Save &amp; share or Publish.</>,
               ]}
             />
           </>

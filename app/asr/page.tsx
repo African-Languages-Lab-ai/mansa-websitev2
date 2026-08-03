@@ -22,12 +22,12 @@ export default function AsrPage() {
       <Navbar solid />
       <main>
         <ProductHero
-          bgSrc={asset("/assets/hero-transcribe.webp")}
+          bgSrc={asset("/assets/product-asr.webp")}
           eyebrow="Mansa ASR"
           title="Accurate Speech Recognition Built for Africa."
           subtitle="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects."
           cta="Try Mansa ASR"
-          objectPosition="center 35%"
+          objectPosition="center 45%"
         />
 
         <EmptyFeatureCards

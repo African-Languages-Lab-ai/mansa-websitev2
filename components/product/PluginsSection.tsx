@@ -3,31 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
-import { Button } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
-import { APP_URL } from "@/lib/links";
 import { asset } from "@/lib/assets";
-
-const plugins = [
-  {
-    name: "Fact Checker",
-    body: "Verify claims with live web evidence before you trust an answer.",
-    color: "bg-blue-50 text-blue-600",
-    icon: "🛡",
-  },
-  {
-    name: "Ghana News Brief",
-    body: "Get a quick, curated briefing on the day's Ghana headlines.",
-    color: "bg-orange-50 text-orange-600",
-    icon: "📰",
-  },
-  {
-    name: "Study Helper",
-    body: "Explain concepts step by step, tuned for how you learn best.",
-    color: "bg-emerald-50 text-emerald-600",
-    icon: "📖",
-  },
-];
 
 export function PluginsSection() {
   return (
@@ -40,29 +17,9 @@ export function PluginsSection() {
             Extend Mansa with plugins built for how you work.
           </h2>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-muted">
-            Install plugins to bring live web evidence, local news, and guided learning straight into
-            your conversation, no extra apps required.
+            Plugins are available to help you fact-check claims with live web evidence, catch up on
+            local news, and study smarter, right inside your conversation, no extra apps required.
           </p>
-
-          <ul className="mt-8 space-y-4">
-            {plugins.map((p) => (
-              <li key={p.name} className="flex items-start gap-4">
-                <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl text-lg ${p.color}`}>
-                  <span aria-hidden>{p.icon}</span>
-                </span>
-                <div>
-                  <p className="font-semibold text-ink">{p.name}</p>
-                  <p className="text-sm text-ink-muted">{p.body}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8">
-            <Button variant="filled" size="default" href={APP_URL}>
-              Explore Plugins
-            </Button>
-          </div>
         </motion.div>
 
         {/* Right: plugins UI */}
