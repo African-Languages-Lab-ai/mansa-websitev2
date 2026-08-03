@@ -23,8 +23,6 @@ type Props = {
   /** how the UI sits in the panel — "cover" fills edge-to-edge, "contain" letterboxes,
    *  "float" shows the UI at its native aspect ratio, top-anchored on the panel background */
   fit?: "cover" | "contain" | "float";
-  /** blend the section's bottom edge into this Tailwind bg-* color instead of a hard cut */
-  fadeToClass?: string;
 };
 
 /**
@@ -42,7 +40,6 @@ export function EmptyFeatureCards({
   glow = false,
   mediaAspect = "aspect-[4/3]",
   fit = "contain",
-  fadeToClass,
 }: Props) {
   const dark = theme === "dark";
   const float = fit === "float";
@@ -55,10 +52,7 @@ export function EmptyFeatureCards({
   const grid = columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
 
   return (
-    <section className={`relative overflow-hidden ${dark ? "bg-espresso py-24 md:py-28" : "bg-cream py-24 md:py-28"}`}>
-      {fadeToClass && (
-        <div aria-hidden className={`pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b ${fadeToClass}`} />
-      )}
+    <section className={dark ? "bg-espresso py-24 md:py-28" : "bg-cream py-24 md:py-28"}>
       <div className="container-page">
         <motion.div
           variants={fadeUp}

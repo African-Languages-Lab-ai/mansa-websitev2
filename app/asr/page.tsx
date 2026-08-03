@@ -33,7 +33,7 @@ export default function AsrPage() {
         <EmptyFeatureCards
           heading="Speech recognition built for African languages."
           subheading="Clear, accurate, and true to how people actually speak."
-          mediaAspect="aspect-[4/5]"
+          mediaAspect="aspect-[551/523]"
           fit="float"
           cards={[
             {
@@ -41,14 +41,14 @@ export default function AsrPage() {
               body: "Convert spoken language into clear, accurate text with AI tuned for real-world audio.",
               img: asset("/assets/asr-ui-1.webp"),
               imgWidth: 326,
-              imgHeight: 557,
+              imgHeight: 524,
             },
             {
               title: "Built for African Languages",
               body: "Recognizes speech accurately across Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects.",
               img: asset("/assets/asr-ui-2.webp"),
               imgWidth: 326,
-              imgHeight: 485,
+              imgHeight: 524,
             },
           ]}
         />
