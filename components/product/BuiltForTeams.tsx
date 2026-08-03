@@ -18,7 +18,7 @@ export function BuiltForTeams({ heading, individuals, teams }: Props) {
   const [tab, setTab] = useState(tabs[0]);
 
   return (
-    <section className="bg-espresso py-24 md:py-28">
+    <section className="bg-espresso py-16 md:py-20">
       <div className="container-page">
         <motion.h2
           variants={fadeUp}

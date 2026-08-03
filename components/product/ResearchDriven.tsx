@@ -28,7 +28,7 @@ const items = [
 
 export function ResearchDriven({ product = "Mansa" }: { product?: string }) {
   return (
-    <section className="bg-cream pb-24 pt-4 md:pb-28">
+    <section className="bg-cream py-16 md:py-20">
       <div className="container-page rounded-3xl bg-cream-dark/50 px-6 py-14 md:px-12 md:py-16">
         <motion.div
           variants={fadeUp}
