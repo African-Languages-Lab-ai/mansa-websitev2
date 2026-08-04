@@ -119,17 +119,20 @@ export function UseCases() {
                 </p>
               </div>
 
-              {/* Web app screenshot for the active use case */}
+              {/* Web app screenshot for the active use case — the whole card
+                  scales together on hover so the rounded frame's clip
+                  boundary grows in lockstep with the image, instead of a
+                  smaller viewport cropping a larger zoomed image. */}
               <motion.div
                 style={reduce ? undefined : { y: imgY }}
-                className="group mx-auto w-full overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-black/5"
+                className="mx-auto w-full overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-black/5 transition-transform duration-300 ease-out hover:scale-[1.04]"
               >
                 <Image
                   src={active.img}
                   alt={active.headline}
                   width={1310}
                   height={615}
-                  className="h-auto w-full transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+                  className="h-auto w-full"
                 />
               </motion.div>
             </motion.div>

@@ -41,7 +41,7 @@ const caps = [
 
 export function AgentCapabilities() {
   return (
-    <section className="bg-cream py-24 md:py-28">
+    <section className="bg-cream py-16 md:py-20">
       <div className="container-page">
         <motion.div
           variants={fadeUp}

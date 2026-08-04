@@ -112,13 +112,13 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Trust bar: label in the gutter, marquee full-bleed to the screen edges */}
-      <div className="pb-16 md:pb-24">
+      {/* Trust bar: hidden for now per request — may come back later, keep as-is. */}
+      {/* <div className="pb-16 md:pb-24">
         <p className="container-page mb-8 text-center text-sm font-medium uppercase tracking-wide text-ink-muted">
           Trusted by enterprise organisations
         </p>
         <LogoMarquee />
-      </div>
+      </div> */}
     </section>
   );
 }
