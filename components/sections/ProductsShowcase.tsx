@@ -92,7 +92,7 @@ const items: AccordionItem[] = [
     content: (
       <Body
         href="/interpret"
-        text="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects."
+        text="Production-grade text-to-speech for Hausa, Igbo, Yoruba, Twi and Ewe, with natural African accents and dialects."
       />
     ),
   },

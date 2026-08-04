@@ -11,9 +11,9 @@ import { BuiltForTeams } from "@/components/product/BuiltForTeams";
 import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Mansa Interpret: Automatic speech recognition for African languages",
+  title: "Mansa Interpret: Natural text-to-speech for African languages",
   description:
-    "Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects.",
+    "Production-grade text-to-speech for Hausa, Igbo, Yoruba, Twi and Ewe, with natural African accents and dialects.",
 };
 
 export default function InterpretPage() {
@@ -24,28 +24,28 @@ export default function InterpretPage() {
         <ProductHero
           bgSrc={asset("/assets/product-asr.webp")}
           eyebrow="Mansa Interpret"
-          title="Accurate Speech Recognition Built for Africa."
-          subtitle="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects."
+          title="Natural Text-to-Speech Built for Africa."
+          subtitle="Production-grade text-to-speech for Hausa, Igbo, Yoruba, Twi and Ewe, with natural African accents and dialects."
           cta="Try Mansa Interpret"
           objectPosition="center 45%"
         />
 
         <EmptyFeatureCards
-          heading="Speech recognition built for African languages."
-          subheading="Clear, accurate, and true to how people actually speak."
+          heading="Natural speech generation for African languages."
+          subheading="Clear, natural, and true to how people actually speak."
           mediaAspect="aspect-[551/523]"
           fit="float"
           cards={[
             {
-              title: "Clear, Accurate Speech Recognition",
-              body: "Convert spoken language into clear, accurate text with AI tuned for real-world audio.",
+              title: "Clear, Natural Text-to-Speech",
+              body: "Convert written text into clear, natural-sounding speech with AI tuned for African languages.",
               img: asset("/assets/asr-ui-1.webp"),
               imgWidth: 326,
               imgHeight: 524,
             },
             {
               title: "Built for African Languages",
-              body: "Recognizes speech accurately across Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects.",
+              body: "Generates natural speech across Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects.",
               img: asset("/assets/asr-ui-2.webp"),
               imgWidth: 326,
               imgHeight: 524,
@@ -59,16 +59,16 @@ export default function InterpretPage() {
         <BuiltForTeams
           heading="Mansa Interpret is built for every team"
           individuals={[
-            { title: "Transcribe conversations", body: "Turn spoken conversations into accurate text across African languages." },
-            { title: "Voice notes to text", body: "Convert voice memos and recordings into clear, searchable text." },
-            { title: "Learn by listening", body: "Practice and understand African languages through accurate speech recognition." },
-            { title: "Accessible communication", body: "Make spoken content accessible to everyone, in any supported language." },
+            { title: "Read text aloud", body: "Turn written content into clear, natural spoken audio across African languages." },
+            { title: "Text to voice notes", body: "Turn written notes and messages into natural-sounding voice recordings." },
+            { title: "Learn by listening", body: "Practice pronunciation and understand African languages through natural generated speech." },
+            { title: "Accessible communication", body: "Make written content accessible to everyone by turning it into spoken audio." },
           ]}
           teams={[
-            { title: "Call center transcription", body: "Accurately transcribe customer calls across African languages and accents." },
-            { title: "Meeting transcripts", body: "Capture accurate transcripts from multilingual team meetings." },
-            { title: "Voice-driven workflows", body: "Power voice interfaces and IVR systems with reliable speech recognition." },
-            { title: "Quality at scale", body: "Recognize speech accurately across accents and dialects, at any volume." },
+            { title: "Automated voice prompts", body: "Generate natural IVR and call center prompts across African languages and accents." },
+            { title: "Narrated content", body: "Turn reports, articles, and updates into natural spoken audio for your team." },
+            { title: "Voice-driven workflows", body: "Power voice interfaces and IVR systems with natural, reliable speech generation." },
+            { title: "Quality at scale", body: "Generate natural speech across accents and dialects, at any volume." },
           ]}
         />
 
@@ -76,7 +76,7 @@ export default function InterpretPage() {
 
         <SunsetBand
           bgSrc={asset("/assets/final-cta-bg.webp")}
-          title="Speech recognition that understands African languages."
+          title="Text-to-speech that understands African languages."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
         />

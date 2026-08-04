@@ -104,7 +104,7 @@ export function UseCases() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
+              className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.35fr_0.65fr] lg:gap-16"
             >
               <div>
                 <h3 className="max-w-md text-2xl font-semibold leading-tight text-ink sm:text-3xl">
