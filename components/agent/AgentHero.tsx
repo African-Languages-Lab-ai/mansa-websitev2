@@ -1,16 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { APP_URL } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 export function AgentHero() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [-24, 24]);
+
   return (
-    <section className="relative flex min-h-[600px] items-center overflow-hidden bg-espresso pt-[72px]">
-      {/* Silhouette + glowing staff backdrop */}
-      <div className="absolute inset-0">
+    <section ref={ref} className="relative flex min-h-[600px] items-center overflow-hidden bg-espresso pt-[72px]">
+      {/* Silhouette + glowing staff backdrop (parallax) */}
+      <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-8">
         <Image
           src={asset("/assets/mansa-agent-bg.webp")}
           alt=""
@@ -21,7 +27,7 @@ export function AgentHero() {
         />
         <div className="absolute inset-0 bg-espresso/45" />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-espresso/60 to-transparent" />
-      </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}

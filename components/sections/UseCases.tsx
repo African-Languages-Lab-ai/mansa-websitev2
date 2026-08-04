@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { asset } from "@/lib/assets";
@@ -56,9 +56,13 @@ const tabs: Tab[] = [
 export function UseCases() {
   const [activeId, setActiveId] = useState(tabs[0].id);
   const active = tabs.find((t) => t.id === activeId)!;
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const imgY = useTransform(scrollYProgress, [0, 1], [-16, 16]);
 
   return (
-    <section className="bg-cream-dark py-24 md:py-28">
+    <section ref={sectionRef} className="bg-cream-dark py-24 md:py-28">
       <div className="container-page">
         <motion.div
           variants={fadeUp}
@@ -116,7 +120,10 @@ export function UseCases() {
               </div>
 
               {/* Web app screenshot for the active use case */}
-              <div className="group mx-auto w-full overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-black/5">
+              <motion.div
+                style={reduce ? undefined : { y: imgY }}
+                className="group mx-auto w-full overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-black/5"
+              >
                 <Image
                   src={active.img}
                   alt={active.headline}
@@ -124,7 +131,7 @@ export function UseCases() {
                   height={615}
                   className="h-auto w-full transition-transform duration-300 ease-out group-hover:scale-[1.04]"
                 />
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>

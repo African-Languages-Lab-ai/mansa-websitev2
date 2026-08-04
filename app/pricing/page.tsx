@@ -3,10 +3,46 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { SunsetBand } from "@/components/sections/SunsetBand";
-import { FAQ } from "@/components/sections/FAQ";
 import { PricingPlans } from "@/components/pricing/PricingPlans";
 import { AgentTestimonial } from "@/components/agent/AgentTestimonial";
+import { PageFAQ } from "@/components/product/PageFAQ";
 import { asset } from "@/lib/assets";
+
+const faqs = [
+  {
+    id: "free",
+    title: "What's included in the Free plan?",
+    content: "Mansa Chat with limited monthly credits that reset each billing cycle, no credit card required.",
+  },
+  {
+    id: "out-of-credits",
+    title: "What happens when I run out of monthly credits?",
+    content:
+      "Depending on your plan, Chat and Agent can continue using your All Lab balance once your plan credits run out.",
+  },
+  {
+    id: "change-plan",
+    title: "Can I change plans at any time?",
+    content: "Yes. Upgrade, downgrade, or cancel your plan at any time from your account settings.",
+  },
+  {
+    id: "custom",
+    title: "Do you offer custom pricing for large teams?",
+    content:
+      "Yes. Contact sales for a custom monthly allowance, dedicated support, and volume pricing for your organization.",
+  },
+  {
+    id: "api-usage",
+    title: "Is Translate and Transcribe API usage included in my plan?",
+    content:
+      "Translate and Transcribe continue to bill against your All Lab balance directly, separate from your monthly Chat and Agent plan credit.",
+  },
+  {
+    id: "rollover",
+    title: "Do unused credits roll over?",
+    content: "No. Monthly plan credit resets each billing cycle and does not roll over.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Mansa Pricing",
@@ -43,7 +79,7 @@ export default function PricingPage() {
         </section>
 
         <AgentTestimonial />
-        <FAQ />
+        <PageFAQ faqs={faqs} />
 
         <SunsetBand
           bgSrc={asset("/assets/final-cta-bg.webp")}

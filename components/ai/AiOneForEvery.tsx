@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { APP_URL } from "@/lib/links";
@@ -79,9 +79,13 @@ function MansaChatCard({ prompt }: { prompt: string }) {
 export function AiOneForEvery() {
   const [tab, setTab] = useState(tabNames[0]);
   const active = tabs[tab];
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const panelY = useTransform(scrollYProgress, [0, 1], [-16, 16]);
 
   return (
-    <section className="bg-cream py-24 md:py-28">
+    <section ref={sectionRef} className="bg-cream py-24 md:py-28">
       <div className="container-page">
         <motion.div
           variants={fadeUp}
@@ -138,7 +142,10 @@ export function AiOneForEvery() {
               </div>
 
               {/* Media panel — provided UI for the first tab, generated card otherwise */}
-              <div className="group flex items-center justify-center rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] p-6 transition-transform duration-300 ease-out hover:scale-[1.03]">
+              <motion.div
+                style={reduce ? undefined : { y: panelY }}
+                className="group flex items-center justify-center rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] p-6 transition-transform duration-300 ease-out hover:scale-[1.03]"
+              >
                 {active.img ? (
                   <Image
                     src={active.img}
@@ -150,7 +157,7 @@ export function AiOneForEvery() {
                 ) : (
                   <MansaChatCard prompt={active.prompt} />
                 )}
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>

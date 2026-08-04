@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
 const prompts = [
-  { tag: "Marketing", q: "What campaigns are our top three competitors running right now, and how does our messaging compare?" },
-  { tag: "Legal", q: "What are the latest regulatory changes affecting solar in the EU this year, and what should counsel be tracking?" },
-  { tag: "Product", q: "Pull our open PO bugs from Linear and group them by product team." },
-  { tag: "Finance", q: "Summarize John Deere's latest 10-Q, flag the three biggest changes from last quarter, and tell me what isn't reported qualitatively." },
-  { tag: "Consulting", q: "Size the total addressable market for supermarkets in the EU and walk me through your assumptions." },
-  { tag: "Technology", q: "Map the value chain for phone manufacturing and flag where margin is concentrating and where it's being disrupted." },
+  { tag: "Support", q: "A customer in Lagos is asking why their order hasn't shipped, in Yoruba. Help me write a polite, on-brand reply." },
+  { tag: "Marketing", q: "Translate this product launch email into Swahili, Hausa, and Igbo while keeping the tone upbeat and on-brand." },
+  { tag: "Product", q: "Review this onboarding screen and flag any copy that won't translate naturally into Twi." },
+  { tag: "Research", q: "Summarize these Amharic customer interviews in English and pull out the top three recurring complaints." },
+  { tag: "Sales", q: "How do I say \"thank you for your business, we look forward to working with you\" politely in Xhosa?" },
+  { tag: "Operations", q: "Turn these mixed English and Hausa meeting notes into a clear action list for the team." },
 ];
 
 export function AiWhatAsk() {

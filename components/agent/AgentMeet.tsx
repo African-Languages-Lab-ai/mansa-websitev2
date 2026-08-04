@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
 import { APP_URL } from "@/lib/links";
@@ -9,8 +10,13 @@ import { fadeUp, viewportOnce } from "@/lib/motion";
 import { asset } from "@/lib/assets";
 
 export function AgentMeet() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [-12, 12]);
+
   return (
-    <section className="bg-cream py-24 md:py-28">
+    <section ref={ref} className="bg-cream py-24 md:py-28">
       <div className="container-page grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left copy */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
@@ -38,13 +44,15 @@ export function AgentMeet() {
           viewport={viewportOnce}
           className="relative flex justify-center overflow-hidden rounded-3xl p-6 md:p-8"
         >
-          <Image
-            src={asset("/assets/mansa-agent-bg.webp")}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+          <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-4">
+            <Image
+              src={asset("/assets/mansa-agent-bg.webp")}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-espresso/30" />
           <div className="group relative w-full max-w-[280px] overflow-hidden rounded-3xl shadow-2xl">
             <Image

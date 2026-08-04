@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { languages, type Language } from "@/lib/languages";
 import { fadeUp, viewportOnce } from "@/lib/motion";
@@ -36,6 +36,9 @@ function polar(angleDeg: number, r: number) {
 export function SupportedLanguages() {
   const [active, setActive] = useState<Language | null>(null);
   const globeRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: globeRef, offset: ["start end", "end start"] });
+  const globeY = useTransform(scrollYProgress, [0, 1], [-16, 16]);
 
   const select = (lang: Language) =>
     setActive((cur) => (cur?.name === lang.name ? null : lang));
@@ -80,8 +83,9 @@ export function SupportedLanguages() {
 
         {/* Globe + positioned spokes (lg and up) */}
         <div className="mt-14 hidden justify-center lg:flex">
-          <div
+          <motion.div
             ref={globeRef}
+            style={reduce ? undefined : { y: globeY }}
             className="relative aspect-square w-[560px] max-w-full"
           >
             {/* Connector lines */}
@@ -157,7 +161,7 @@ export function SupportedLanguages() {
 
             {/* Floating description card */}
             <LanguageCard active={active} onClose={() => setActive(null)} />
-          </div>
+          </motion.div>
         </div>
 
         {/* Mobile / tablet: globe + wrapped chip grid */}

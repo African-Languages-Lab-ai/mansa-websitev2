@@ -1,20 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Button, ArrowGlyph } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { CONTACT_MAILTO } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 export function EnterpriseCTA() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+
   return (
-    <section className="relative overflow-hidden bg-espresso py-20 md:py-24">
-      {/* Full-bleed backdrop */}
-      <div className="absolute inset-0">
+    <section ref={ref} className="relative overflow-hidden bg-espresso py-20 md:py-24">
+      {/* Full-bleed backdrop (parallax) */}
+      <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-8">
         <Image src={asset("/assets/enterprise-cta-bg.webp")} alt="" fill className="object-cover opacity-40" sizes="100vw" />
         <div className="absolute inset-0 bg-espresso/60" />
-      </div>
+      </motion.div>
 
       <motion.div
         variants={fadeUp}

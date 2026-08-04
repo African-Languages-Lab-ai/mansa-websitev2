@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
@@ -19,10 +20,15 @@ const features = [
 ];
 
 export function MansaAgent() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+
   return (
-    <section className="relative overflow-hidden bg-espresso py-16 md:py-20">
-      {/* Silhouette background (per reference) with overlays for legibility */}
-      <div className="pointer-events-none absolute inset-0">
+    <section ref={ref} className="relative overflow-hidden bg-espresso py-16 md:py-20">
+      {/* Silhouette background (per reference) with overlays for legibility (parallax) */}
+      <motion.div style={reduce ? undefined : { y: bgY }} className="pointer-events-none absolute -inset-8">
         <Image
           src={asset("/assets/mansa-agent-bg.webp")}
           alt=""
@@ -31,7 +37,7 @@ export function MansaAgent() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/70 to-espresso/85" />
-      </div>
+      </motion.div>
 
       <div className="container-page relative grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         {/* Left copy */}

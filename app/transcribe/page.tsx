@@ -2,13 +2,50 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SunsetBand } from "@/components/sections/SunsetBand";
-import { FAQ } from "@/components/sections/FAQ";
 import { ProductHero } from "@/components/product/ProductHero";
 import { EmptyFeatureCards } from "@/components/product/EmptyFeatureCards";
 import { StatsStrip } from "@/components/product/StatsStrip";
 import { ResearchDriven } from "@/components/product/ResearchDriven";
 import { BuiltForTeams } from "@/components/product/BuiltForTeams";
+import { PageFAQ } from "@/components/product/PageFAQ";
 import { asset } from "@/lib/assets";
+
+const faqs = [
+  {
+    id: "languages",
+    title: "What languages does Mansa Transcribe support?",
+    content:
+      "English and 30+ African languages, including Hausa, Igbo, Yoruba, Twi, and Ewe, with accurate recognition of local accents and dialects.",
+  },
+  {
+    id: "formats",
+    title: "What audio formats can I upload?",
+    content: "WAV is recommended, but MP3, M4A, and WEBM are also supported.",
+  },
+  {
+    id: "length",
+    title: "How long can my recordings be?",
+    content:
+      "Mansa Transcribe automatically chunks longer recordings, so meetings, lectures, and calls of any length can be transcribed.",
+  },
+  {
+    id: "calls",
+    title: "Can I use Mansa Transcribe for call centers and meetings?",
+    content:
+      "Yes. Teams use Mansa Transcribe to capture accurate transcripts from multilingual customer calls and team meetings.",
+  },
+  {
+    id: "integrate",
+    title: "Can I integrate Mansa Transcribe into my own app?",
+    content: "Yes. Mansa Transcribe exposes a simple REST API so you can transcribe audio directly inside your product.",
+  },
+  {
+    id: "privacy",
+    title: "Is my audio data kept private?",
+    content:
+      "Yes. Audio and transcripts are encrypted in transit and at rest, and stored only as long as needed for troubleshooting.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Mansa Transcribe: Automatic speech recognition for African languages",
@@ -72,7 +109,7 @@ export default function TranscribePage() {
           ]}
         />
 
-        <FAQ />
+        <PageFAQ faqs={faqs} />
 
         <SunsetBand
           bgSrc={asset("/assets/sunset-band-bg.webp")}

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
 import { Accordion, type AccordionItem } from "@/components/ui/Accordion";
@@ -102,9 +102,13 @@ export function ProductsShowcase() {
   const [activeId, setActiveId] = useState("ai");
   const activeImage = productImages[activeId] ?? productImages.ai;
   const activeUI = productUIs[activeId] ?? null;
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [-16, 16]);
 
   return (
-    <section id="products" className="bg-cream py-14 md:py-20">
+    <section id="products" ref={sectionRef} className="bg-cream py-14 md:py-20">
       <div className="container-page">
        <div className="rounded-3xl bg-espresso px-6 py-16 sm:px-10 md:px-14 md:py-20">
         {/* Heading block */}
@@ -151,13 +155,15 @@ export function ProductsShowcase() {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0"
               >
-                <Image
-                  src={activeImage}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-4">
+                  <Image
+                    src={activeImage}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </motion.div>
                 <div className="absolute inset-0 bg-espresso/25" />
 
                 {activeUI ? (
