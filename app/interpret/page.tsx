@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Pill } from "@/components/ui/Pill";
-import { Button } from "@/components/ui/Button";
-import { CONTACT_MAILTO } from "@/lib/links";
+import { SunsetBand } from "@/components/sections/SunsetBand";
+import { FAQ } from "@/components/sections/FAQ";
+import { ProductHero } from "@/components/product/ProductHero";
+import { EmptyFeatureCards } from "@/components/product/EmptyFeatureCards";
+import { StatsStrip } from "@/components/product/StatsStrip";
+import { ResearchDriven } from "@/components/product/ResearchDriven";
+import { BuiltForTeams } from "@/components/product/BuiltForTeams";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = {
-  title: "Mansa Interpret: Real-time voice interpretation, coming soon",
+  title: "Mansa Interpret: Automatic speech recognition for African languages",
   description:
-    "Real-time voice interpretation across African languages. Mansa Interpret is coming soon.",
+    "Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects.",
 };
 
 export default function InterpretPage() {
@@ -16,25 +21,65 @@ export default function InterpretPage() {
     <>
       <Navbar solid />
       <main>
-        <section className="flex min-h-[calc(100vh-72px)] flex-col items-center justify-center bg-espresso px-6 pt-[72px] text-center">
-          <Pill>Mansa Interpret</Pill>
-          <span className="mt-5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-offwhite/70">
-            Coming soon
-          </span>
-          <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-tight tracking-tight text-offwhite sm:text-5xl">
-            Real-time voice interpretation for African languages.
-          </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-offwhite/60">
-            Mansa Interpret will let people speak naturally in their own language and be
-            understood instantly, in conversations, calls, and meetings across 30+ African
-            languages. We&apos;re building it now.
-          </p>
-          <div className="mt-8">
-            <Button variant="light" size="default" href={CONTACT_MAILTO}>
-              Get notified when it launches
-            </Button>
-          </div>
-        </section>
+        <ProductHero
+          bgSrc={asset("/assets/product-asr.webp")}
+          eyebrow="Mansa Interpret"
+          title="Accurate Speech Recognition Built for Africa."
+          subtitle="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects."
+          cta="Try Mansa Interpret"
+          objectPosition="center 45%"
+        />
+
+        <EmptyFeatureCards
+          heading="Speech recognition built for African languages."
+          subheading="Clear, accurate, and true to how people actually speak."
+          mediaAspect="aspect-[551/523]"
+          fit="float"
+          cards={[
+            {
+              title: "Clear, Accurate Speech Recognition",
+              body: "Convert spoken language into clear, accurate text with AI tuned for real-world audio.",
+              img: asset("/assets/asr-ui-1.webp"),
+              imgWidth: 326,
+              imgHeight: 524,
+            },
+            {
+              title: "Built for African Languages",
+              body: "Recognizes speech accurately across Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects.",
+              img: asset("/assets/asr-ui-2.webp"),
+              imgWidth: 326,
+              imgHeight: 524,
+            },
+          ]}
+        />
+
+        <StatsStrip />
+        <ResearchDriven product="Mansa Interpret" />
+
+        <BuiltForTeams
+          heading="Mansa Interpret is built for every team"
+          individuals={[
+            { title: "Transcribe conversations", body: "Turn spoken conversations into accurate text across African languages." },
+            { title: "Voice notes to text", body: "Convert voice memos and recordings into clear, searchable text." },
+            { title: "Learn by listening", body: "Practice and understand African languages through accurate speech recognition." },
+            { title: "Accessible communication", body: "Make spoken content accessible to everyone, in any supported language." },
+          ]}
+          teams={[
+            { title: "Call center transcription", body: "Accurately transcribe customer calls across African languages and accents." },
+            { title: "Meeting transcripts", body: "Capture accurate transcripts from multilingual team meetings." },
+            { title: "Voice-driven workflows", body: "Power voice interfaces and IVR systems with reliable speech recognition." },
+            { title: "Quality at scale", body: "Recognize speech accurately across accents and dialects, at any volume." },
+          ]}
+        />
+
+        <FAQ />
+
+        <SunsetBand
+          bgSrc={asset("/assets/final-cta-bg.webp")}
+          title="Speech recognition that understands African languages."
+          subtitle="Download the app"
+          buttons={["appstore", "playstore"]}
+        />
       </main>
       <Footer />
     </>

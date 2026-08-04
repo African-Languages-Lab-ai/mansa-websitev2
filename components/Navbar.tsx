@@ -14,8 +14,7 @@ const products = [
   { name: "Mansa AI", href: "/ai", img: asset("/assets/product-ai.webp") },
   { name: "Mansa Transcribe", href: "/transcribe", img: asset("/assets/product-transcribe.webp") },
   { name: "Mansa Translate", href: "/translate", img: asset("/assets/product-translate.webp") },
-  { name: "Mansa ASR", href: "/asr", img: asset("/assets/product-asr.webp") },
-  { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-ai.webp") },
+  { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-asr.webp") },
 ];
 
 export function Navbar({ solid = false }: { solid?: boolean }) {

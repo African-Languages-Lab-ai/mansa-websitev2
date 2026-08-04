@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
@@ -16,8 +17,7 @@ const productImages: Record<string, string> = {
   ai: asset("/assets/product-ai.webp"),
   translate: asset("/assets/product-translate.webp"),
   transcribe: asset("/assets/product-transcribe.webp"),
-  asr: asset("/assets/product-asr.webp"),
-  interpret: asset("/assets/product-translate.webp"),
+  interpret: asset("/assets/product-asr.webp"),
 };
 
 // The product's app UI floated over the art. Width/height are each image's
@@ -25,32 +25,23 @@ const productImages: Record<string, string> = {
 // aspect ratio, which reads as blur.
 const productUIs: Record<string, { src: string; width: number; height: number } | null> = {
   agent: { src: asset("/assets/agent-section-ui-static.webp"), width: 394, height: 807 },
-  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 753 },
+  ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 795 },
   translate: { src: asset("/assets/translate-section-ui.webp"), width: 394, height: 793 },
   transcribe: { src: asset("/assets/transcribe-section-ui.webp"), width: 394, height: 798 },
-  asr: { src: asset("/assets/asr-section-ui.webp"), width: 394, height: 786 },
-  interpret: null,
+  interpret: { src: asset("/assets/asr-section-ui.webp"), width: 394, height: 786 },
 };
 
-function Body({ text }: { text: string }) {
+function Body({ text, href }: { text: string; href: string }) {
   return (
     <div>
       <p>{text}</p>
-      <a
-        href="#"
+      <Link
+        href={href}
         className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sunset-1 transition-colors hover:text-offwhite focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset-1 rounded"
       >
         Learn More →
-      </a>
+      </Link>
     </div>
-  );
-}
-
-function ComingSoonBadge() {
-  return (
-    <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-offwhite/70">
-      Coming soon
-    </span>
   );
 }
 
@@ -59,44 +50,51 @@ const items: AccordionItem[] = [
     id: "agent",
     title: "Mansa Agent",
     content: (
-      <Body text="An autonomous assistant that takes action across your tools. Research, manage email, calendars, and more." />
+      <Body
+        href="/agent"
+        text="An autonomous assistant that takes action across your tools. Research, manage email, calendars, and more."
+      />
     ),
   },
   {
     id: "ai",
     title: "Mansa AI",
     content: (
-      <Body text="Your everyday AI assistant for learning, writing, brainstorming, coding, and answering questions in English and 30+ African languages." />
+      <Body
+        href="/ai"
+        text="Your everyday AI assistant for learning, writing, brainstorming, coding, and answering questions in English and 30+ African languages."
+      />
     ),
   },
   {
     id: "translate",
     title: "Mansa Translate",
-    content: <Body text="Fast, natural translation across 30+ African languages, tuned for local nuance and context." />,
+    content: (
+      <Body
+        href="/translate"
+        text="Fast, natural translation across 30+ African languages, tuned for local nuance and context."
+      />
+    ),
   },
   {
     id: "transcribe",
     title: "Mansa Transcribe",
     content: (
-      <Body text="Turn speech from English and 30+ African languages into accurate text, recognizing African accents and dialects." />
-    ),
-  },
-  {
-    id: "asr",
-    title: "Mansa ASR",
-    content: (
-      <Body text="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects." />
+      <Body
+        href="/transcribe"
+        text="Turn speech from English and 30+ African languages into accurate text, recognizing African accents and dialects."
+      />
     ),
   },
   {
     id: "interpret",
-    title: (
-      <span className="flex items-center gap-2">
-        Mansa Interpret
-        <ComingSoonBadge />
-      </span>
+    title: "Mansa Interpret",
+    content: (
+      <Body
+        href="/interpret"
+        text="Production-grade automatic speech recognition for Hausa, Igbo, Yoruba, Twi and Ewe, preserving African accents and dialects."
+      />
     ),
-    content: <p>Real-time voice interpretation across African languages, coming soon.</p>,
   },
 ];
 
@@ -183,7 +181,7 @@ export function ProductsShowcase() {
         {/* CTA */}
         <div className="mt-12 flex justify-center">
           <Button variant="light" size="default" href={APP_URL}>
-            Use Mansa
+            Try Mansa
           </Button>
         </div>
        </div>

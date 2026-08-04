@@ -3,7 +3,7 @@ import { openRunde } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mansa-web-six.vercel.app"),
+  metadataBase: new URL("https://mymansa.ai"),
   title: "Mansa: The AI built for African languages",
   description:
     "Chat, translate, transcribe, and work across African languages with AI designed to understand the continent. Mansa by African Languages Lab.",
