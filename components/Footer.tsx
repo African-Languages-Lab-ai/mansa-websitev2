@@ -54,7 +54,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <span
                 aria-hidden
-                className="h-[26px] w-[30px] bg-sunset-1"
+                className="h-[26px] w-[30px] bg-onbrand dark:bg-sunset-1"
                 style={{
                   WebkitMaskImage: `url(${asset("/assets/logo-mark-white.webp")})`,
                   maskImage: `url(${asset("/assets/logo-mark-white.webp")})`,
@@ -66,7 +66,7 @@ export function Footer() {
                   maskPosition: "center",
                 }}
               />
-              <span className="text-xl font-bold tracking-tight text-sunset-1">mansa</span>
+              <span className="text-xl font-bold tracking-tight text-onbrand dark:text-sunset-1">mansa</span>
             </div>
             <p className="mt-4 max-w-[16rem] text-sm leading-relaxed text-onbrand/50">
               Africa&apos;s AI Thinking Partner, built by African Languages Lab.

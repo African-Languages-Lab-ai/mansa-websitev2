@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 // Runs before paint so the correct theme class is present on first render
 // (no flash of the wrong theme). Falls back to the OS preference.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();`;
 
 export default function RootLayout({
   children,
