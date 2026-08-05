@@ -23,8 +23,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Background art drifts slower (~0.3x) than the foreground panel.
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  // Panel drifts slightly on scroll.
   const panelY = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
   return (
@@ -85,34 +84,19 @@ export function Hero() {
           style={reduce ? undefined : { y: panelY }}
           className="relative"
         >
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-maroon shadow-soft">
-            {/* Scroll parallax layer */}
-            <motion.div style={reduce ? undefined : { y: bgY }} className="absolute inset-0">
-              {/* Continuous slow zoom + pan (Ken Burns) */}
-              <motion.div
-                className="absolute -inset-[7%]"
-                animate={
-                  reduce
-                    ? undefined
-                    : { scale: [1, 1.09, 1], x: ["0%", "-2.5%", "0%"], y: ["0%", "2%", "0%"] }
-                }
-                transition={
-                  reduce
-                    ? undefined
-                    : { duration: 22, ease: "easeInOut", repeat: Infinity }
-                }
-              >
-                <Image
-                  src={asset("/assets/hero-bg.webp")}
-                  alt="Illustrated African landscape at sunset"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark/40 via-transparent to-transparent" />
-            </motion.div>
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-cream-dark shadow-soft">
+            {/* Animated hero (GIF). The GIF is 16:9 inside a 4:3 panel, so
+                object-cover crops the sides in — biased slightly up and left so
+                the star mark near the bottom-right corner is cropped out. */}
+            <Image
+              src={asset("/assets/hero-section.gif")}
+              alt="Mansa hero animation"
+              fill
+              priority
+              unoptimized
+              className="scale-[1.06] object-cover object-[45%_44%]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </motion.div>
       </div>
