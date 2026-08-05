@@ -84,10 +84,11 @@ export function Hero() {
           style={reduce ? undefined : { y: panelY }}
           className="relative"
         >
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-cream-dark shadow-soft">
-            {/* Animated hero (GIF). The GIF is 16:9 inside a 4:3 panel, so
-                object-cover crops the sides in — biased slightly up and left so
-                the star mark near the bottom-right corner is cropped out. */}
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
+            {/* Animated hero (GIF), no frame so it blends into the page
+                background. The GIF is 16:9 inside a 4:3 panel, so object-cover
+                crops the sides in — biased slightly up and left so the star mark
+                near the bottom-right corner is cropped out. */}
             <Image
               src={asset("/assets/hero-section.gif")}
               alt="Mansa hero animation"
