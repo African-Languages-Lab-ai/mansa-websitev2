@@ -74,10 +74,10 @@ export function SupportedLanguages() {
         >
           <Pill>Mansa&apos;s languages</Pill>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Supported Languages
+            Languages Mansa understands
           </h2>
           <p className="mt-3 max-w-xl text-lg text-ink-muted">
-            Our language base is constantly being updated.
+            Supporting 30+ African languages and growing through continuous research.
           </p>
         </motion.div>
 
@@ -150,8 +150,8 @@ export function SupportedLanguages() {
                   }}
                   className={`absolute whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium leading-none transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
                     on
-                      ? "scale-110 bg-maroon text-offwhite shadow-md"
-                      : "text-ink hover:bg-maroon/10 hover:text-maroon"
+                      ? "scale-110 bg-maroon text-onbrand shadow-md"
+                      : "text-ink hover:bg-maroon/10 hover:text-accent"
                   }`}
                 >
                   {l.name}
@@ -181,8 +181,8 @@ export function SupportedLanguages() {
                   aria-pressed={on}
                   className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
                     on
-                      ? "border-maroon bg-maroon text-offwhite"
-                      : "border-ink/10 bg-cream-dark/60 text-ink hover:border-maroon/40 hover:text-maroon"
+                      ? "border-maroon bg-maroon text-onbrand"
+                      : "border-ink/10 bg-cream-dark/60 text-ink hover:border-maroon/40 hover:text-accent"
                   }`}
                 >
                   {l.name}
@@ -204,7 +204,7 @@ export function SupportedLanguages() {
                   className="rounded-2xl border border-ink/10 bg-cream-dark/80 p-5 text-center shadow-soft"
                   aria-live="polite"
                 >
-                  <h3 className="text-lg font-semibold text-maroon">{active.name}</h3>
+                  <h3 className="text-lg font-semibold text-accent">{active.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                     {active.description}
                   </p>
@@ -251,7 +251,7 @@ function LanguageCard({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25 }}
           >
-            <h3 className="text-xl font-bold text-maroon">{active.name}</h3>
+            <h3 className="text-xl font-bold text-accent">{active.name}</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-muted">
               {active.description}
             </p>

@@ -43,19 +43,18 @@ export function MansaAgent() {
         {/* Left copy */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
           <Pill>Mansa Agent</Pill>
-          <h2 className="mt-4 max-w-lg text-3xl font-bold leading-tight tracking-tight text-offwhite sm:text-4xl">
-            An AI that doesn&apos;t just answer, it gets things done.
+          <h2 className="mt-4 max-w-lg text-3xl font-bold leading-tight tracking-tight text-onbrand sm:text-4xl">
+            An AI that thinks with you, and gets things done.
           </h2>
-          <p className="mt-4 max-w-md leading-relaxed text-offwhite/70">
-            Research the web, manage your email and calendar, work with GitHub, automate recurring
-            tasks, remember your preferences, and act on your behalf, all from one intelligent
-            assistant.
+          <p className="mt-4 max-w-md leading-relaxed text-onbrand/70">
+            Research, automate, organize, and act on your behalf with an AI agent that remembers
+            your preferences and works across your favorite tools.
           </p>
 
           <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-2.5 sm:grid-cols-2">
             {features.map((f) => (
-              <li key={f} className="flex items-center gap-2.5 text-offwhite/85">
-                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-maroon text-[10px] text-offwhite">
+              <li key={f} className="flex items-center gap-2.5 text-onbrand/85">
+                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-maroon text-[10px] text-onbrand">
                   ✓
                 </span>
                 <span className="text-base font-medium">{f}</span>

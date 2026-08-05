@@ -52,7 +52,7 @@ export function AgentSecurity() {
               variants={fadeUp}
               className="rounded-2xl border border-maroon/20 bg-cream-dark/40 p-7 transition-shadow hover:shadow-soft"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-maroon/25 text-xl text-maroon">
+              <span className="grid h-11 w-11 place-items-center rounded-xl border border-maroon/25 text-xl text-accent">
                 {c.icon}
               </span>
               <h3 className="mt-5 text-xl font-semibold text-ink">{c.title}</h3>

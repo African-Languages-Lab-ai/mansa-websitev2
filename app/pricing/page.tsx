@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { LogoMarquee } from "@/components/LogoMarquee";
 import { SunsetBand } from "@/components/sections/SunsetBand";
 import { PricingPlans } from "@/components/pricing/PricingPlans";
 import { AgentTestimonial } from "@/components/agent/AgentTestimonial";
@@ -70,20 +69,12 @@ export default function PricingPage() {
 
         <PricingPlans />
 
-        {/* Trust bar */}
-        <section className="bg-cream pb-20">
-          <p className="container-page mb-8 text-center text-sm font-medium uppercase tracking-wide text-ink-muted">
-            Trusted by enterprise organisations
-          </p>
-          <LogoMarquee />
-        </section>
-
         <AgentTestimonial />
         <PageFAQ faqs={faqs} />
 
         <SunsetBand
           bgSrc={asset("/assets/final-cta-bg.webp")}
-          title="Unlock the power of African language AI"
+          title="Start thinking without language barriers."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
         />

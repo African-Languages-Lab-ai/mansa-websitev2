@@ -29,11 +29,12 @@ export function EnterpriseCTA() {
         viewport={viewportOnce}
         className="container-page relative flex flex-col items-center text-center"
       >
-        <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-offwhite sm:text-4xl">
-          Want to Integrate our API&apos;s to your Enterprise?
+        <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-onbrand sm:text-4xl">
+          Bring African AI into your products.
         </h2>
-        <p className="mt-3 max-w-xl text-lg text-offwhite/70">
-          Bring African-language AI into your products with a single, well-documented API.
+        <p className="mt-3 max-w-xl text-lg text-onbrand/70">
+          Integrate chat, translation, transcription, speech, and AI agents into your products with
+          enterprise-ready APIs built for African languages.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button variant="filled" href={CONTACT_MAILTO}>Contact Us</Button>

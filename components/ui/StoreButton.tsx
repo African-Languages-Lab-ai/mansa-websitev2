@@ -38,9 +38,9 @@ export function StoreButton({ store, variant = "filled", onDark = true, classNam
   const label = isApp ? "App Store" : "Play Store";
   const sub = isApp ? "Download on the" : "Get it on";
 
-  const filled = "bg-offwhite text-espresso hover:bg-white focus-visible:ring-offwhite";
+  const filled = "bg-onbrand text-espresso hover:bg-white focus-visible:ring-onbrand";
   const outline = onDark
-    ? "border border-offwhite/40 text-offwhite hover:bg-offwhite hover:text-espresso focus-visible:ring-offwhite"
+    ? "border border-onbrand/40 text-onbrand hover:bg-onbrand hover:text-espresso focus-visible:ring-onbrand"
     : "border border-ink/25 text-ink hover:bg-ink hover:text-cream focus-visible:ring-ink";
   // Classic black store badge (Get Started section)
   const badge = "rounded-xl bg-black text-white hover:bg-black/85 focus-visible:ring-black";

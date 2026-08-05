@@ -73,7 +73,7 @@ export function UseCases() {
         >
           <Pill>Use cases</Pill>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            How Teams Use Mansa
+            What you can do with Mansa
           </h2>
         </motion.div>
 
@@ -89,7 +89,7 @@ export function UseCases() {
                 aria-pressed={on}
                 className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
                   on
-                    ? "bg-maroon text-offwhite shadow-sm"
+                    ? "bg-maroon text-onbrand shadow-sm"
                     : "bg-cream text-ink/70 hover:bg-cream/70 hover:text-ink"
                 }`}
               >

@@ -46,7 +46,7 @@ export function ImpactVideo() {
             How Mansa is Making Real Impact
           </h2>
           <p className="mt-3 max-w-xl text-lg text-ink/70">
-            Mansa proves that powerful AI shouldn&apos;t leave out African languages.
+            We&apos;re building a future where language never limits opportunity.
           </p>
         </motion.div>
 
@@ -72,7 +72,7 @@ export function ImpactVideo() {
           {!playing && (
             <>
               <div className="pointer-events-none absolute inset-0 bg-black/15" />
-              <span className="absolute left-4 top-4 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-offwhite backdrop-blur">
+              <span className="absolute left-4 top-4 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-onbrand backdrop-blur">
                 Build Inclusive Technology
               </span>
               <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-md bg-white/90 px-2 py-1 text-[11px] font-semibold text-[#FF0000]">
@@ -87,7 +87,7 @@ export function ImpactVideo() {
                 aria-label="Play the Mansa impact film"
                 className="group absolute inset-0 grid place-items-center focus:outline-none"
               >
-                <span className="grid h-20 w-20 place-items-center rounded-full bg-offwhite/95 text-espresso shadow-xl transition-all duration-200 group-hover:scale-105 group-hover:bg-white group-focus-visible:ring-4 group-focus-visible:ring-offwhite/60">
+                <span className="grid h-20 w-20 place-items-center rounded-full bg-onbrand/95 text-espresso shadow-xl transition-all duration-200 group-hover:scale-105 group-hover:bg-white group-focus-visible:ring-4 group-focus-visible:ring-onbrand/60">
                   <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
                     <path d="M8 5v14l11-7z" />
                   </svg>

@@ -33,7 +33,7 @@ export function CtaBand({ bgSrc, title, cta, objectPosition = "center" }: Props)
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl text-3xl font-bold leading-tight tracking-tight text-offwhite drop-shadow sm:text-4xl"
+          className="max-w-2xl text-3xl font-bold leading-tight tracking-tight text-onbrand drop-shadow sm:text-4xl"
         >
           {title}
         </motion.h2>

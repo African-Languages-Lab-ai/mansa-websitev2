@@ -18,7 +18,7 @@ export function AgentTestimonial() {
             &ldquo;Mansa Agent has transformed how we support customers across multiple African
             markets. Instead of maintaining separate support teams for different languages, we now
             deploy one intelligent agent that understands our products, our policies, and our
-            customers&mdash;delivering fast, localized support around the clock.&rdquo;
+            customers, delivering fast, localized support around the clock.&rdquo;
           </blockquote>
           <figcaption className="mt-6 text-sm font-semibold text-ink">
             Customer Success Team &middot; Base

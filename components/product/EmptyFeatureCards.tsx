@@ -64,13 +64,13 @@ export function EmptyFeatureCards({
           {eyebrow && <Pill>{eyebrow}</Pill>}
           <h2
             className={`${eyebrow ? "mt-4" : ""} max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl ${
-              dark ? "text-offwhite" : "text-ink"
+              dark ? "text-onbrand" : "text-ink"
             }`}
           >
             {heading}
           </h2>
           {subheading && (
-            <p className={`mt-3 max-w-xl text-lg ${dark ? "text-offwhite/60" : "text-ink-muted"}`}>
+            <p className={`mt-3 max-w-xl text-lg ${dark ? "text-onbrand/60" : "text-ink-muted"}`}>
               {subheading}
             </p>
           )}
@@ -115,12 +115,12 @@ export function EmptyFeatureCards({
                     ))}
                 </div>
               </div>
-              <h3 className={`mt-6 text-center text-xl font-semibold ${dark ? "text-offwhite" : "text-ink"}`}>
+              <h3 className={`mt-6 text-center text-xl font-semibold ${dark ? "text-onbrand" : "text-ink"}`}>
                 {c.title}
               </h3>
               <p
                 className={`mx-auto mt-2 max-w-md text-center text-base leading-relaxed ${
-                  dark ? "text-offwhite/60" : "text-ink-muted"
+                  dark ? "text-onbrand/60" : "text-ink-muted"
                 }`}
               >
                 {c.body}

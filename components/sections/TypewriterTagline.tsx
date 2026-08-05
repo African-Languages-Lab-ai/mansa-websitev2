@@ -29,7 +29,7 @@ export function TypewriterTagline() {
   }, [count, deleting]);
 
   return (
-    <p className="mb-3 h-4 text-sm font-medium tracking-wide text-maroon">
+    <p className="mb-3 h-4 text-sm font-medium tracking-wide text-accent">
       <span aria-hidden>
         {TEXT.slice(0, count)}
         <span className="animate-pulse">|</span>

@@ -7,7 +7,7 @@ export function CodeBlock({ code, label }: { code: string; label?: string }) {
   return (
     <div className="mt-3 overflow-hidden rounded-xl border border-white/10 bg-espresso">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
-        <span className="text-[11px] font-semibold uppercase tracking-wide text-offwhite/40">
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-onbrand/40">
           {label ?? "Code"}
         </span>
         <button
@@ -17,12 +17,12 @@ export function CodeBlock({ code, label }: { code: string; label?: string }) {
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
           }}
-          className="text-[11px] font-medium text-offwhite/50 transition-colors hover:text-offwhite focus:outline-none"
+          className="text-[11px] font-medium text-onbrand/50 transition-colors hover:text-onbrand focus:outline-none"
         >
           {copied ? "Copied" : "Copy"}
         </button>
       </div>
-      <pre className="overflow-x-auto p-4 text-[13px] leading-relaxed text-offwhite/90">
+      <pre className="overflow-x-auto p-4 text-[13px] leading-relaxed text-onbrand/90">
         <code>{code}</code>
       </pre>
     </div>
@@ -46,7 +46,7 @@ export function ParamTable({ rows, headField = "Parameter" }: { rows: Param[]; h
         <tbody>
           {rows.map((r) => (
             <tr key={r.name} className="border-b border-ink/5 last:border-0">
-              <td className="px-4 py-3 font-mono text-[13px] text-maroon">{r.name}</td>
+              <td className="px-4 py-3 font-mono text-[13px] text-accent">{r.name}</td>
               <td className="px-4 py-3 text-ink-muted">{r.type}</td>
               <td className="px-4 py-3 text-ink-muted">{r.required ? "Yes" : "No"}</td>
               <td className="px-4 py-3 text-ink-muted">{r.desc}</td>
@@ -61,7 +61,7 @@ export function ParamTable({ rows, headField = "Parameter" }: { rows: Param[]; h
 export function Endpoint({ method, path }: { method: string; path: string }) {
   return (
     <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-ink/10 bg-cream-dark/40 px-4 py-3 font-mono text-sm">
-      <span className="rounded-md bg-maroon px-2 py-1 text-xs font-bold text-offwhite">{method}</span>
+      <span className="rounded-md bg-maroon px-2 py-1 text-xs font-bold text-onbrand">{method}</span>
       <span className="break-all text-ink">{path}</span>
     </div>
   );

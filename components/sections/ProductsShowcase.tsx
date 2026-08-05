@@ -37,7 +37,7 @@ function Body({ text, href }: { text: string; href: string }) {
       <p>{text}</p>
       <Link
         href={href}
-        className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sunset-1 transition-colors hover:text-offwhite focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset-1 rounded"
+        className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sunset-1 transition-colors hover:text-onbrand focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset-1 rounded"
       >
         Learn More →
       </Link>
@@ -62,7 +62,7 @@ const items: AccordionItem[] = [
     content: (
       <Body
         href="/ai"
-        text="Your everyday AI assistant for learning, writing, brainstorming, coding, and answering questions in English and 30+ African languages."
+        text="Your AI thinking partner for learning, writing, brainstorming, coding, and solving problems in English and 30+ African languages."
       />
     ),
   },
@@ -120,11 +120,12 @@ export function ProductsShowcase() {
           className="flex flex-col items-center text-center"
         >
           <Pill onDark>Products</Pill>
-          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-offwhite sm:text-4xl">
-            Everything you need to work across African languages
+          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-onbrand sm:text-4xl">
+            Everything you need to think, create, and work without language barriers
           </h2>
-          <p className="mt-3 max-w-xl text-lg text-offwhite/60">
-            Mansa provides the AI infrastructure designed specifically for Africa.
+          <p className="mt-3 max-w-xl text-lg text-onbrand/60">
+            One AI platform for chatting, automating, translating, transcribing, and generating
+            speech across African languages.
           </p>
         </motion.div>
 
@@ -175,7 +176,7 @@ export function ProductsShowcase() {
                     className="absolute left-1/2 top-1/2 h-auto w-[52%] max-w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl transition-transform duration-300 ease-out group-hover:scale-105"
                   />
                 ) : (
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/40 px-5 py-2 text-sm font-semibold text-offwhite backdrop-blur">
+                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/40 px-5 py-2 text-sm font-semibold text-onbrand backdrop-blur">
                     Coming soon
                   </span>
                 )}

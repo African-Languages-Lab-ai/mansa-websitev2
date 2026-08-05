@@ -517,7 +517,7 @@ async function transcribeAudio(file) {
                     ["503", "Service Unavailable", "Service is temporarily scaled down during inactivity to conserve costs and is starting up; usually takes 2-3 minutes"],
                   ].map((row) => (
                     <tr key={row[0]} className="border-b border-ink/5 last:border-0">
-                      <td className="px-4 py-3 font-mono text-[13px] text-maroon">{row[0]}</td>
+                      <td className="px-4 py-3 font-mono text-[13px] text-accent">{row[0]}</td>
                       <td className="px-4 py-3 font-medium text-ink">{row[1]}</td>
                       <td className="px-4 py-3 text-ink-muted">{row[2]}</td>
                     </tr>
@@ -685,7 +685,7 @@ async function transcribeAudio(file) {
                 <tbody>
                   {mtLanguages.map(([code, lang]) => (
                     <tr key={code} className="border-b border-ink/5 last:border-0">
-                      <td className="px-4 py-2.5 font-mono text-[13px] text-maroon">{code}</td>
+                      <td className="px-4 py-2.5 font-mono text-[13px] text-accent">{code}</td>
                       <td className="px-4 py-2.5 text-ink-muted">{lang}</td>
                     </tr>
                   ))}
@@ -740,8 +740,8 @@ async function transcribeAudio(file) {
           <>
             <P>Simple, transparent pricing based on character count with no hidden fees.</P>
             <div className="mt-4 rounded-2xl bg-espresso px-6 py-8 text-center">
-              <p className="text-3xl font-bold text-offwhite">$100 <span className="text-lg font-medium text-offwhite/60">per 1 million characters</span></p>
-              <p className="mt-1 text-sm text-offwhite/50">That&apos;s just $0.0001 per character</p>
+              <p className="text-3xl font-bold text-onbrand">$100 <span className="text-lg font-medium text-onbrand/60">per 1 million characters</span></p>
+              <p className="mt-1 text-sm text-onbrand/50">That&apos;s just $0.0001 per character</p>
             </div>
             <div className="mt-4 overflow-x-auto rounded-xl border border-ink/10">
               <table className="w-full min-w-[300px] border-collapse text-sm">

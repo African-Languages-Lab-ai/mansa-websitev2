@@ -19,7 +19,7 @@ export function CostCalculator() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Paste or type text here..."
         rows={5}
-        className="mt-4 w-full rounded-xl border border-ink/15 bg-white p-4 text-sm text-ink placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-maroon"
+        className="mt-4 w-full rounded-xl border border-ink/15 bg-offwhite p-4 text-sm text-ink placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-maroon"
       />
 
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -32,8 +32,8 @@ export function CostCalculator() {
           <p className="mt-1 text-xl font-bold text-ink">$100 / 1M</p>
         </div>
         <div className="rounded-xl border border-maroon/20 bg-maroon/5 px-4 py-3">
-          <p className="text-xs font-medium uppercase tracking-wide text-maroon">Estimated Cost</p>
-          <p className="mt-1 text-xl font-bold text-maroon">${cost.toFixed(4)}</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-accent">Estimated Cost</p>
+          <p className="mt-1 text-xl font-bold text-accent">${cost.toFixed(4)}</p>
         </div>
       </div>
 

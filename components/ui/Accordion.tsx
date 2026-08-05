@@ -40,8 +40,8 @@ export function Accordion({
   };
 
   const divider = onDark ? "border-white/10" : "border-ink/10";
-  const titleColor = onDark ? "text-offwhite" : "text-ink";
-  const bodyColor = onDark ? "text-offwhite/60" : "text-ink-muted";
+  const titleColor = onDark ? "text-onbrand" : "text-ink";
+  const bodyColor = onDark ? "text-onbrand/60" : "text-ink-muted";
 
   return (
     <div className="w-full">

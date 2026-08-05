@@ -34,22 +34,22 @@ function variantClasses(variant: Variant, onDark: boolean): string {
   switch (variant) {
     case "filled":
       return (
-        "bg-maroon text-offwhite shadow-sm hover:bg-maroon-dark " +
+        "bg-maroon text-onbrand shadow-sm hover:bg-maroon-dark " +
         "hover:shadow-lg hover:shadow-maroon/30 focus-visible:ring-maroon " +
         "focus-visible:shadow-lg focus-visible:shadow-maroon/30"
       );
     case "outline":
       return onDark
-        ? "border border-offwhite/40 text-offwhite hover:bg-offwhite hover:text-espresso focus-visible:bg-offwhite focus-visible:text-espresso focus-visible:ring-offwhite"
+        ? "border border-onbrand/40 text-onbrand hover:bg-onbrand hover:text-espresso focus-visible:bg-onbrand focus-visible:text-espresso focus-visible:ring-onbrand"
         : "border border-ink/25 text-ink hover:bg-ink hover:text-cream focus-visible:bg-ink focus-visible:text-cream focus-visible:ring-ink";
     case "light":
       return (
-        "bg-offwhite text-espresso hover:bg-white shadow-sm hover:shadow-lg " +
-        "hover:shadow-black/20 focus-visible:ring-offwhite focus-visible:shadow-lg"
+        "bg-onbrand text-espresso hover:bg-white shadow-sm hover:shadow-lg " +
+        "hover:shadow-black/20 focus-visible:ring-onbrand focus-visible:shadow-lg"
       );
     case "ghost":
       return onDark
-        ? "text-offwhite hover:bg-white/10 focus-visible:bg-white/10 focus-visible:ring-offwhite"
+        ? "text-onbrand hover:bg-white/10 focus-visible:bg-white/10 focus-visible:ring-onbrand"
         : "text-ink hover:bg-black/5 focus-visible:bg-black/5 focus-visible:ring-ink";
   }
 }

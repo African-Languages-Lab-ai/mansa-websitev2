@@ -7,6 +7,32 @@
      variable class on <html>. Do NOT hardcode it here or the self-hosted
      face is bypassed. */
 
+  /* Theme palette as space-separated RGB channels, consumed by Tailwind via
+     rgb(var(--c-*) / <alpha-value>). Toggling `.dark` on <html> flips them. */
+  :root {
+    --c-cream: 246 241 231;
+    --c-cream-dark: 237 230 214;
+    --c-espresso: 28 19 14;
+    --c-espresso-light: 42 28 19;
+    --c-ink: 36 23 15;
+    --c-ink-muted: 107 92 78;
+    --c-offwhite: 251 248 242;
+    --c-accent: 122 42 29; /* maroon */
+    color-scheme: light;
+  }
+
+  .dark {
+    --c-cream: 20 16 12;
+    --c-cream-dark: 32 25 19;
+    --c-espresso: 14 10 7;
+    --c-espresso-light: 24 17 11;
+    --c-ink: 244 238 228;
+    --c-ink-muted: 178 164 149;
+    --c-offwhite: 38 30 22;
+    --c-accent: 232 177 92; /* brand yellow (sunset-1) — readable on dark */
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -14,6 +40,7 @@
   body {
     @apply bg-cream text-ink antialiased;
     font-family: var(--font-open-runde), system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
@@ -47,9 +74,30 @@
   }
 }
 
+/* Page-transition fade (see app/template.tsx). No fill-mode, so the element's
+   resting opacity (1) applies whenever the animation is not running — content
+   is never left invisible. */
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-fade {
+  animation: pageFade 0.32s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation: none !important;
+  }
+  .page-fade {
+    animation: none;
   }
   html {
     scroll-behavior: auto;

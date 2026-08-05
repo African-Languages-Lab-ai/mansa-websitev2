@@ -55,7 +55,7 @@ export function ResearchDriven({ product = "Mansa" }: { product?: string }) {
         >
           {items.map((it) => (
             <motion.div key={it.title} variants={fadeUp}>
-              <span className="grid h-10 w-10 place-items-center rounded-lg border border-maroon/25 text-lg text-maroon">
+              <span className="grid h-10 w-10 place-items-center rounded-lg border border-maroon/25 text-lg text-accent">
                 {it.icon}
               </span>
               <h3 className="mt-4 text-base font-semibold text-ink">{it.title}</h3>

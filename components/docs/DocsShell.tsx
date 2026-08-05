@@ -57,7 +57,7 @@ export function DocsShell() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search docs..."
-          className="w-full rounded-full border border-ink/15 bg-white px-4 py-2 text-sm text-ink placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-maroon"
+          className="w-full rounded-full border border-ink/15 bg-offwhite px-4 py-2 text-sm text-ink placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-maroon"
         />
       </div>
       {filteredGroups.map((g) => {
@@ -84,7 +84,7 @@ export function DocsShell() {
                       onClick={() => select(p.id, g.heading)}
                       className={`block w-full rounded-lg px-2.5 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
                         p.id === activeId
-                          ? "bg-maroon/10 font-medium text-maroon"
+                          ? "bg-maroon/10 font-medium text-accent"
                           : "text-ink-muted hover:bg-black/5 hover:text-ink"
                       }`}
                     >
@@ -108,7 +108,7 @@ export function DocsShell() {
           type="button"
           onClick={() => setMobileNavOpen((v) => !v)}
           aria-expanded={mobileNavOpen}
-          className="flex w-full items-center justify-between rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm font-medium text-ink"
+          className="flex w-full items-center justify-between rounded-xl border border-ink/10 bg-offwhite px-4 py-3 text-sm font-medium text-ink"
         >
           <span>
             {activeHeading} <span className="text-ink-muted">/</span> {active.title}
@@ -127,7 +127,7 @@ export function DocsShell() {
 
       {/* Content */}
       <div className="min-w-0">
-        <p className="text-xs font-semibold uppercase tracking-wide text-maroon">{activeHeading}</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-accent">{activeHeading}</p>
         <h1 className="mt-1 text-2xl font-bold tracking-tight text-ink sm:text-3xl">{active.title}</h1>
         <div className="mt-6 max-w-3xl">
           {active.id === "cost-calculator" ? <CostCalculator /> : active.node}

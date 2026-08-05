@@ -7,44 +7,8 @@ import { EmptyFeatureCards } from "@/components/product/EmptyFeatureCards";
 import { StatsStrip } from "@/components/product/StatsStrip";
 import { ResearchDriven } from "@/components/product/ResearchDriven";
 import { BuiltForTeams } from "@/components/product/BuiltForTeams";
-import { PageFAQ } from "@/components/product/PageFAQ";
 import { asset } from "@/lib/assets";
 
-const faqs = [
-  {
-    id: "what-is",
-    title: "What is Mansa Interpret?",
-    content: "Mansa Interpret converts written text into clear, natural-sounding speech across African languages.",
-  },
-  {
-    id: "languages",
-    title: "What languages does Mansa Interpret support?",
-    content: "Hausa, Igbo, Yoruba, Twi, Ewe, and more, all with natural African accents and dialects.",
-  },
-  {
-    id: "ivr",
-    title: "Can I use Mansa Interpret for voice prompts and IVR?",
-    content:
-      "Yes. Teams use Mansa Interpret to generate natural call center prompts and voice interfaces across African languages.",
-  },
-  {
-    id: "documents",
-    title: "Can Mansa Interpret read long documents aloud?",
-    content: "Yes. Turn reports, articles, and updates into natural spoken audio for listening on the go.",
-  },
-  {
-    id: "natural",
-    title: "How natural does the generated speech sound?",
-    content:
-      "Mansa Interpret is tuned specifically for African languages, so the speech it generates preserves natural accents and pronunciation instead of sounding robotic.",
-  },
-  {
-    id: "integrate",
-    title: "Can I integrate Mansa Interpret into my own product?",
-    content:
-      "Yes. Mansa Interpret is built on the same API platform as the rest of Mansa, so you can generate speech directly inside your app.",
-  },
-];
 
 export const metadata: Metadata = {
   title: "Mansa Interpret: Natural text-to-speech for African languages",
@@ -108,7 +72,6 @@ export default function InterpretPage() {
           ]}
         />
 
-        <PageFAQ faqs={faqs} />
 
         <SunsetBand
           bgSrc={asset("/assets/final-cta-bg.webp")}

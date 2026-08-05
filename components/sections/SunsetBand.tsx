@@ -40,7 +40,7 @@ export function SunsetBand({ bgSrc, title, subtitle, buttons, className = "" }: 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl text-3xl font-bold leading-tight tracking-tight text-offwhite drop-shadow-sm sm:text-4xl lg:text-[2.75rem]"
+          className="max-w-3xl text-3xl font-bold leading-tight tracking-tight text-onbrand drop-shadow-sm sm:text-4xl lg:text-[2.75rem]"
         >
           {title}
         </motion.h2>
@@ -53,7 +53,7 @@ export function SunsetBand({ bgSrc, title, subtitle, buttons, className = "" }: 
           className="mt-7 flex flex-wrap items-center justify-center gap-4"
         >
           {subtitle && (
-            <span className="text-base font-medium text-offwhite/90">{subtitle}</span>
+            <span className="text-base font-medium text-onbrand/90">{subtitle}</span>
           )}
           {buttons.includes("appstore") && <StoreButton store="appstore" variant="outline" />}
           {buttons.includes("playstore") && <StoreButton store="playstore" variant="outline" />}

@@ -39,16 +39,16 @@ export function Hero() {
         >
           <TypewriterTagline />
           <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-            The AI built for African languages.
+            Meet Africa&apos;s AI Thinking Partner
           </h1>
-          <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-muted">
-            Chat, translate, transcribe, and work across 30+ African languages with AI
-            designed to understand the continent.
+          <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-muted">
+            Think clearly and ask freely with AI agents, chat, translation, transcription,
+            and speech in 30+ African languages, all in one place with Mansa.
           </p>
 
           {/* Search-bar-style input */}
           <div className="mt-8 max-w-md">
-            <div className="flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 p-2 pl-5 shadow-soft backdrop-blur">
+            <div className="flex items-center gap-2 rounded-full border border-ink/10 bg-offwhite/80 p-2 pl-5 shadow-soft backdrop-blur">
               <input
                 type="text"
                 placeholder="How can I help you today?"
@@ -67,7 +67,7 @@ export function Hero() {
                   key={p.label}
                   className="group inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-cream-dark/60 px-3.5 py-1.5 text-sm font-medium text-ink/75 transition-all hover:bg-cream-dark hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
                 >
-                  <span aria-hidden className="text-maroon">
+                  <span aria-hidden className="text-accent">
                     {p.icon}
                   </span>
                   {p.label}
@@ -77,7 +77,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Right: maroon panel with parallax art + floating mockups */}
+        {/* Right: rounded panel showing just the landscape art, gently animated */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -86,28 +86,33 @@ export function Hero() {
           className="relative"
         >
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-maroon shadow-soft">
-            {/* Parallax background art */}
-            <motion.div style={reduce ? undefined : { y: bgY }} className="absolute -inset-6">
-              <Image
-                src={asset("/assets/hero-bg.webp")}
-                alt="Illustrated African landscape at sunset"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark/30 via-transparent to-transparent" />
+            {/* Scroll parallax layer */}
+            <motion.div style={reduce ? undefined : { y: bgY }} className="absolute inset-0">
+              {/* Continuous slow zoom + pan (Ken Burns) */}
+              <motion.div
+                className="absolute -inset-[7%]"
+                animate={
+                  reduce
+                    ? undefined
+                    : { scale: [1, 1.09, 1], x: ["0%", "-2.5%", "0%"], y: ["0%", "2%", "0%"] }
+                }
+                transition={
+                  reduce
+                    ? undefined
+                    : { duration: 22, ease: "easeInOut", repeat: Infinity }
+                }
+              >
+                <Image
+                  src={asset("/assets/hero-bg.webp")}
+                  alt="Illustrated African landscape at sunset"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark/40 via-transparent to-transparent" />
             </motion.div>
-
-            {/* Floating app UI */}
-            <Image
-              src={asset("/assets/hero-section-ui.webp")}
-              alt="Mansa app interface"
-              width={398}
-              height={799}
-              unoptimized
-              className="absolute left-1/2 top-[8%] z-10 h-auto w-[42%] -translate-x-1/2 rounded-2xl shadow-2xl"
-            />
           </div>
         </motion.div>
       </div>

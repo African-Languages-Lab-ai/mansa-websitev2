@@ -35,10 +35,10 @@ export function AgentHero() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="container-page relative flex flex-col items-center py-24 text-center md:py-28"
       >
-        <h1 className="text-4xl font-bold tracking-tight text-offwhite drop-shadow sm:text-5xl lg:text-6xl">
+        <h1 className="text-4xl font-bold tracking-tight text-onbrand drop-shadow sm:text-5xl lg:text-6xl">
           Mansa Agent
         </h1>
-        <p className="mt-5 max-w-xl text-lg font-medium text-offwhite/90 drop-shadow sm:text-xl">
+        <p className="mt-5 max-w-xl text-lg font-medium text-onbrand/90 drop-shadow sm:text-xl">
           Your autonomous AI assistant that remembers, researches, and gets work done.
         </p>
         <div className="mt-8">

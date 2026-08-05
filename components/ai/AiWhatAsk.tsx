@@ -27,12 +27,12 @@ function PromptCard({ tag, q, ariaHidden = false }: { tag: string; q: string; ar
       className="group flex w-[340px] shrink-0 flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-white/20 hover:bg-white/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset-1"
     >
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-wide text-offwhite/50">{tag}</span>
-        <span aria-hidden className="text-offwhite/30 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-offwhite/70">
+        <span className="text-xs font-semibold uppercase tracking-wide text-onbrand/50">{tag}</span>
+        <span aria-hidden className="text-onbrand/30 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-onbrand/70">
           ↗
         </span>
       </div>
-      <p className="mt-3 text-base leading-relaxed text-offwhite/85">{q}</p>
+      <p className="mt-3 text-base leading-relaxed text-onbrand/85">{q}</p>
     </a>
   );
 }
@@ -65,7 +65,7 @@ export function AiWhatAsk() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="text-center text-3xl font-bold tracking-tight text-offwhite sm:text-4xl"
+          className="text-center text-3xl font-bold tracking-tight text-onbrand sm:text-4xl"
         >
           What will you ask?
         </motion.h2>

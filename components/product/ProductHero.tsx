@@ -38,14 +38,14 @@ export function ProductHero({ bgSrc, eyebrow, title, subtitle, cta, objectPositi
         className="container-page relative flex flex-col items-center py-24 text-center md:py-28"
       >
         {eyebrow && (
-          <span className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-offwhite/80">
+          <span className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-onbrand/80">
             {eyebrow}
           </span>
         )}
-        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-offwhite drop-shadow sm:text-5xl lg:text-[3.25rem]">
+        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-onbrand drop-shadow sm:text-5xl lg:text-[3.25rem]">
           {title}
         </h1>
-        <p className="mt-5 max-w-xl text-lg font-medium text-offwhite/90 drop-shadow">
+        <p className="mt-5 max-w-xl text-lg font-medium text-onbrand/90 drop-shadow">
           {subtitle}
         </p>
         <div className="mt-8">

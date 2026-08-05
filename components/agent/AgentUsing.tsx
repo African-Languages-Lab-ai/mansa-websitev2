@@ -32,7 +32,7 @@ export function AgentUsing() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="text-center text-3xl font-bold tracking-tight text-offwhite sm:text-4xl"
+          className="text-center text-3xl font-bold tracking-tight text-onbrand sm:text-4xl"
         >
           How people are using Mansa Agent
         </motion.h2>
@@ -47,8 +47,8 @@ export function AgentUsing() {
                 type="button"
                 onClick={() => setTab(t)}
                 aria-pressed={on}
-                className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offwhite ${
-                  on ? "bg-cream-dark text-espresso" : "text-offwhite/70 hover:text-offwhite"
+                className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-onbrand ${
+                  on ? "bg-cream-dark text-espresso" : "text-onbrand/70 hover:text-onbrand"
                 }`}
               >
                 {t}
@@ -70,8 +70,8 @@ export function AgentUsing() {
             >
               {content[tab].map((c) => (
                 <div key={c.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
-                  <h3 className="text-lg font-semibold text-offwhite">{c.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-offwhite/60">{c.body}</p>
+                  <h3 className="text-lg font-semibold text-onbrand">{c.title}</h3>
+                  <p className="mt-2 text-base leading-relaxed text-onbrand/60">{c.body}</p>
                 </div>
               ))}
             </motion.div>

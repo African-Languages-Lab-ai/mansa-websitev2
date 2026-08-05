@@ -8,18 +8,18 @@ import { LAB_ABOUT } from "@/lib/links";
 const cards = [
   {
     icon: "◈",
-    title: "Trained for Africa",
-    body: "Built using billions of African language tokens collected through direct, community-driven research.",
+    title: "Built for Africa",
+    body: "Powered by one of the world's largest African language datasets, built through years of research and community collaboration.",
   },
   {
     icon: "❖",
     title: "Cultural Understanding",
-    body: "Understands meaning, expressions, and context instead of translating word for word.",
+    body: "Understands culture, intent, and nuance, not just words.",
   },
   {
     icon: "↻",
-    title: "Always Improving",
-    body: "Continuously refined with new languages, better speech recognition, and ongoing research.",
+    title: "Continuously Learning",
+    body: "Constantly expanding language support, improving speech models, and advancing through ongoing research.",
   },
 ];
 
@@ -65,21 +65,20 @@ export function WhyMansa() {
         >
           <Pill>Why Mansa</Pill>
           <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Mansa is built to understand African languages
+            AI that truly understands Africa.
           </h2>
           <p className="mt-3 max-w-2xl text-lg text-ink-muted">
-            Mansa, developed by{" "}
+            Built by{" "}
             <a
               href={LAB_ABOUT}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-maroon underline decoration-maroon/30 underline-offset-2 transition-colors hover:text-maroon-dark"
+              className="font-semibold text-accent underline decoration-accent/30 underline-offset-2 transition-opacity hover:opacity-80"
             >
-              the African Languages Lab
+              African Languages Lab
             </a>
-            , natively
-            understands African languages, dialects, and cultural contexts, unlike most AI models
-            that treat them as an afterthought.
+            , Mansa understands African languages, dialects, and cultural context from the ground
+            up, delivering AI that feels truly local.
           </p>
         </motion.div>
 
@@ -97,7 +96,7 @@ export function WhyMansa() {
               variants={fadeUp}
               className="rounded-2xl border border-ink/10 bg-cream-dark/40 p-7 transition-shadow hover:shadow-soft"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-maroon/20 text-xl text-maroon">
+              <span className="grid h-11 w-11 place-items-center rounded-xl border border-maroon/20 text-xl text-accent">
                 {c.icon}
               </span>
               <h3 className="mt-5 text-xl font-semibold text-ink">{c.title}</h3>
@@ -110,8 +109,8 @@ export function WhyMansa() {
       {/* Numbers — heading in the gutter, cards auto-scroll to the right screen edge */}
       <div className="mt-16 flex flex-col gap-8 md:mt-24 lg:flex-row lg:items-center">
         <h3 className="container-page shrink-0 text-3xl font-semibold leading-tight text-ink sm:text-4xl lg:w-72 lg:pr-0">
-          Some of the
-          <br className="hidden lg:block" /> numbers
+          Built on African
+          <br className="hidden lg:block" /> AI research
         </h3>
 
         {reduce ? (

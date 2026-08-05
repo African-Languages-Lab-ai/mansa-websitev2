@@ -1,18 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { LAB_ABOUT, LAB_RESEARCH } from "@/lib/links";
+import { LAB_ABOUT } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 type FooterLink = { label: string; href: string };
+
+const LAB_OUR_RESEARCH = "https://www.africanlanguageslab.com/our-research";
 
 const columns: { heading: string; links: FooterLink[] }[] = [
   {
     heading: "Company",
     links: [
       { label: "About", href: LAB_ABOUT },
-      { label: "Research", href: LAB_RESEARCH },
+      { label: "Overview", href: "/overview" },
+      { label: "Research", href: LAB_OUR_RESEARCH },
     ],
   },
   {
@@ -26,7 +28,13 @@ const columns: { heading: string; links: FooterLink[] }[] = [
   },
   {
     heading: "Resources",
-    links: [{ label: "Documentation", href: "/docs" }],
+    links: [
+      { label: "Blog", href: "/resources/blog" },
+      { label: "News", href: "/resources/news" },
+      { label: "Use Cases", href: "/resources/use-cases" },
+      { label: "Customer Stories", href: "/resources/customer-stories" },
+      { label: "Documentation", href: "/docs" },
+    ],
   },
   {
     heading: "API Platform",
@@ -38,24 +46,37 @@ const socials = ["X", "LinkedIn", "Instagram", "YouTube"];
 
 export function Footer() {
   return (
-    <footer className="bg-espresso pt-16 text-offwhite">
+    <footer className="bg-espresso pt-16 text-onbrand">
       <div className="container-page">
         <div className="grid grid-cols-2 gap-10 border-b border-white/10 pb-14 md:grid-cols-3 lg:grid-cols-6">
-          {/* Brand */}
+          {/* Brand — logo in brand yellow */}
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2">
-              <Image src={asset("/assets/logo-mark-white.webp")} alt="" width={30} height={26} className="h-[26px] w-auto" />
-              <span className="text-xl font-bold tracking-tight text-offwhite">mansa</span>
+              <span
+                aria-hidden
+                className="h-[26px] w-[30px] bg-sunset-1"
+                style={{
+                  WebkitMaskImage: `url(${asset("/assets/logo-mark-white.webp")})`,
+                  maskImage: `url(${asset("/assets/logo-mark-white.webp")})`,
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                }}
+              />
+              <span className="text-xl font-bold tracking-tight text-sunset-1">mansa</span>
             </div>
-            <p className="mt-4 max-w-[16rem] text-sm leading-relaxed text-offwhite/50">
-              The AI built for African languages, by the African Languages Lab.
+            <p className="mt-4 max-w-[16rem] text-sm leading-relaxed text-onbrand/50">
+              Africa&apos;s AI Thinking Partner, built by African Languages Lab.
             </p>
           </div>
 
           {/* Link columns */}
           {columns.map((col) => (
             <div key={col.heading}>
-              <h3 className="text-sm font-semibold text-offwhite">{col.heading}</h3>
+              <h3 className="text-sm font-semibold text-onbrand">{col.heading}</h3>
               <ul className="mt-4 space-y-3">
                 {col.links.map((l) => {
                   const external = l.href.startsWith("http");
@@ -65,9 +86,14 @@ export function Footer() {
                         href={l.href}
                         target={external ? "_blank" : undefined}
                         rel={external ? "noopener noreferrer" : undefined}
-                        className="text-sm text-offwhite/55 transition-colors hover:text-offwhite focus:outline-none focus-visible:text-offwhite"
+                        className="inline-flex items-center gap-1 text-sm text-onbrand/55 transition-colors hover:text-onbrand focus:outline-none focus-visible:text-onbrand"
                       >
                         {l.label}
+                        {external && (
+                          <span aria-hidden className="text-xs">
+                            ↗
+                          </span>
+                        )}
                       </Link>
                     </li>
                   );
@@ -78,13 +104,13 @@ export function Footer() {
 
           {/* Follow us */}
           <div>
-            <h3 className="text-sm font-semibold text-offwhite">Follow Us</h3>
+            <h3 className="text-sm font-semibold text-onbrand">Follow Us</h3>
             <ul className="mt-4 space-y-3">
               {socials.map((s) => (
                 <li key={s}>
                   <a
                     href="#"
-                    className="text-sm text-offwhite/55 transition-colors hover:text-offwhite focus:outline-none focus-visible:text-offwhite"
+                    className="text-sm text-onbrand/55 transition-colors hover:text-onbrand focus:outline-none focus-visible:text-onbrand"
                   >
                     {s}
                   </a>
@@ -96,7 +122,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 py-6 text-center">
-          <p className="text-sm text-offwhite/50">
+          <p className="text-sm text-onbrand/50">
             © Copyright 2026 Mansa by African Languages Lab.
           </p>
         </div>

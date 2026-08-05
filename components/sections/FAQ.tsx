@@ -65,7 +65,7 @@ export function FAQ() {
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <p className="text-sm font-medium uppercase tracking-wide text-maroon">FAQs</p>
+          <p className="text-sm font-medium uppercase tracking-wide text-accent">FAQs</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Questions, answered
           </h2>

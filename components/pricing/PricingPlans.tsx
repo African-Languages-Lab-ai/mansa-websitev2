@@ -102,8 +102,19 @@ const plans: Plan[] = [
 
 function Check() {
   return (
-    <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-maroon/15 text-[10px] font-bold text-maroon">
-      ✓
+    <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-maroon/15 text-accent">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-2.5 w-2.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={4}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M5 13l4 4L19 7" />
+      </svg>
     </span>
   );
 }
@@ -121,7 +132,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-2xl font-bold tracking-tight text-ink">{plan.name}</h3>
         {plan.badge && (
-          <span className="shrink-0 rounded-full bg-maroon px-3 py-1 text-xs font-semibold text-offwhite">
+          <span className="shrink-0 rounded-full bg-maroon px-3 py-1 text-xs font-semibold text-onbrand">
             {plan.badge}
           </span>
         )}

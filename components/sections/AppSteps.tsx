@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { StoreButton } from "@/components/ui/StoreButton";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
@@ -59,37 +60,51 @@ function ChatIcon() {
   );
 }
 
-/** Dashed curved connector between two steps (desktop only). */
+/**
+ * Dashed curved connector between two steps (desktop only).
+ * The arrowhead is a marker with orient="auto" so it always points along the
+ * curve, and the SVG keeps its aspect ratio (no stretch) so nothing distorts.
+ */
 function StepArrow({ variant }: { variant: "hump" | "valley" }) {
+  const id = `appsteps-arrow-${variant}`;
   const d =
     variant === "hump"
-      ? "M4 52 C 55 8, 145 8, 194 44"
-      : "M4 36 C 55 72, 145 72, 194 28";
-  const head =
-    variant === "hump"
-      ? "M185 34 L195 45 L183 47"
-      : "M183 18 L195 29 L184 32";
+      ? "M2 44 C 46 6, 114 6, 156 40"
+      : "M2 30 C 46 60, 114 60, 156 34";
   return (
     <svg
-      viewBox="0 0 200 80"
+      viewBox="0 0 160 64"
       fill="none"
-      className="hidden h-20 w-full flex-1 text-ink/30 lg:block"
+      className="h-auto w-full text-ink/35"
       aria-hidden
-      preserveAspectRatio="none"
     >
+      <defs>
+        <marker
+          id={id}
+          viewBox="0 0 8 8"
+          markerWidth={7}
+          markerHeight={7}
+          refX={6}
+          refY={4}
+          orient="auto"
+        >
+          <path
+            d="M1 1 L6 4 L1 7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.4}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </marker>
+      </defs>
       <path
         d={d}
         stroke="currentColor"
         strokeWidth={2}
         strokeLinecap="round"
-        strokeDasharray="2 8"
-      />
-      <path
-        d={head}
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeDasharray="2 7"
+        markerEnd={`url(#${id})`}
       />
     </svg>
   );
@@ -109,7 +124,7 @@ const steps = [
   {
     icon: <ChatIcon />,
     title: "Start using Mansa",
-    body: "Start using Mansa agent, chatting, translating, or transcribing.",
+    body: "Start chatting, automating, translating, transcribing, or generating speech with Mansa.",
   },
 ];
 
@@ -126,7 +141,7 @@ export function AppSteps() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
-            Get Started on the app in Minutes
+            Start thinking with Mansa in minutes
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
             Go from download to your first conversation in three simple steps.
@@ -139,13 +154,13 @@ export function AppSteps() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mt-16 flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-4"
+          className="mt-16 flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-center lg:gap-2"
         >
           {steps.map((s, i) => (
-            <div key={s.title} className="contents">
+            <Fragment key={s.title}>
               <motion.div
                 variants={fadeUp}
-                className="flex w-full max-w-xs flex-col items-center text-center lg:flex-1"
+                className="flex w-full max-w-xs flex-col items-center text-center lg:w-64 lg:max-w-none lg:flex-none"
               >
                 {/* Icon card: light rounded tile with a sunset glyph inside */}
                 <div className="flex h-24 w-24 items-center justify-center rounded-3xl bg-offwhite shadow-soft">
@@ -161,16 +176,17 @@ export function AppSteps() {
                 </p>
               </motion.div>
 
-              {/* Arrow between cards, aligned with the icon row */}
+              {/* Arrow cell — h-24 matches the icon tile so the curve centers
+                  on the icon row; hidden on mobile where steps stack. */}
               {i < steps.length - 1 && (
-                <motion.div
-                  variants={fadeUp}
-                  className="flex flex-1 items-start pt-6"
+                <div
+                  aria-hidden
+                  className="hidden h-24 flex-1 items-center px-2 lg:flex"
                 >
                   <StepArrow variant={i === 0 ? "hump" : "valley"} />
-                </motion.div>
+                </div>
               )}
-            </div>
+            </Fragment>
           ))}
         </motion.div>
 

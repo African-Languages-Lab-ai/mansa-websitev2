@@ -9,7 +9,6 @@ import { UseCases } from "@/components/sections/UseCases";
 import { AppSteps } from "@/components/sections/AppSteps";
 import { ImpactVideo } from "@/components/sections/ImpactVideo";
 import { EnterpriseCTA } from "@/components/sections/EnterpriseCTA";
-import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/Footer";
 import { asset } from "@/lib/assets";
 
@@ -22,7 +21,7 @@ export default function Home() {
 
         <SunsetBand
           bgSrc={asset("/assets/sunset-band-bg.webp")}
-          title="Your AI partner in thinking for Africa."
+          title="Your AI thinking partner, built for Africa."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
         />
@@ -35,12 +34,11 @@ export default function Home() {
         <AppSteps />
         <ImpactVideo />
         <EnterpriseCTA />
-        <FAQ />
 
         {/* Final CTA reuses the sunset band with different copy */}
         <SunsetBand
           bgSrc={asset("/assets/final-cta-bg.webp")}
-          title="Unlock the power of African language AI"
+          title="Start thinking without language barriers."
           buttons={["appstore", "playstore"]}
         />
       </main>

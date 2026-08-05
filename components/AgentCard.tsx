@@ -79,7 +79,7 @@ export function AgentCard() {
       <div className="mt-2 space-y-2">
         {featured.map((f) => (
           <div key={f.title} className="flex items-center gap-3 rounded-xl border border-ink/5 bg-cream/40 p-3">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-maroon/10 text-maroon">◍</span>
+            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-maroon/10 text-accent">◍</span>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-medium text-ink">{f.title}</p>
               <p className="truncate text-xs text-ink-muted">{f.sub}</p>
@@ -90,7 +90,7 @@ export function AgentCard() {
       </div>
 
       <div className="mt-3 flex items-center gap-2 border-t border-ink/5 pt-3 text-sm font-medium text-ink">
-        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-maroon/10 text-maroon">◎</span>
+        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-maroon/10 text-accent">◎</span>
         Research watch
       </div>
     </div>
