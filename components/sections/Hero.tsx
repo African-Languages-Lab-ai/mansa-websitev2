@@ -84,7 +84,7 @@ export function Hero() {
           style={reduce ? undefined : { y: panelY }}
           className="relative"
         >
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
             <Image
               src={asset("/assets/hero-section.gif")}
               alt="Mansa hero animation"
