@@ -76,7 +76,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Right: animated hero graphic shown at its native 16:9 dimensions */}
+        {/* Right: animated hero graphic in the original 4:3 panel */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -84,7 +84,7 @@ export function Hero() {
           style={reduce ? undefined : { y: panelY }}
           className="relative"
         >
-          <div className="relative aspect-[16/9] w-full overflow-hidden">
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
             <Image
               src={asset("/assets/hero-section.gif")}
               alt="Mansa hero animation"
