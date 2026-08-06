@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button, ArrowGlyph } from "@/components/ui/Button";
+import { MansaChatMock } from "@/components/resources/MansaChatMock";
 import { getUseCases, getUseCase } from "@/lib/content/use-cases";
 import { APP_URL, CONTACT_MAILTO } from "@/lib/links";
 
@@ -78,12 +79,20 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
               </p>
             </section>
 
-            {uc.example && (
-              <section className="rounded-2xl bg-offwhite p-6 ring-1 ring-black/5">
-                <h2 className="text-lg font-semibold text-ink">In practice</h2>
+            {uc.demo && (
+              <section>
+                <h2 className="text-2xl font-bold tracking-tight text-ink">
+                  In practice
+                </h2>
                 <p className="mt-2 text-base leading-relaxed text-ink-muted">
-                  {uc.example}
+                  A quick look at how this works inside Mansa.
                 </p>
+                <div className="mt-5">
+                  <MansaChatMock
+                    prompt={uc.demo.prompt}
+                    response={uc.demo.response}
+                  />
+                </div>
               </section>
             )}
           </div>

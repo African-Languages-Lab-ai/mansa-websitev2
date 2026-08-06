@@ -18,12 +18,12 @@ const products = [
   { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-asr.webp") },
 ];
 
-const resources = [
+const resources: { name: string; href: string; external?: boolean }[] = [
   { name: "Blog", href: "/resources/blog" },
   { name: "News", href: "/resources/news" },
   { name: "Use Cases", href: "/resources/use-cases" },
   { name: "Customer Stories", href: "/resources/customer-stories" },
-  { name: "Documentation", href: "/docs" },
+  { name: "Documentation", href: "https://all-lab-portal.com/docs", external: true },
 ];
 
 export function Navbar({ solid = false }: { solid?: boolean }) {
@@ -156,16 +156,30 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   className="absolute left-1/2 top-full mt-3 w-56 -translate-x-1/2 rounded-2xl border border-ink/10 bg-cream/95 p-2 shadow-soft backdrop-blur-md"
                 >
-                  {resources.map((r) => (
-                    <Link
-                      key={r.name}
-                      href={r.href}
-                      onClick={() => setResourcesOpen(false)}
-                      className="block rounded-xl px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-black/5 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
-                    >
-                      {r.name}
-                    </Link>
-                  ))}
+                  {resources.map((r) =>
+                    r.external ? (
+                      <a
+                        key={r.name}
+                        href={r.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setResourcesOpen(false)}
+                        className="flex items-center gap-1 rounded-xl px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-black/5 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+                      >
+                        {r.name}
+                        <span aria-hidden className="text-xs">↗</span>
+                      </a>
+                    ) : (
+                      <Link
+                        key={r.name}
+                        href={r.href}
+                        onClick={() => setResourcesOpen(false)}
+                        className="block rounded-xl px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-black/5 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+                      >
+                        {r.name}
+                      </Link>
+                    )
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>
@@ -296,16 +310,30 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               </button>
               {mobileResources && (
                 <div className="mb-2 flex flex-col gap-1 pl-4">
-                  {resources.map((r) => (
-                    <Link
-                      key={r.name}
-                      href={r.href}
-                      onClick={() => setOpen(false)}
-                      className="rounded-lg px-2 py-2 text-base text-ink/80 hover:bg-black/5 hover:text-ink"
-                    >
-                      {r.name}
-                    </Link>
-                  ))}
+                  {resources.map((r) =>
+                    r.external ? (
+                      <a
+                        key={r.name}
+                        href={r.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setOpen(false)}
+                        className="inline-flex items-center gap-1 rounded-lg px-2 py-2 text-base text-ink/80 hover:bg-black/5 hover:text-ink"
+                      >
+                        {r.name}
+                        <span aria-hidden className="text-xs">↗</span>
+                      </a>
+                    ) : (
+                      <Link
+                        key={r.name}
+                        href={r.href}
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-2 py-2 text-base text-ink/80 hover:bg-black/5 hover:text-ink"
+                      >
+                        {r.name}
+                      </Link>
+                    )
+                  )}
                 </div>
               )}
 

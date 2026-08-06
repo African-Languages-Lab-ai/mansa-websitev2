@@ -7,7 +7,7 @@ import { MansaAgent } from "@/components/sections/MansaAgent";
 import { SupportedLanguages } from "@/components/sections/SupportedLanguages";
 import { UseCases } from "@/components/sections/UseCases";
 import { AppSteps } from "@/components/sections/AppSteps";
-import { ImpactVideo } from "@/components/sections/ImpactVideo";
+// import { ImpactVideo } from "@/components/sections/ImpactVideo"; // hidden — see below
 import { EnterpriseCTA } from "@/components/sections/EnterpriseCTA";
 import { Footer } from "@/components/Footer";
 import { asset } from "@/lib/assets";
@@ -32,7 +32,10 @@ export default function Home() {
         <SupportedLanguages />
         <UseCases />
         <AppSteps />
-        <ImpactVideo />
+        {/* "How Mansa is Making Real Impact" (video) is hidden for now.
+            To restore it: re-enable the ImpactVideo import above and
+            uncomment the line below. */}
+        {/* <ImpactVideo /> */}
         <EnterpriseCTA />
 
         {/* Final CTA reuses the sunset band with different copy */}

@@ -33,7 +33,7 @@ const columns: { heading: string; links: FooterLink[] }[] = [
       { label: "News", href: "/resources/news" },
       { label: "Use Cases", href: "/resources/use-cases" },
       { label: "Customer Stories", href: "/resources/customer-stories" },
-      { label: "Documentation", href: "/docs" },
+      { label: "Documentation", href: "https://all-lab-portal.com/docs" },
     ],
   },
   {
@@ -42,7 +42,11 @@ const columns: { heading: string; links: FooterLink[] }[] = [
   },
 ];
 
-const socials = ["X", "LinkedIn", "Instagram", "YouTube"];
+const socials: FooterLink[] = [
+  { label: "X", href: "https://x.com/all__lab" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/african-languages-lab" },
+  { label: "Instagram", href: "https://www.instagram.com/africanlanguageslab/" },
+];
 
 export function Footer() {
   return (
@@ -107,12 +111,14 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-onbrand">Follow Us</h3>
             <ul className="mt-4 space-y-3">
               {socials.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <a
-                    href="#"
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-onbrand/55 transition-colors hover:text-onbrand focus:outline-none focus-visible:text-onbrand"
                   >
-                    {s}
+                    {s.label}
                   </a>
                 </li>
               ))}

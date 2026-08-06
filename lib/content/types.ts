@@ -57,6 +57,18 @@ export type UseCaseCategory =
   | "Media & content"
   | "Developer & API";
 
+/** A line in a demo response: a plain paragraph, a quoted output, or a code block. */
+export type DemoResponseLine =
+  | string
+  | { quote: string }
+  | { code: string };
+
+/** A sample Mansa chat exchange shown in the "In practice" UI mock. */
+export type UseCaseDemo = {
+  prompt: string;
+  response: DemoResponseLine[];
+};
+
 export type UseCase = {
   slug: string;
   title: string;
@@ -67,6 +79,8 @@ export type UseCase = {
   challenge: string;
   solution: string;
   example?: string;
+  /** Prompt + response rendered as a Mansa chat UI in "In practice". */
+  demo?: UseCaseDemo;
   placeholder?: boolean;
 };
 

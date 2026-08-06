@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mymansa.ai"),
-  title: "Mansa: Africa's AI Thinking Partner",
+  title: "Mansa | Africa's AI Thinking Partner",
   description:
     "Chat, translate, transcribe, and work across African languages with AI designed to understand the continent. Mansa by African Languages Lab.",
 };

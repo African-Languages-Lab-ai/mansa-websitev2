@@ -14,137 +14,70 @@ export const posts: Post[] = [
     category: "Impact",
     date: "2026-06-18",
     authorId: "team",
-    readMinutes: 6,
+    readMinutes: 9,
     featured: true,
     body: [
       {
         type: "paragraph",
-        text: "Africa is home to more than two thousand languages, yet the vast majority have almost no presence in modern AI systems. When a language is missing from the data that models learn from, the people who speak it are effectively locked out of the tools that are reshaping how the rest of the world works, learns, and communicates.",
+        text: "Africa is home to more than two thousand languages, spoken by well over a billion people, yet the vast majority have almost no presence in modern AI systems. When a language is missing from the data that models learn from, the people who speak it are effectively locked out of the tools that are reshaping how the rest of the world works, learns, and communicates.",
+      },
+      {
+        type: "paragraph",
+        text: "This is not a small gap at the edges of the technology. It is a structural one. The same models that can draft an email, summarize a contract, tutor a student, or answer a medical question in English, French, or Mandarin often fall apart when asked to do the same in Yoruba, Amharic, Twi, or Swahili. And they fail quietly, producing fluent but wrong answers that are easy to trust and hard to catch.",
       },
       { type: "heading", text: "The representation gap" },
       {
         type: "paragraph",
-        text: "General purpose models are trained mostly on text scraped from the open web, where African languages are severely underrepresented. The result is a feedback loop. Less data leads to weaker performance, weaker performance discourages use, and low use produces even less data. Left alone, the gap widens with every new model release.",
+        text: "General purpose models are trained mostly on text scraped from the open web, where African languages are severely underrepresented. Whole languages that are thriving in daily life appear in only a handful of digitized documents, if any. The result is a feedback loop. Less data leads to weaker performance, weaker performance discourages use, and low use produces even less data. Left alone, the gap widens with every new model release.",
+      },
+      {
+        type: "paragraph",
+        text: "The economics make it worse. Because these languages are treated as small markets, they rarely justify dedicated investment from the largest labs, so they are handled with automatic translation pipelines that bolt an African language onto a model designed for somewhere else. That approach can approximate words, but it misses meaning, tone, idiom, and the cultural context that makes language actually work.",
       },
       {
         type: "quote",
         text: "A language without AI representation is a community without a seat at the table.",
       },
+      { type: "heading", text: "Why the gap persists" },
+      {
+        type: "paragraph",
+        text: "Three things keep the gap open. First, data: high quality text and speech in African languages is scarce online and scattered offline. Second, orality: many African languages live primarily in speech, so text-only approaches capture only part of how people communicate. Third, evaluation: without benchmarks built by native speakers, it is hard to even measure how badly a model is doing, which lets weak performance go unnoticed.",
+      },
+      {
+        type: "paragraph",
+        text: "Solving representation therefore is not a matter of scraping more of the web. It requires going to the source, working with the communities who speak these languages, and building data, models, and tests together rather than after the fact.",
+      },
       { type: "heading", text: "Building from the languages up" },
       {
         type: "paragraph",
-        text: "Mansa, developed by the African Languages Lab, takes the opposite approach. Instead of bolting African languages onto a model designed for other markets, Mansa is trained on billions of African language tokens gathered through direct, community driven research. The model learns meaning, expression, and cultural context rather than translating word for word.",
+        text: "Mansa, developed by the African Languages Lab, takes the opposite approach to the industry default. Instead of bolting African languages onto a model designed for other markets, Mansa is trained on billions of African language tokens gathered through direct, community driven research. The model learns meaning, expression, and cultural context rather than translating word for word.",
       },
       {
         type: "list",
         items: [
           "Trained on community sourced data across 30 or more African languages.",
-          "Designed to respect dialect, tone, and cultural nuance.",
-          "Continuously refined as new languages and speech data are added.",
+          "Designed to respect dialect, tone, and cultural nuance rather than flatten it.",
+          "Built to work across text and speech, so oral first languages are first class.",
+          "Continuously refined as new languages, dialects, and speech data are added.",
         ],
+      },
+      {
+        type: "paragraph",
+        text: "That data does not appear out of nowhere. It is collected through the wider ecosystem the Lab has built, where communities contribute speech and text in their own languages, that contribution is turned into clean training data, and the resulting models flow back into Mansa. As more people use Mansa, more communities are motivated to contribute, and the loop compounds instead of stalling.",
+      },
+      { type: "heading", text: "What changes when a language is represented" },
+      {
+        type: "paragraph",
+        text: "Representation is not only a technical goal. It decides who gets to participate. A student can learn science in their mother tongue instead of struggling through a second language. A small business can answer customers in the language they actually speak. A clinic can share health guidance that people understand the first time. A community can transcribe and preserve the stories of its elders before they are lost.",
+      },
+      {
+        type: "paragraph",
+        text: "Each of these is ordinary in English today and out of reach in most African languages. Closing that distance is the difference between AI that serves a fraction of the world and AI that serves everyone.",
       },
       { type: "heading", text: "Why it matters" },
       {
         type: "paragraph",
-        text: "Representation is not only a technical goal. It decides who can use AI to learn in their first language, run a business, access public services, and preserve their culture. Closing the gap is a long term effort, and it is the reason the African Languages Lab exists.",
-      },
-    ],
-  },
-  {
-    slug: "one-ecosystem-mansa-all-voices-base-swarm",
-    type: "blog",
-    title: "One ecosystem: how Mansa, All Voices, Base, and Swarm fit together",
-    excerpt:
-      "Mansa is one part of a larger effort. Here is how the pieces connect into a single ecosystem for African language AI.",
-    category: "Product",
-    date: "2026-05-30",
-    authorId: "team",
-    readMinutes: 5,
-    body: [
-      {
-        type: "paragraph",
-        text: "Mansa does not stand alone. It sits inside a broader ecosystem built by the African Languages Lab, where data collection, model development, and applications reinforce each other. Each part solves a different piece of the same problem, and together they create a flywheel for African language AI.",
-      },
-      { type: "heading", text: "The pieces" },
-      {
-        type: "list",
-        items: [
-          "All Voices: a crowdsourced platform where communities contribute speech and text data in their own languages.",
-          "Base: shared infrastructure that turns contributed data into clean, training ready datasets.",
-          "Swarm Intelligence Hub: research that pushes the modeling frontier for low resource languages.",
-          "Mansa: the assistant that brings all of this to people through chat, translation, transcription, and speech.",
-        ],
-      },
-      { type: "heading", text: "Why one ecosystem" },
-      {
-        type: "paragraph",
-        text: "Data collected through All Voices improves the models developed in the Swarm Intelligence Hub. Those models power Mansa. As more people use Mansa, more communities are motivated to contribute through All Voices. The loop is deliberate, and it is what lets progress compound instead of stalling on any single bottleneck.",
-      },
-    ],
-  },
-  {
-    slug: "inside-mansa-multimodal-capabilities",
-    type: "blog",
-    title: "Inside Mansa: working across text and speech",
-    excerpt:
-      "A high level tour of how Mansa works across text and speech, and why that matters for African languages.",
-    category: "Research",
-    date: "2026-04-22",
-    authorId: "team",
-    readMinutes: 7,
-    body: [
-      {
-        type: "paragraph",
-        text: "Many African languages are primarily spoken rather than written, and even where a writing system exists, day to day communication often happens through voice. An assistant that only reads and writes text would miss how people actually use their languages. That is why Mansa is designed to work across more than one kind of input.",
-      },
-      { type: "heading", text: "Text and speech, together" },
-      {
-        type: "paragraph",
-        text: "Mansa brings chat, translation, transcription, and speech into a single system. You can type a question, speak it, or move between the two. Transcription turns African language audio into accurate text, and speech turns text back into natural sounding voice, so the assistant meets people wherever they are most comfortable.",
-      },
-      {
-        type: "list",
-        items: [
-          "Chat and reasoning in English and 30 or more African languages.",
-          "Translation tuned for local nuance rather than literal word swaps.",
-          "Transcription that recognizes African accents and dialects.",
-          "Speech that produces natural voice output in supported languages.",
-        ],
-      },
-      { type: "heading", text: "Why multimodal matters here" },
-      {
-        type: "paragraph",
-        text: "For oral first communities, voice is not a convenience feature, it is the primary interface. Supporting speech end to end is what makes AI genuinely usable for millions of people who have been left out so far.",
-      },
-    ],
-  },
-  {
-    slug: "ghana-ai-summit-2026-recap",
-    type: "blog",
-    title: "Ghana AI Summit 2026: what we took away",
-    excerpt:
-      "A recap of the conversations, ideas, and momentum from the Ghana AI Summit 2026.",
-    category: "Events",
-    date: "2026-03-12",
-    authorId: "team",
-    readMinutes: 4,
-    body: [
-      {
-        type: "paragraph",
-        text: "The African Languages Lab joined builders, researchers, and policymakers at the Ghana AI Summit 2026 to talk about one question that ran through the whole event: how do we make sure the next wave of AI includes African languages and the people who speak them.",
-      },
-      { type: "heading", text: "Themes we heard" },
-      {
-        type: "list",
-        items: [
-          "Local data and local ownership are the foundation of trustworthy AI for Africa.",
-          "Speech matters as much as text for languages that are primarily spoken.",
-          "Access should reach everyday people, not just enterprises and researchers.",
-        ],
-      },
-      {
-        type: "paragraph",
-        text: "We came away more convinced than ever that community driven data and models built from African languages up are the path forward. Thank you to everyone who stopped by to talk with the Mansa team.",
+        text: "Language is how people access opportunity, and AI is quickly becoming how people access information, services, and work. If African languages are left out of this shift, the inequality it creates will be far harder to reverse later than it is to prevent now. Building representation from the languages up, with the communities who speak them, is the reason the African Languages Lab exists, and it is the standard Mansa is built to meet.",
       },
     ],
   },
@@ -159,68 +92,46 @@ export const posts: Post[] = [
     category: "Announcements",
     date: "2026-07-01",
     authorId: "team",
-    readMinutes: 3,
+    readMinutes: 5,
     featured: true,
     body: [
       {
         type: "paragraph",
-        text: "The African Languages Lab today introduced Mansa, an AI assistant built specifically for African languages. Mansa understands African languages, dialects, and cultural context natively, rather than treating them as an afterthought.",
+        text: "The African Languages Lab today introduced Mansa, an AI assistant built specifically for African languages. Mansa understands African languages, dialects, and cultural context natively, rather than treating them as an afterthought, and brings chat, an autonomous agent, translation, transcription, and speech together in one place.",
+      },
+      {
+        type: "paragraph",
+        text: "Most AI tools reach African languages, if at all, through translation layers wrapped around models built for other markets. Mansa is built the other way around. It is trained on billions of African language tokens gathered through direct, community driven research, so it works with meaning and nuance instead of word for word approximations.",
       },
       { type: "heading", text: "What Mansa offers" },
       {
         type: "list",
         items: [
           "Chat and an autonomous agent that can research, plan, and take action.",
-          "Translation and transcription across 30 or more African languages.",
-          "Natural speech output in supported languages.",
-          "A single API for developers who want to build on the platform.",
+          "Translation across 30 or more African languages, tuned for local nuance.",
+          "Transcription that recognizes African accents and dialects.",
+          "Natural speech output, so oral first languages are fully supported.",
+          "A single, well documented API for developers who want to build on the platform.",
         ],
       },
+      { type: "heading", text: "Built for African languages, natively" },
       {
         type: "paragraph",
-        text: "Mansa is available on the web and on mobile through the App Store and Google Play. Developers can start building on the Mansa platform through the developer documentation.",
+        text: "Because Mansa learns from data collected with the communities who speak these languages, it handles dialect, tone, and cultural context that general models tend to miss. It is designed to work across both text and speech, which matters for the many African languages that live primarily in conversation rather than on the page.",
       },
-    ],
-  },
-  {
-    slug: "pan-african-ai-innovation-summit-2026",
-    type: "news",
-    title: "Mansa at the Pan African AI and Innovation Summit 2026",
-    excerpt:
-      "The African Languages Lab will join the Pan African AI and Innovation Summit in Accra on September 22 and 23, 2026.",
-    category: "Events",
-    date: "2026-06-25",
-    authorId: "team",
-    readMinutes: 2,
-    body: [
+      { type: "heading", text: "Available today" },
       {
         type: "paragraph",
-        text: "The African Languages Lab will be at the Pan African AI and Innovation Summit in Accra on September 22 and 23, 2026. The team will share how Mansa is built for African languages and where the platform is headed next.",
+        text: "Mansa is available now on the web and on mobile through the App Store and Google Play. Anyone can start for free, chatting, translating, transcribing, and generating speech across supported languages, and upgrade as their needs grow.",
+      },
+      { type: "heading", text: "For developers and organizations" },
+      {
+        type: "paragraph",
+        text: "Teams can bring African language AI into their own products through the Mansa API, with endpoints for translation, transcription, chat, and speech. Organizations that need custom deployments, dedicated support, or specific language and dialect work can reach the team directly to plan a rollout.",
       },
       {
         type: "paragraph",
-        text: "If you are attending, come and meet the Mansa team. We will update this post with highlights after the event.",
-      },
-    ],
-  },
-  {
-    slug: "mansa-at-deep-learning-indaba",
-    type: "news",
-    title: "Mansa at the Deep Learning Indaba",
-    excerpt:
-      "Notes from the African Languages Lab at the Deep Learning Indaba, one of the continent's largest gatherings of AI researchers.",
-    category: "Events",
-    date: "2026-05-10",
-    authorId: "team",
-    readMinutes: 2,
-    body: [
-      {
-        type: "paragraph",
-        text: "The African Languages Lab joined the Deep Learning Indaba to connect with researchers working to strengthen machine learning across Africa. The Indaba is one of the continent's largest gatherings of AI researchers and practitioners.",
-      },
-      {
-        type: "paragraph",
-        text: "Conversations centered on low resource languages, community sourced data, and building tools that reach everyday people. We are grateful to be part of this growing community.",
+        text: "This launch is a starting point. The African Languages Lab will keep expanding language and dialect coverage, improving speech models, and advancing the research behind Mansa, so that more people can access intelligence, opportunity, and innovation in their own language.",
       },
     ],
   },
