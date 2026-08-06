@@ -76,7 +76,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Right: rounded panel showing just the landscape art, gently animated */}
+        {/* Right: animated hero graphic shown at its native 16:9 dimensions */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -84,28 +84,15 @@ export function Hero() {
           style={reduce ? undefined : { y: panelY }}
           className="relative"
         >
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
-            {/* Animated hero (GIF), no frame so it blends into the page
-                background. The GIF is 16:9 inside a 4:3 panel, so object-cover
-                crops the sides in — biased slightly up and left so the star mark
-                near the bottom-right corner is cropped out. */}
+          <div className="relative aspect-[16/9] w-full overflow-hidden">
             <Image
               src={asset("/assets/hero-section.gif")}
               alt="Mansa hero animation"
               fill
               priority
               unoptimized
-              className="scale-[1.06] object-cover object-[45%_44%]"
+              className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
-              // Radial feather: opaque around the centered coin, fading to
-              // transparent toward the edges so the GIF's rectangular frame and
-              // darker corner vignette dissolve into the page background.
-              style={{
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 60% 64% at 50% 46%, #000 34%, transparent 82%)",
-                maskImage:
-                  "radial-gradient(ellipse 60% 64% at 50% 46%, #000 34%, transparent 82%)",
-              }}
             />
           </div>
         </motion.div>
