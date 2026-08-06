@@ -97,6 +97,15 @@ export function Hero() {
               unoptimized
               className="scale-[1.06] object-cover object-[45%_44%]"
               sizes="(max-width: 1024px) 100vw, 50vw"
+              // Radial feather: opaque around the centered coin, fading to
+              // transparent toward the edges so the GIF's rectangular frame and
+              // darker corner vignette dissolve into the page background.
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 60% 64% at 50% 46%, #000 34%, transparent 82%)",
+                maskImage:
+                  "radial-gradient(ellipse 60% 64% at 50% 46%, #000 34%, transparent 82%)",
+              }}
             />
           </div>
         </motion.div>
