@@ -21,7 +21,7 @@ export default function Home() {
 
         <SunsetBand
           bgSrc={asset("/assets/sunset-band-bg.webp")}
-          title="Your AI thinking partner, built for Africa."
+          title="Your AI partner in thinking for Africa."
           subtitle="Download the app"
           buttons={["appstore", "playstore"]}
         />

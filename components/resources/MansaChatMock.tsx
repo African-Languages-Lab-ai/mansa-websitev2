@@ -13,7 +13,7 @@ export function MansaChatMock({
   response: DemoResponseLine[];
 }) {
   return (
-    <div className="overflow-hidden rounded-2xl bg-cream ring-1 ring-black/5">
+    <div className="overflow-hidden rounded-2xl bg-cream shadow-soft ring-1 ring-black/5">
       {/* Top bar: model / language selector */}
       <div className="flex justify-end px-4 pt-4 sm:px-6">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-offwhite px-3 py-1.5 text-xs font-medium text-ink/70">
@@ -58,11 +58,15 @@ export function MansaChatMock({
 
       {/* Input bar */}
       <div className="px-4 pb-5 pt-3 sm:px-8">
-        <div className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-black/5">
+        <div className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-ink/15">
           <PlusIcon />
-          <span className="flex-1 truncate text-sm text-ink-muted/70">
-            Message Mansa...
-          </span>
+          <div className="flex min-w-0 flex-1 items-center gap-1">
+            <span
+              aria-hidden
+              className="inline-block h-4 w-px shrink-0 bg-ink/70 animate-[caretBlink_1.1s_steps(1)_infinite]"
+            />
+            <span className="truncate text-sm text-ink-muted/70">Message Mansa...</span>
+          </div>
           <span className="hidden items-center gap-1 text-xs font-medium text-ink/70 sm:inline-flex">
             <SparkleIcon />
             Balanced
