@@ -38,7 +38,7 @@ export function Hero() {
         >
           <TypewriterTagline />
           <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-            Meet Africa&apos;s AI Thinking Partner
+            The AI built for Africa.
           </h1>
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-muted">
             Think clearly and ask freely with AI agents, chat, translation, transcription,

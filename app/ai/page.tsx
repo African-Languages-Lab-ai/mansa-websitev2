@@ -6,7 +6,6 @@ import { EmptyFeatureCards } from "@/components/product/EmptyFeatureCards";
 import { CtaBand } from "@/components/product/CtaBand";
 import { AiOneForEvery } from "@/components/ai/AiOneForEvery";
 import { AiWhatAsk } from "@/components/ai/AiWhatAsk";
-import { PluginsSection } from "@/components/product/PluginsSection";
 import { asset } from "@/lib/assets";
 
 
@@ -44,7 +43,6 @@ export default function AiPage() {
           ]}
         />
 
-        <PluginsSection />
         <AiOneForEvery />
         <AiWhatAsk />
 

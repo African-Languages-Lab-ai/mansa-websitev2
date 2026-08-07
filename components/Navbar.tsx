@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useScrollNav } from "@/lib/useScrollNav";
 import { Button, ArrowGlyph } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { APP_URL } from "@/lib/links";
+import { SIGNUP_URL, LOGIN_URL } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 const products = [
@@ -15,7 +15,8 @@ const products = [
   { name: "Mansa AI", href: "/ai", img: asset("/assets/product-ai.webp") },
   { name: "Mansa Transcribe", href: "/transcribe", img: asset("/assets/product-transcribe.webp") },
   { name: "Mansa Translate", href: "/translate", img: asset("/assets/product-translate.webp") },
-  { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-asr.webp") },
+  { name: "Mansa TTS", href: "/tts", img: asset("/assets/product-tts.png") },
+  { name: "Mansa Interpret", href: "/interpret", img: asset("/assets/product-interpret.png") },
 ];
 
 const resources: { name: string; href: string; external?: boolean }[] = [
@@ -113,7 +114,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               Product
               <span
                 aria-hidden
-                className={`text-xs text-ink/50 transition-transform ${productsOpen ? "rotate-180" : ""}`}
+                className={`text-sm text-ink/50 transition-transform ${productsOpen ? "rotate-180" : ""}`}
               >
                 ▾
               </span>
@@ -141,7 +142,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               Resources
               <span
                 aria-hidden
-                className={`text-xs text-ink/50 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
+                className={`text-sm text-ink/50 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
               >
                 ▾
               </span>
@@ -191,8 +192,14 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           >
             Pricing
           </Link>
+          <a
+            href={LOGIN_URL}
+            className="rounded-full px-2 py-1 text-base font-medium text-ink/80 transition-colors hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+          >
+            Login
+          </a>
           <ThemeToggle />
-          <Button size="default" href={APP_URL}>
+          <Button size="default" href={SIGNUP_URL}>
             Get started
           </Button>
         </div>
@@ -226,7 +233,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             className="absolute inset-x-0 top-full hidden border-t border-ink/10 bg-cream/95 backdrop-blur-md md:block"
           >
             <div className="container-page py-6">
-              <div className="grid grid-cols-5 gap-5">
+              <div className="grid grid-cols-3 gap-4 lg:grid-cols-6 lg:gap-5">
                 {products.map((p) => (
                   <Link
                     key={p.name}
@@ -344,13 +351,19 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               >
                 Pricing
               </Link>
+              <a
+                href={LOGIN_URL}
+                className="rounded-lg px-2 py-3 text-lg font-medium text-ink hover:bg-black/5"
+              >
+                Login
+              </a>
 
               <div className="mt-1 flex items-center justify-between rounded-lg px-2 py-2">
                 <span className="text-lg font-medium text-ink">Appearance</span>
                 <ThemeToggle />
               </div>
 
-              <Button className="mt-2 w-full" href={APP_URL}>
+              <Button className="mt-2 w-full" href={SIGNUP_URL}>
                 Get started <ArrowGlyph />
               </Button>
             </div>

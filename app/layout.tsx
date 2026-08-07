@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { openRunde } from "@/lib/fonts";
+import { sora } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mymansa.ai"),
-  title: "Mansa | Africa's AI Thinking Partner",
+  title: "Mansa | The AI built for Africa.",
   description:
     "Chat, translate, transcribe, and work across African languages with AI designed to understand the continent. Mansa by African Languages Lab.",
 };
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={openRunde.variable} suppressHydrationWarning>
+    <html lang="en" className={sora.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

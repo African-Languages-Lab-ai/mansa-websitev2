@@ -47,7 +47,7 @@ export function EmptyFeatureCards({
     fit === "cover" ? "object-cover object-top" : "object-contain object-center p-4";
   const panelClass =
     panel === "gold"
-      ? "bg-gradient-to-b from-[#E4C486] to-[#CDA45A]"
+      ? "bg-gradient-to-b from-[#E4C486] to-[#CDA45A] dark:from-[#E4C486]/25 dark:to-[#CDA45A]/25"
       : "border border-white/10 bg-white/[0.04]";
   const grid = columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
 

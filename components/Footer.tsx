@@ -1,29 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { LAB_ABOUT } from "@/lib/links";
+import {
+  LAB_ABOUT,
+  LAB_CAREERS,
+  LAB_RESEARCH,
+  LOGIN_URL,
+  SIGNUP_URL,
+  DOCS_URL,
+} from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 type FooterLink = { label: string; href: string };
-
-const LAB_OUR_RESEARCH = "https://www.africanlanguageslab.com/our-research";
 
 const columns: { heading: string; links: FooterLink[] }[] = [
   {
     heading: "Company",
     links: [
-      { label: "About", href: LAB_ABOUT },
-      { label: "Overview", href: "/overview" },
-      { label: "Research", href: LAB_OUR_RESEARCH },
+      { label: "African Languages Lab", href: LAB_ABOUT },
+      { label: "Careers", href: LAB_CAREERS },
+      { label: "Research", href: LAB_RESEARCH },
+      { label: "Login", href: LOGIN_URL },
+      { label: "Sign up", href: SIGNUP_URL },
     ],
   },
   {
-    heading: "Product",
+    heading: "Products",
     links: [
+      { label: "Overview", href: "/overview" },
       { label: "Mansa AI", href: "/ai" },
       { label: "Translate", href: "/translate" },
       { label: "Transcribe", href: "/transcribe" },
       { label: "Agent", href: "/agent" },
+      { label: "Mansa TTS", href: "/tts" },
+      { label: "Mansa Interpret", href: "/interpret" },
     ],
   },
   {
@@ -33,12 +43,14 @@ const columns: { heading: string; links: FooterLink[] }[] = [
       { label: "News", href: "/resources/news" },
       { label: "Use Cases", href: "/resources/use-cases" },
       { label: "Customer Stories", href: "/resources/customer-stories" },
-      { label: "Documentation", href: "https://all-lab-portal.com/docs" },
     ],
   },
   {
-    heading: "API Platform",
-    links: [{ label: "Pricing", href: "/pricing" }],
+    heading: "Mansa platform",
+    links: [
+      { label: "Pricing", href: "/pricing" },
+      { label: "Documentation", href: DOCS_URL },
+    ],
   },
 ];
 

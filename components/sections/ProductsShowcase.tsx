@@ -17,19 +17,25 @@ const productImages: Record<string, string> = {
   ai: asset("/assets/product-ai.webp"),
   translate: asset("/assets/product-translate.webp"),
   transcribe: asset("/assets/product-transcribe.webp"),
-  interpret: asset("/assets/product-asr.webp"),
+  tts: asset("/assets/product-tts.png"),
+  interpret: asset("/assets/product-interpret.png"),
 };
 
 // The product's app UI floated over the art. Width/height are each image's
 // native size: mismatched values here stretch the screenshot off its real
-// aspect ratio, which reads as blur.
+// aspect ratio, which reads as blur. TTS and Interpret use a single full
+// product image (no floated UI).
 const productUIs: Record<string, { src: string; width: number; height: number } | null> = {
   agent: { src: asset("/assets/agent-section-ui-static.webp"), width: 394, height: 807 },
   ai: { src: asset("/assets/ai-section-ui.webp"), width: 394, height: 795 },
   translate: { src: asset("/assets/translate-section-ui.webp"), width: 394, height: 793 },
   transcribe: { src: asset("/assets/transcribe-section-ui.webp"), width: 394, height: 798 },
-  interpret: { src: asset("/assets/asr-section-ui.webp"), width: 394, height: 786 },
+  tts: null,
+  interpret: null,
 };
+
+// Products not yet live get a "Coming soon" badge on the art panel.
+const comingSoon = new Set(["interpret"]);
 
 function Body({ text, href }: { text: string; href: string }) {
   return (
@@ -87,13 +93,35 @@ const items: AccordionItem[] = [
     ),
   },
   {
+    id: "tts",
+    title: "Mansa TTS",
+    content: (
+      <Body
+        href="/tts"
+        text="Production-grade text-to-speech that turns written text into natural, expressive African-language voices across Hausa, Igbo, Yoruba, Twi, Ewe and more."
+      />
+    ),
+  },
+  {
     id: "interpret",
     title: "Mansa Interpret",
     content: (
-      <Body
-        href="/interpret"
-        text="Production-grade text-to-speech for Hausa, Igbo, Yoruba, Twi and Ewe, with natural African accents and dialects."
-      />
+      <div>
+        <span className="mb-3 inline-block rounded-full bg-sunset-1/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-sunset-1">
+          Coming soon
+        </span>
+        <p>
+          Real-time speech translation that lets two people speak different
+          African languages and understand each other instantly, listening in
+          one language and speaking back in another.
+        </p>
+        <Link
+          href="/interpret"
+          className="mt-3 inline-flex items-center gap-1 rounded text-sm font-medium text-sunset-1 transition-colors hover:text-onbrand focus:outline-none focus-visible:ring-2 focus-visible:ring-sunset-1"
+        >
+          Learn More →
+        </Link>
+      </div>
     ),
   },
 ];
@@ -167,7 +195,7 @@ export function ProductsShowcase() {
                 </motion.div>
                 <div className="absolute inset-0 bg-espresso/25" />
 
-                {activeUI ? (
+                {activeUI && (
                   <Image
                     src={activeUI.src}
                     alt=""
@@ -175,8 +203,9 @@ export function ProductsShowcase() {
                     height={activeUI.height}
                     className="absolute left-1/2 top-1/2 h-auto w-[52%] max-w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-2xl transition-transform duration-300 ease-out group-hover:scale-105"
                   />
-                ) : (
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/40 px-5 py-2 text-sm font-semibold text-onbrand backdrop-blur">
+                )}
+                {comingSoon.has(activeId) && (
+                  <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-black/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-onbrand backdrop-blur">
                     Coming soon
                   </span>
                 )}

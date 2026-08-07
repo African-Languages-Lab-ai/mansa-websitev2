@@ -32,7 +32,6 @@ export default function TranslatePage() {
 
         <EmptyFeatureCards
           heading="Built for African language understanding."
-          subheading="More than translation."
           mediaAspect="aspect-[551/523]"
           fit="float"
           cards={[

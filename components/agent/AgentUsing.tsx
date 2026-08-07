@@ -71,7 +71,7 @@ export function AgentUsing() {
               {content[tab].map((c) => (
                 <div key={c.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
                   <h3 className="text-lg font-semibold text-onbrand">{c.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-onbrand/60">{c.body}</p>
+                  <p className="mt-2 text-base leading-relaxed text-onbrand/90">{c.body}</p>
                 </div>
               ))}
             </motion.div>

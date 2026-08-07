@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  /* --font-open-runde is defined by next/font (see lib/fonts.ts) via the
-     variable class on <html>. Do NOT hardcode it here or the self-hosted
-     face is bypassed. */
+  /* --font-sora is defined by next/font (see lib/fonts.ts) via the variable
+     class on <html>. Do NOT hardcode it here or the optimized face is
+     bypassed. */
 
   /* Theme palette as space-separated RGB channels, consumed by Tailwind via
      rgb(var(--c-*) / <alpha-value>). Toggling `.dark` on <html> flips them. */
@@ -39,7 +39,7 @@
 
   body {
     @apply bg-cream text-ink antialiased;
-    font-family: var(--font-open-runde), system-ui, sans-serif;
+    font-family: var(--font-sora), system-ui, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 

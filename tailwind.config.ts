@@ -51,7 +51,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-open-runde)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sora)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         "7xl": "80rem",

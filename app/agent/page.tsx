@@ -9,7 +9,6 @@ import { AgentCapabilities } from "@/components/agent/AgentCapabilities";
 import { AgentGetStarted } from "@/components/agent/AgentGetStarted";
 import { AgentUsing } from "@/components/agent/AgentUsing";
 import { AgentSecurity } from "@/components/agent/AgentSecurity";
-import { PluginsSection } from "@/components/product/PluginsSection";
 import { AgentFAQ } from "@/components/agent/AgentFAQ";
 import { asset } from "@/lib/assets";
 
@@ -28,7 +27,6 @@ export default function AgentPage() {
         <AgentMeet />
         <AgentWhy />
         <AgentCapabilities />
-        <PluginsSection />
         <AgentUsing />
         <AgentSecurity />
         <AgentGetStarted />

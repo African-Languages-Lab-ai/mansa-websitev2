@@ -3,19 +3,21 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
-import { StoreButton } from "@/components/ui/StoreButton";
+import { Button, ArrowGlyph } from "@/components/ui/Button";
+import { APP_URL } from "@/lib/links";
 
 type SunsetBandProps = {
   bgSrc: string;
   title: string;
-  /** short inline label shown before the buttons (e.g. "Download the app") */
+  /** Deprecated: "Download the app" label — no longer rendered while only the
+      web app is live. Kept optional so callers compile. */
   subtitle?: string;
-  /** which store buttons to show */
-  buttons: ("appstore" | "playstore")[];
+  /** Deprecated: store buttons are hidden for now (web only). Kept optional. */
+  buttons?: ("appstore" | "playstore")[];
   className?: string;
 };
 
-export function SunsetBand({ bgSrc, title, subtitle, buttons, className = "" }: SunsetBandProps) {
+export function SunsetBand({ bgSrc, title, className = "" }: SunsetBandProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -50,13 +52,11 @@ export function SunsetBand({ bgSrc, title, subtitle, buttons, className = "" }: 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-7 flex flex-wrap items-center justify-center gap-4"
+          className="mt-7 flex justify-center"
         >
-          {subtitle && (
-            <span className="text-base font-medium text-onbrand/90">{subtitle}</span>
-          )}
-          {buttons.includes("appstore") && <StoreButton store="appstore" variant="outline" />}
-          {buttons.includes("playstore") && <StoreButton store="playstore" variant="outline" />}
+          <Button size="lg" variant="light" href={APP_URL}>
+            Try Mansa <ArrowGlyph />
+          </Button>
         </motion.div>
       </div>
     </section>

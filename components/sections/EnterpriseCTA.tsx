@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Button, ArrowGlyph } from "@/components/ui/Button";
 import { fadeUp, viewportOnce } from "@/lib/motion";
-import { CONTACT_MAILTO } from "@/lib/links";
+import { CONTACT_MAILTO, DOCS_URL } from "@/lib/links";
 import { asset } from "@/lib/assets";
 
 export function EnterpriseCTA() {
@@ -38,7 +38,7 @@ export function EnterpriseCTA() {
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button variant="filled" href={CONTACT_MAILTO}>Contact Us</Button>
-          <Button variant="outline" onDark href="/docs">
+          <Button variant="outline" onDark href={DOCS_URL}>
             Check Our API Documentation <ArrowGlyph />
           </Button>
         </div>

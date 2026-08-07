@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { StoreButton } from "@/components/ui/StoreButton";
+import { Button, ArrowGlyph } from "@/components/ui/Button";
+import { APP_URL } from "@/lib/links";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
 const steps = [
-  { n: "1", title: "Download the Mansa app", body: "Get Mansa free on the App Store or Google Play." },
+  { n: "1", title: "Open Mansa on the web", body: "Head to Mansa in your browser, no download needed." },
   { n: "2", title: "Create your account", body: "Sign up and set up your workspace in a minute." },
   {
     n: "3",
@@ -20,11 +21,12 @@ export function AgentGetStarted() {
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.6fr] lg:gap-16">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
           <h2 className="max-w-xs text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
-            Get Started with Mansa Agent on the app in Minutes
+            Get Started with Mansa Agent in Minutes
           </h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <StoreButton store="appstore" variant="badge" />
-            <StoreButton store="playstore" variant="badge" />
+          <div className="mt-8">
+            <Button size="lg" href={APP_URL}>
+              Try Mansa <ArrowGlyph />
+            </Button>
           </div>
         </motion.div>
 
