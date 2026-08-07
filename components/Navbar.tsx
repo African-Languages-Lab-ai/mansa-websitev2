@@ -114,7 +114,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               Product
               <span
                 aria-hidden
-                className={`text-base text-ink/50 transition-transform ${productsOpen ? "rotate-180" : ""}`}
+                className={`text-base text-accent transition-transform ${productsOpen ? "rotate-180" : ""}`}
               >
                 ▾
               </span>
@@ -142,7 +142,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               Resources
               <span
                 aria-hidden
-                className={`text-base text-ink/50 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
+                className={`text-base text-accent transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
               >
                 ▾
               </span>
