@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Pill } from "@/components/ui/Pill";
 import { Button } from "@/components/ui/Button";
+import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import { asset } from "@/lib/assets";
 
@@ -77,15 +78,15 @@ export function MansaAgent() {
           viewport={viewportOnce}
           className="flex justify-center lg:justify-end"
         >
-          <div className="group w-full max-w-[300px] overflow-hidden rounded-3xl shadow-2xl">
+          <PhoneFrame className="max-w-[300px]">
             <Image
               src={asset("/assets/agent-section-ui-static.webp")}
               alt="Mansa Agent app interface"
               width={394}
               height={807}
-              className="h-auto w-full transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+              className="h-auto w-full"
             />
-          </div>
+          </PhoneFrame>
         </motion.div>
       </div>
     </section>
