@@ -29,9 +29,9 @@ const columns: { heading: string; links: FooterLink[] }[] = [
     links: [
       { label: "Overview", href: "/overview" },
       { label: "Mansa AI", href: "/ai" },
-      { label: "Translate", href: "/translate" },
-      { label: "Transcribe", href: "/transcribe" },
-      { label: "Agent", href: "/agent" },
+      { label: "Mansa Translate", href: "/translate" },
+      { label: "Mansa Transcribe", href: "/transcribe" },
+      { label: "Mansa Agent", href: "/agent" },
       { label: "Mansa TTS", href: "/tts" },
       { label: "Mansa Interpret", href: "/interpret" },
     ],
