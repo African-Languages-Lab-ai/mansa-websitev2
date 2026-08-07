@@ -13,6 +13,8 @@ const inputPills = [
   { icon: "◎", label: "Transcribe" },
   { icon: "⇄", label: "Translate" },
   { icon: "✦", label: "Agent" },
+  { icon: "♫", label: "TTS" },
+  { icon: "⇌", label: "Interpret" },
 ];
 
 export function Hero() {
@@ -47,14 +49,18 @@ export function Hero() {
 
           {/* Search-bar-style input */}
           <div className="mt-8 max-w-md">
-            <div className="flex items-center gap-2 rounded-full border border-ink/10 bg-offwhite/80 p-2 pl-5 shadow-soft backdrop-blur">
+            <div className="flex items-center gap-1.5 rounded-full border border-ink/10 bg-offwhite/80 p-1.5 pl-4 shadow-soft backdrop-blur sm:gap-2 sm:p-2 sm:pl-5">
               <input
                 type="text"
                 placeholder="How can I help you today?"
-                className="min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink-muted/70 focus:outline-none"
+                className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink-muted/70 focus:outline-none sm:text-base"
                 aria-label="Ask Mansa"
               />
-              <Button size="default" className="shrink-0" href={APP_URL}>
+              <Button
+                size="default"
+                className="shrink-0 px-3.5 py-2 text-xs sm:px-6 sm:py-3 sm:text-sm md:text-base"
+                href={APP_URL}
+              >
                 Ask Mansa <ArrowGlyph />
               </Button>
             </div>
@@ -62,15 +68,18 @@ export function Hero() {
             {/* inline pills */}
             <div className="mt-4 flex flex-wrap items-center gap-2">
               {inputPills.map((p) => (
-                <button
+                <a
                   key={p.label}
+                  href={APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-cream-dark/60 px-3.5 py-1.5 text-sm font-medium text-ink/75 transition-all hover:bg-cream-dark hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
                 >
                   <span aria-hidden className="text-accent">
                     {p.icon}
                   </span>
                   {p.label}
-                </button>
+                </a>
               ))}
             </div>
           </div>
