@@ -8,120 +8,220 @@ import type { UseCase, UseCaseCategory } from "./types";
 export const useCases: UseCase[] = [
   {
     slug: "language-preservation-and-documentation",
-    title: "Preserve and document endangered languages",
+    title: "Turn a box of cassette tapes into a searchable Yoruba archive",
     summary:
-      "Turn recordings and field notes into searchable, structured records across African languages.",
+      "Mansa transcribes oral recordings across African languages and keeps the original wording intact, so preservation work doesn't depend on how many hours one researcher has free this month.",
     category: "Language preservation",
     icon: "◈",
-    challenge:
-      "Much of Africa's linguistic heritage lives in audio recordings, oral histories, and handwritten field notes that are hard to search, share, or study at scale. Elders carry knowledge that has never been written down, archives sit on shelves in formats no one can query, and every year that passes without documentation means stories, dialects, and entire ways of speaking are quietly lost. Manual transcription is slow and expensive, and few tools handle African languages well enough to help.",
-    solution:
-      "Mansa transcribes speech and organizes it across dozens of African languages, turning hours of recordings into clean, searchable text without changing the speaker's original wording. Researchers and communities can index oral histories, add English translations side by side, and build living archives that are easy to revisit and share. What used to take weeks of manual work becomes something a small team, or a single community member, can do in an afternoon.",
-    demo: {
-      prompt:
-        "I recorded an elder telling a Yoruba folktale. Transcribe it and give me a clean version to archive.",
-      response: [
-        "Done. I detected the language as Yoruba and transcribed the full recording, keeping the storyteller's original phrasing.",
-        "I split it into timed segments and tidied the punctuation so it reads clearly, without changing any of the wording.",
-        "Segment 1 (0:00 to 0:38): the narrator introduces Ijapa, the tortoise, and sets up the lesson of the tale.",
-        "Want me to add an English translation next to the Yoruba for the archive?",
-      ],
+    meta: {
+      category: "Research & Archives",
+      languages: "30+ African languages",
+      product: "Mansa Transcribe",
     },
+    challenge:
+      "A lot of what makes up a community's linguistic memory only exists as sound: an elder's folktale on a cassette, a griot's praise-song recorded on a phone, a linguist's decades-old field tapes sitting in a box. None of it is searchable. None of it can be cited, indexed, or cross-referenced until someone sits down and transcribes it by hand, which is slow, expensive, and rare for languages most transcription services don't support well. Every year that passes without documentation is a year closer to losing a dialect, a story, or a way of speaking for good.",
+    solution:
+      "Mansa Transcribe is a standalone tool. You select the source language, then either upload an audio file or record directly in the app, and hit Transcribe. It returns the speech as text in that same source language, preserving the speaker's exact wording.",
+    steps: [
+      {
+        title: "Select the source language",
+        body: "Choose the language being spoken in the recording, for example Yoruba.",
+      },
+      {
+        title: "Upload or record",
+        body: "Upload an existing audio file, a cassette digitization, a phone recording, a field tape, or record live if you're sitting with the elder or interviewee in person.",
+      },
+      {
+        title: "Hit Transcribe",
+        body: "Mansa returns the full transcript as text in the source language, with the speaker's original wording preserved.",
+      },
+    ],
+    altNote: {
+      heading: "If you need it in another language too",
+      body: "To get an English version of the transcript, take the output and run it through Mansa Translate separately: choose Yoruba as the source, English as the target, and paste the transcript in.",
+    },
+    tips: [
+      "Upload the highest quality audio you have. Background noise and low bitrate audio reduce transcription accuracy more than dialect or accent does.",
+      "If a recording mixes two languages, select whichever language dominates the recording as the source language, since Transcribe works from a single selected source language.",
+    ],
   },
   {
     slug: "education-and-literacy-tools",
-    title: "Build education and literacy tools",
+    title: "Turn one science concept into three reading levels, in Swahili",
     summary:
-      "Give learners tutoring and study help in their mother tongue, at any level.",
+      "Mansa explains, tutors, and checks understanding in a learner's mother tongue, so kids aren't learning a new concept and a second language at the same time.",
     category: "Education & literacy",
     icon: "✦",
-    challenge:
-      "Students learn best in the language they think in, yet most digital learning tools speak only a handful of global languages. Across the continent, children are asked to grasp new concepts and a foreign language at the same time, which slows learning and leaves many behind. Teachers rarely have materials in their pupils' mother tongue, and off-the-shelf AI tutors either refuse local languages or answer with confident mistakes.",
-    solution:
-      "Mansa explains concepts, answers questions, and supports reading and writing practice across African languages and English, matched to a learner's level. A pupil can ask for a science idea to be broken down in their first language, practice writing with instant feedback, and check their understanding with follow-up questions. Teachers and edtech builders can use the same capabilities to generate lessons, quizzes, and explanations that finally meet students where they are.",
-    demo: {
-      prompt: "Explain photosynthesis to a Primary 5 pupil in simple Swahili.",
-      response: [
-        "Here's a simple explanation at a Primary 5 level, in Swahili:",
-        {
-          quote:
-            "Mimea hutumia mwanga wa jua, maji, na hewa kutengeneza chakula chao. Kwa kufanya hivyo, hutoa hewa safi tunayovuta.",
-        },
-        "In English: plants use sunlight, water, and air to make their own food, and by doing so they release the fresh air we breathe.",
-        "Want a few practice questions in Swahili to go with it?",
-      ],
+    meta: {
+      category: "EdTech & Classroom Tools",
+      languages: "30+ African languages",
+      product: "Mansa AI",
     },
+    challenge:
+      "Most digital learning tools only work in a handful of global languages, which means a student who thinks in Swahili or Hausa has to translate a concept into a second language before they can even start learning it. That extra step slows everyone down and quietly disadvantages the kids who need the most support. Teachers rarely have leveled materials in their pupils' home language, and generic AI tutors either refuse to answer in the language at all or answer confidently in ways that are subtly wrong.",
+    solution:
+      "Mansa explains concepts, answers follow-up questions, and supports reading and writing practice across African languages and English, adjusted to a learner's grade level. Teachers and edtech builders can use the same underlying model to generate leveled handouts, quizzes, and lesson explanations in one pass.",
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Explain photosynthesis for a Primary 5 class in Swahili. Then give me the same explanation again for a Primary 3 class using simpler vocabulary, and write three short comprehension questions in Swahili for each level.",
+      },
+      {
+        title: "Give Mansa context",
+        bullets: [
+          "The grade or reading level you're targeting",
+          "Any curriculum standard or textbook section the explanation should match",
+          "Whether you want English alongside the Swahili, or Swahili only",
+        ],
+      },
+      {
+        title: "What Mansa returns",
+        body: "Two leveled explanations delivered, Primary 5 and Primary 3, each under 80 words with an English line beneath for teacher reference. Six comprehension questions total, three per level, plus a short vocabulary list flagging which words were simplified for the younger group.",
+      },
+    ],
+    tryItNext: [
+      "Turn the Primary 5 version into a one-page worksheet with a fill-in-the-blank section.",
+      "Explain the same concept in Hausa and Amharic too, so I can compare across my three classrooms.",
+    ],
+    tips: [
+      'Name the grade level and subject standard explicitly. Mansa\'s vocabulary choices shift a lot between "explain simply" and "explain for a Primary 3 pupil."',
+      "Ask for a vocabulary list alongside any simplified explanation. It's the fastest way to check what got cut or changed before sharing the material with a class.",
+    ],
   },
   {
     slug: "customer-support-and-localization",
-    title: "Support customers in the languages they speak",
+    title: "Reply to an angry customer in Swahili, in the tone your brand actually uses",
     summary:
-      "Resolve conversations and localize products for African language markets.",
+      "Mansa reads and replies in the customer's own language with local nuance, so one support team can cover many African-language markets without hiring an agent per language.",
     category: "Customer support & localization",
     icon: "⇄",
-    challenge:
-      "Teams want to serve customers across many African languages, but hiring native-speaking agents for every market and dialect is expensive and slow. Support tickets pile up in languages the team cannot read, machine translation strips out tone and politeness, and users are pushed to a second language they may not be comfortable in. The result is longer resolution times, frustrated customers, and markets that feel like an afterthought.",
-    solution:
-      "Mansa reads and replies in the customer's own language with the right tone and local nuance, so a single team can support many markets at once. It drafts warm, on-brand responses, summarizes incoming messages, and helps localize help centers, product copy, and onboarding flows. Support and product teams move faster, reach more people, and make every market feel first class rather than translated.",
-    demo: {
-      prompt:
-        "A customer messaged in Swahili, upset that their order arrived late. Draft a warm, apologetic reply in Swahili.",
-      response: [
-        "Here's a warm, apologetic reply in Swahili you can send as is:",
-        {
-          quote:
-            "Samahani sana kwa kuchelewa kwa oda yako. Tunaelewa jinsi hili linavyoudhi, na tunalishughulikia sasa hivi. Utapata taarifa mpya leo, na tumekuandalia punguzo dogo kama radhi.",
-        },
-        "It stays friendly and respectful, and offers a small goodwill discount. Want a shorter version for SMS?",
-      ],
+    meta: {
+      category: "Customer Experience & Support Ops",
+      languages: "30+ African languages",
+      product: "Mansa AI (Mansa Translate for literal text conversion)",
     },
+    challenge:
+      "Serving customers across multiple African languages usually means one of two bad options: hire native-speaking agents for every market you operate in, which is expensive and slow to scale, or run everything through generic machine translation, which strips out tone, politeness markers, and cultural context that make a reply feel like it came from a real person. Support tickets pile up in languages the core team can't read, and customers get pushed toward a second language they'd rather not use.",
+    solution: [
+      "This one runs through Mansa AI chat. Drafting a reply with a specific tone, in your brand voice, with a discount code worked in, is a generation task, so it needs the chat, which writes directly in the customer's language.",
+      "If you've already written the reply in English and want it converted as-is, Mansa Translate handles that: choose English as the source, Swahili as the target, paste the text in.",
+    ],
+    steps: [
+      {
+        title: "Describe the task, in chat",
+        quote:
+          "This customer messaged in Swahili, frustrated their order arrived five days late. Draft a warm, apologetic reply in our brand voice, offer a 10% discount code, and keep it under 60 words so it works as an SMS too.",
+      },
+      {
+        title: "Give Mansa context",
+        bullets: [
+          "The original customer message",
+          "Your brand's tone guide or a couple of example replies in English to match",
+          "Any policy limits, refund caps, discount rules, escalation triggers",
+        ],
+      },
+      {
+        title: "What Mansa returns",
+        body: "Reply drafted in Swahili, apologetic but not over-apologizing, discount code inserted, 54 words.",
+      },
+    ],
+    tryItNext: [
+      "Rewrite that reply for a customer who's messaged us three times this month. Slightly firmer, still polite.",
+      "Now write the same kind of apologetic reply for a late delivery complaint in Hausa.",
+    ],
   },
   {
     slug: "government-and-public-service-translation",
-    title: "Translate government and public services",
+    title: "Get one health notice into five local languages before the print deadline",
     summary:
-      "Make public information and services available in local languages.",
+      "Mansa translates public information while preserving exact meaning, formatted for posters, SMS blasts, or radio scripts, so a small team can communicate at national scale.",
     category: "Government & public service",
     icon: "◉",
-    challenge:
-      "Critical public information, health guidance, tax notices, election details, and emergency alerts, often reaches citizens only in official languages that many people do not read fluently. When a message is misunderstood or never reaches a community at all, the cost is measured in missed clinic visits, unclaimed services, and eroded trust. Translating every notice by hand into dozens of local languages is simply not feasible for most agencies.",
-    solution:
-      "Mansa translates public service content across African languages while preserving the exact meaning, keeping notices short, clear, and appropriate for posters, SMS, or radio scripts. Agencies can push the same message out in many languages at once, adapt reading levels for different audiences, and reach communities in the languages they actually use. Clear communication becomes something a small public-sector team can deliver at national scale.",
-    demo: {
-      prompt:
-        'Translate this malaria notice into clear, simple Swahili for a poster: "Sleep under a treated mosquito net every night and remove standing water near your home."',
-      response: [
-        "Here's a clear, simple Swahili translation suited to a public poster:",
-        {
-          quote:
-            "Lala ndani ya chandarua chenye dawa kila usiku, na ondoa maji yaliyotuama karibu na nyumbani kwako.",
-        },
-        "I kept it short and direct so it's easy to read at a glance. Want it in Hausa and Yoruba as well?",
-      ],
+    meta: {
+      category: "Public Health & Civic Communication",
+      languages: "30+ African languages",
+      product: "Mansa AI (Mansa Translate for literal text conversion)",
     },
+    challenge:
+      "Health guidance, tax notices, election information, and emergency alerts often only reach citizens in a country's official language, which many residents don't read fluently day to day. When a notice is misunderstood or never reaches a community at all, the cost shows up as missed clinic visits, unclaimed benefits, or people who simply didn't know what to do in an emergency. Translating every notice into a dozen or more local languages by hand isn't realistic for most agency-sized teams.",
+    solution: [
+      "This works through Mansa AI chat. Getting a notice down to poster length, or rewritten for a 10-second radio read, means reshaping the text, so it needs the chat's drafting ability, in the target language directly.",
+      "For a final, approved translation converted into another language exactly as written, Mansa Translate handles that: choose the language pair, paste the text in, get the translation out.",
+    ],
+    steps: [
+      {
+        title: "Describe the task, in chat",
+        quote:
+          'Translate this into simple, direct Swahili suitable for a wall poster with large text: "Sleep under a treated mosquito net every night and remove standing water near your home." Then give me the same message in Hausa, Yoruba, and Amharic, each under 15 words.',
+      },
+      {
+        title: "Give Mansa context",
+        bullets: [
+          "The original notice, in full, with any legal or medical phrasing that must stay exact",
+          "The output format: poster, SMS, radio script, each has different length and tone constraints",
+          "The reading level you're targeting, since public notices often need to work for low-literacy audiences",
+        ],
+      },
+      {
+        title: "What Mansa returns",
+        body: "Four translations delivered, each under 15 words, formatted for poster display. A radio script variant included for each language as well, written to read naturally aloud in under 10 seconds.",
+      },
+    ],
+    tryItNext: [
+      "Turn this into a 3-question SMS survey in the same four languages, to check if the message landed.",
+      "Simplify the Swahili version further for an audience with limited literacy. Fewer clauses, shorter words.",
+    ],
+    tips: [
+      "Specify the output format up front. A poster line, an SMS, and a radio script all need different lengths and rhythms even when the underlying message is identical.",
+      "For anything legally or medically sensitive, ask Mansa to flag any place where an exact literal translation isn't possible so a native-speaking reviewer can check that specific line before publishing.",
+    ],
   },
   {
     slug: "media-and-content-localization",
-    title: "Localize media and content",
+    title: "Turn one tagline into five versions that don't sound translated",
     summary:
-      "Translate and adapt media for audiences across the continent.",
+      "Mansa AI adapts tone and cultural context when localizing copy, scripts, and captions, so content reads the way a native speaker would actually write it.",
     category: "Media & content",
     icon: "◎",
-    challenge:
-      "Publishers, broadcasters, and creators want to reach African audiences, but localization is slow, costly, and rarely keeps up with the pace they publish. Word-for-word translation flattens humor, idiom, and cultural references, so content that lands in one language falls flat in another. As a result, huge audiences are served thin, awkward versions of stories, or skipped entirely.",
-    solution:
-      "Mansa localizes articles, scripts, subtitles, taglines, and captions across African languages, adapting tone and cultural context instead of translating literally. Creators can produce several native-sounding versions of the same piece in minutes, tune copy for different regions or age groups, and keep a consistent voice across every market. Content feels made for the audience, not translated at them.",
-    demo: {
-      prompt:
-        'Localize this tagline for an East African audience: "Banking made simple." Give me a Swahili version and a warmer alternative.',
-      response: [
-        "Here's a natural Swahili localization, not a word for word translation:",
-        { quote: "Benki iliyorahisishwa." },
-        "A warmer, more conversational alternative:",
-        { quote: "Huduma za benki, bila usumbufu." },
-        'That second line reads as "banking services, without the hassle." Want variations tuned for a younger, social audience?',
-      ],
+    meta: {
+      category: "Media, Marketing & Content",
+      languages: "30+ African languages",
+      product: "Mansa AI (Mansa Translate for literal text conversion)",
     },
+    challenge:
+      "Publishers and creators want to reach African audiences, but localization is usually slow, costly, and out of sync with how fast content actually gets published. Literal, word-for-word translation flattens humor, idiom, and cultural reference points, so a tagline or joke that lands perfectly in English falls flat, or reads strangely, in another language. The result is that huge audiences get a thin, awkward version of a story, or the content skips their language entirely.",
+    solution: [
+      "Another one for Mansa AI chat. Adapting tone, coming up with a warmer alternative, or writing a version aimed at a younger audience, is drafting work, so the chat writes each version directly in the target language.",
+      "Mansa Translate is the right tool once you've picked a final version and need it converted into another language exactly as written.",
+    ],
+    steps: [
+      {
+        title: "Describe the task, in chat",
+        quote:
+          'Localize this tagline for an East African audience: "Banking made simple." Give me a direct Swahili translation, a warmer conversational alternative, and a third version aimed at a younger, social-media audience.',
+      },
+      {
+        title: "Give Mansa context",
+        bullets: [
+          "The original copy, plus any brand voice notes (playful, formal, aspirational)",
+          "The target region or country, since dialect and slang shift even within one language",
+          "The platform: a billboard tagline and an Instagram caption need different rhythm",
+        ],
+      },
+      {
+        title: "What Mansa returns",
+        body: "Three Swahili versions delivered: a direct translation, a warmer conversational line, and a shorter, punchier version with an English back-translation of each so you can sanity-check tone before approving.",
+      },
+    ],
+    tryItNext: [
+      "Now adapt all three for a Nigerian audience in Yoruba, keeping the same three tone options.",
+      "Write subtitle timing cues for the warm version so it fits a 6-second video clip.",
+    ],
+    tips: [
+      "Always ask for an English back-translation alongside the localized copy. It's the fastest way for a non-speaker on your team to sanity-check tone before it ships.",
+      'Give Mansa the platform, not just the message. "Billboard tagline" and "TikTok caption" call for very different sentence rhythm even when the core idea is identical.',
+    ],
   },
   {
     slug: "developer-and-api-use-cases",

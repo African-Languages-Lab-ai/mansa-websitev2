@@ -54,6 +54,13 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
             {uc.summary}
           </p>
 
+          {uc.meta && (
+            <p className="mt-4 text-sm font-medium text-ink-muted">
+              Category: {uc.meta.category} · Languages: {uc.meta.languages} · Product:{" "}
+              {uc.meta.product}
+            </p>
+          )}
+
           {uc.placeholder && (
             <p className="mt-8 rounded-xl border border-sunset-1/40 bg-sunset-1/10 px-4 py-3 text-sm text-ink-muted">
               Illustrative scenario shown to demonstrate the format. Named, verified examples live in Customer Stories.
@@ -74,12 +81,51 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
               <h2 className="text-2xl font-bold tracking-tight text-ink">
                 How Mansa helps
               </h2>
-              <p className="mt-3 text-lg leading-relaxed text-ink-muted">
-                {uc.solution}
-              </p>
+              <div className="mt-3 space-y-3 text-lg leading-relaxed text-ink-muted">
+                {(Array.isArray(uc.solution) ? uc.solution : [uc.solution]).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
             </section>
 
-            {uc.demo && (
+            {uc.steps && (
+              <section>
+                <h2 className="text-2xl font-bold tracking-tight text-ink">
+                  In practice
+                </h2>
+                <ol className="mt-5 space-y-6">
+                  {uc.steps.map((step, i) => (
+                    <li key={step.title} className="flex gap-4">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cream-dark text-sm font-semibold text-ink">
+                        {i + 1}
+                      </span>
+                      <div className="pt-0.5">
+                        <h3 className="text-lg font-semibold text-ink">{step.title}</h3>
+                        {step.body && (
+                          <p className="mt-1.5 text-base leading-relaxed text-ink-muted">
+                            {step.body}
+                          </p>
+                        )}
+                        {step.quote && (
+                          <p className="mt-1.5 text-base italic leading-relaxed text-ink-muted">
+                            &ldquo;{step.quote}&rdquo;
+                          </p>
+                        )}
+                        {step.bullets && (
+                          <ul className="mt-1.5 list-disc space-y-1 pl-5 text-base leading-relaxed text-ink-muted">
+                            {step.bullets.map((b) => (
+                              <li key={b}>{b}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
+
+            {!uc.steps && uc.demo && (
               <section>
                 <h2 className="text-2xl font-bold tracking-tight text-ink">
                   In practice
@@ -93,6 +139,43 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                     response={uc.demo.response}
                   />
                 </div>
+              </section>
+            )}
+
+            {uc.altNote && (
+              <section>
+                <h2 className="text-2xl font-bold tracking-tight text-ink">
+                  {uc.altNote.heading}
+                </h2>
+                <p className="mt-3 text-lg leading-relaxed text-ink-muted">
+                  {uc.altNote.body}
+                </p>
+              </section>
+            )}
+
+            {uc.tryItNext && (
+              <section>
+                <h2 className="text-2xl font-bold tracking-tight text-ink">
+                  Try it next
+                </h2>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-lg leading-relaxed text-ink-muted">
+                  {uc.tryItNext.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {uc.tips && (
+              <section>
+                <h2 className="text-2xl font-bold tracking-tight text-ink">
+                  Tips
+                </h2>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-lg leading-relaxed text-ink-muted">
+                  {uc.tips.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
               </section>
             )}
           </div>

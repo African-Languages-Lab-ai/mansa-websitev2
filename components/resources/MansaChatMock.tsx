@@ -61,10 +61,6 @@ export function MansaChatMock({
         <div className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-ink/15">
           <PlusIcon />
           <div className="flex min-w-0 flex-1 items-center gap-1">
-            <span
-              aria-hidden
-              className="inline-block h-4 w-px shrink-0 bg-ink/70 animate-[caretBlink_1.1s_steps(1)_infinite]"
-            />
             <span className="truncate text-sm text-ink-muted/70">Message Mansa...</span>
           </div>
           <span className="hidden items-center gap-1 text-xs font-medium text-ink/70 sm:inline-flex">

@@ -69,6 +69,22 @@ export type UseCaseDemo = {
   response: DemoResponseLine[];
 };
 
+/** Quick-facts strip shown under the summary on a use case detail page. */
+export type UseCaseMeta = {
+  category: string;
+  languages: string;
+  product: string;
+};
+
+/** A single numbered step in the "In practice" walkthrough. Exactly one of
+ * body / quote / bullets should be set. */
+export type UseCaseStep = {
+  title: string;
+  body?: string;
+  quote?: string;
+  bullets?: string[];
+};
+
 export type UseCase = {
   slug: string;
   title: string;
@@ -77,10 +93,20 @@ export type UseCase = {
   /** Simple glyph shown on the card, consistent with the site's icon style. */
   icon: string;
   challenge: string;
-  solution: string;
+  /** One or more paragraphs under "How Mansa helps". */
+  solution: string | string[];
   example?: string;
-  /** Prompt + response rendered as a Mansa chat UI in "In practice". */
+  meta?: UseCaseMeta;
+  /** Numbered "In practice" walkthrough. Takes priority over `demo` when set. */
+  steps?: UseCaseStep[];
+  /** Prompt + response rendered as a Mansa chat UI in "In practice" (legacy/fallback). */
   demo?: UseCaseDemo;
+  /** Optional callout, e.g. how to get the output in another language. */
+  altNote?: { heading: string; body: string };
+  /** Optional "Try it next" follow-up prompt suggestions. */
+  tryItNext?: string[];
+  /** Optional "Tips" bullets. */
+  tips?: string[];
   placeholder?: boolean;
 };
 
