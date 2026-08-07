@@ -28,7 +28,7 @@ export function PluginsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="relative flex justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] p-6 md:p-8"
+          className="relative flex justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] p-6 md:p-8 dark:from-[#E4C486]/25 dark:to-[#CDA45A]/25"
         >
           <div className="w-full max-w-[300px] overflow-hidden rounded-3xl shadow-2xl">
             <Image

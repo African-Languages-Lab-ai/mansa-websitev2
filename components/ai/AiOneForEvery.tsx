@@ -144,7 +144,7 @@ export function AiOneForEvery() {
               {/* Media panel — provided UI for the first tab, generated card otherwise */}
               <motion.div
                 style={reduce ? undefined : { y: panelY }}
-                className="group flex items-center justify-center rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] p-6 transition-transform duration-300 ease-out hover:scale-[1.03]"
+                className="group flex items-center justify-center rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] p-6 transition-transform duration-300 ease-out hover:scale-[1.03] dark:from-[#E4C486]/25 dark:to-[#CDA45A]/25"
               >
                 {active.img ? (
                   <Image

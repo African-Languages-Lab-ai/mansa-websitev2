@@ -118,10 +118,10 @@ export function SupportedLanguages() {
             {/* Soft glow behind the globe */}
             <div className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(232,177,92,0.55),rgba(194,87,31,0.25)_55%,rgba(122,42,29,0)_72%)] blur-2xl" />
 
-            {/* D3 orthographic-projection globe, gold palette matching the original artwork */}
+            {/* D3 orthographic-projection globe, gold palette matching the original artwork — drag to rotate */}
             <div className="absolute left-1/2 top-1/2 aspect-square w-[84%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full shadow-[0_20px_60px_-15px_rgba(122,42,29,0.55)]">
-              <Globe className="h-full w-full" />
-              <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-maroon/10" />
+              <Globe className="h-full w-full" highlightCountries={active?.countries ?? []} />
+              <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-maroon/10" />
             </div>
 
             {/* Language spoke labels */}
@@ -167,7 +167,7 @@ export function SupportedLanguages() {
         {/* Mobile / tablet: globe + wrapped chip grid */}
         <div className="mt-12 flex flex-col items-center lg:hidden">
           <div className="relative aspect-square w-[240px] overflow-hidden rounded-full shadow-[0_20px_60px_-15px_rgba(122,42,29,0.45)]">
-            <Globe className="h-full w-full" />
+            <Globe className="h-full w-full" highlightCountries={active?.countries ?? []} />
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-2">

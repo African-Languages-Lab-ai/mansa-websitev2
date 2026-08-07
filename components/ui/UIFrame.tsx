@@ -31,7 +31,7 @@ export function UIFrame({
       )}
       <div
         className={`relative h-full w-full overflow-hidden rounded-3xl ${
-          panel === "gold" ? "bg-gradient-to-b from-[#E4C486] to-[#CDA45A]" : ""
+          panel === "gold" ? "bg-gradient-to-b from-[#E4C486] to-[#CDA45A] dark:from-[#E4C486]/25 dark:to-[#CDA45A]/25" : ""
         }`}
       >
         <Image

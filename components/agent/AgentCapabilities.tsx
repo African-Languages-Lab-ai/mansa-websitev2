@@ -66,7 +66,7 @@ export function AgentCapabilities() {
           {caps.map((c) => (
             <motion.div key={c.title} variants={fadeUp} className="flex flex-col">
               {/* Gold panel holding the full app screenshot (not cropped) */}
-              <div className="group relative aspect-[13/11] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A]">
+              <div className="group relative aspect-[13/11] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-[#E4C486] to-[#CDA45A] dark:from-[#E4C486]/25 dark:to-[#CDA45A]/25">
                 <Image
                   src={c.img}
                   alt=""

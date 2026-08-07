@@ -114,7 +114,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               Product
               <span
                 aria-hidden
-                className={`text-sm text-ink/50 transition-transform ${productsOpen ? "rotate-180" : ""}`}
+                className={`text-base text-ink/50 transition-transform ${productsOpen ? "rotate-180" : ""}`}
               >
                 ▾
               </span>
@@ -142,7 +142,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               Resources
               <span
                 aria-hidden
-                className={`text-sm text-ink/50 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
+                className={`text-base text-ink/50 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}
               >
                 ▾
               </span>
@@ -192,13 +192,13 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           >
             Pricing
           </Link>
+          <ThemeToggle />
           <a
             href={LOGIN_URL}
-            className="rounded-full px-2 py-1 text-base font-medium text-ink/80 transition-colors hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+            className="rounded-full px-2 py-1 text-base font-medium text-accent transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
           >
             Login
           </a>
-          <ThemeToggle />
           <Button size="default" href={SIGNUP_URL}>
             Get started
           </Button>
@@ -353,7 +353,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               </Link>
               <a
                 href={LOGIN_URL}
-                className="rounded-lg px-2 py-3 text-lg font-medium text-ink hover:bg-black/5"
+                className="rounded-lg px-2 py-3 text-lg font-medium text-accent hover:bg-black/5"
               >
                 Login
               </a>

@@ -37,7 +37,7 @@ export default function AiPage() {
           glow
           mediaAspect="aspect-[4/5]"
           cards={[
-            { title: "Multilingual by design.", body: "Communicate naturally across English and 30+ African languages with AI built for Africa.", img: asset("/assets/ai-section-ui.webp") },
+            { title: "Multilingual by design.", body: "Communicate naturally across English and 30+ African languages with AI built for Africa.", img: asset("/assets/ai-engineered-multilingual-crop.webp") },
             { title: "Have natural conversations.", body: "Understand complex questions, plan, generate thoughtful responses, and solve problems.", img: asset("/assets/ai-engineered-3.webp") },
             { title: "Write with confidence.", body: "Draft emails, reports, proposals, articles, presentations, and creative content in seconds.", img: asset("/assets/ai-engineered-2.webp") },
           ]}
