@@ -131,6 +131,14 @@ export const useCases: UseCase[] = [
       "Now write the same kind of apologetic reply for a late delivery complaint in Hausa.",
     ],
   },
+];
+
+/* ----------------------------------------------------------------------
+ * Retired for now (kept for easy restoration): Government & public service,
+ * Media & content, Developer & API. Re-add to `useCases` above to bring
+ * them back — content and copy are unchanged.
+ * ------------------------------------------------------------------- */
+export const retiredUseCases: UseCase[] = [
   {
     slug: "government-and-public-service-translation",
     title: "Get one health notice into five local languages before the print deadline",

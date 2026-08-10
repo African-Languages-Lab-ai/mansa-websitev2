@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 // Resources has no hub page of its own (matching claude.com). This route only
-// exists so /resources does not 404 on the static export; it redirects to Blog,
-// the most content-heavy section.
+// exists so /resources does not 404 on the static export; it redirects to Use
+// Cases. (Blog is hidden from nav for now — see components/Navbar.tsx.)
 export default function ResourcesIndex() {
   const router = useRouter();
   useEffect(() => {
-    router.replace("/resources/blog");
+    router.replace("/resources/use-cases");
   }, [router]);
 
   return (

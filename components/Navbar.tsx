@@ -20,7 +20,6 @@ const products = [
 ];
 
 const resources: { name: string; href: string; external?: boolean }[] = [
-  { name: "Blog", href: "/resources/blog" },
   { name: "News", href: "/resources/news" },
   { name: "Use Cases", href: "/resources/use-cases" },
   { name: "Customer Stories", href: "/resources/customer-stories" },
