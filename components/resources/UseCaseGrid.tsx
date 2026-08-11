@@ -54,7 +54,7 @@ export function UseCaseGrid({
               <span aria-hidden>{u.icon}</span>
             </div>
             <span className="mt-5 text-xs font-medium uppercase tracking-wide text-sunset-3">
-              {u.category}
+              {u.productLabel ?? u.category}
             </span>
             <h3 className="mt-2 text-lg font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
               {u.title}

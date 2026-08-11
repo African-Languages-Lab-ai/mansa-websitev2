@@ -11,7 +11,8 @@ export const useCases: UseCase[] = [
     title: "Turn a box of cassette tapes into a searchable Yoruba archive",
     summary:
       "Mansa transcribes oral recordings across African languages and keeps the original wording intact, so preservation work doesn't depend on how many hours one researcher has free this month.",
-    category: "Language preservation",
+    category: "Language & localization",
+    productLabel: "Mansa Transcribe",
     icon: "◈",
     meta: {
       category: "Research & Archives",
@@ -50,7 +51,8 @@ export const useCases: UseCase[] = [
     title: "Turn one science concept into three reading levels, in Swahili",
     summary:
       "Mansa explains, tutors, and checks understanding in a learner's mother tongue, so kids aren't learning a new concept and a second language at the same time.",
-    category: "Education & literacy",
+    category: "Education",
+    productLabel: "Mansa AI",
     icon: "✦",
     meta: {
       category: "EdTech & Classroom Tools",
@@ -94,7 +96,8 @@ export const useCases: UseCase[] = [
     title: "Reply to an angry customer in Swahili, in the tone your brand actually uses",
     summary:
       "Mansa reads and replies in the customer's own language with local nuance, so one support team can cover many African-language markets without hiring an agent per language.",
-    category: "Customer support & localization",
+    category: "Language & localization",
+    productLabel: "Mansa AI",
     icon: "⇄",
     meta: {
       category: "Customer Experience & Support Ops",
@@ -136,7 +139,8 @@ export const useCases: UseCase[] = [
     title: "Turn one tagline into five versions that don't sound translated",
     summary:
       "Mansa AI adapts tone and cultural context when localizing copy, scripts, and captions, so content reads the way a native speaker would actually write it.",
-    category: "Media & content",
+    category: "Language & localization",
+    productLabel: "Mansa AI",
     icon: "◎",
     meta: {
       category: "Media, Marketing & Content",
@@ -182,7 +186,8 @@ export const useCases: UseCase[] = [
     title: "Healthcare & Clinical Communication",
     summary:
       "Mansa helps healthcare organizations translate, simplify, and communicate health information in patients' preferred African languages across text and speech.",
-    category: "Healthcare & clinical communication",
+    category: "Healthcare",
+    productLabel: "Mansa AI",
     icon: "✚",
     challenge:
       "Healthcare information is often delivered in languages that patients may not fully understand. This can create communication barriers between healthcare professionals, patients, caregivers, and community health workers, particularly where African languages are the primary language of communication.",
@@ -219,6 +224,7 @@ export const useCases: UseCase[] = [
     summary:
       "Mansa helps financial institutions localize customer communications and explain financial information in customers' preferred languages.",
     category: "Financial services",
+    productLabel: "Mansa AI",
     icon: "◆",
     challenge:
       "Financial products and services can be difficult to understand when customers are required to interact in languages they are not most comfortable with. Banks, fintechs, insurers, microfinance institutions, and other financial organizations need ways to communicate complex information clearly across multiple African languages.",
@@ -256,6 +262,7 @@ export const useCases: UseCase[] = [
     summary:
       "Mansa connects speech recognition, language understanding, and speech generation into a multilingual voice AI workflow for natural African-language experiences.",
     category: "Voice & conversational AI",
+    productLabel: "Mansa AI",
     icon: "≋",
     challenge:
       "Many African-language AI experiences remain text-first, even though speech is the primary way many people interact with technology. Businesses and organizations need voice interfaces that can understand and respond to customers in the languages they actually speak.",
@@ -715,6 +722,12 @@ export function getUseCase(slug: string): UseCase | undefined {
   return useCases.find((u) => u.slug === slug);
 }
 
+// "Mansa Agent" is deliberately excluded here — its items already read as
+// "Mansa Agent" via their category-as-badge, but they're broad enough (and
+// numerous enough) that giving them their own filter chip would crowd out
+// the product use-case filters. They still show up under "All".
 export function getUseCaseCategories(): UseCaseCategory[] {
-  return Array.from(new Set(useCases.map((u) => u.category))) as UseCaseCategory[];
+  return Array.from(new Set(useCases.map((u) => u.category))).filter(
+    (c) => c !== "Mansa Agent"
+  ) as UseCaseCategory[];
 }

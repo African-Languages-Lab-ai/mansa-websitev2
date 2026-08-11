@@ -50,15 +50,15 @@ export type Post = {
 };
 
 export type UseCaseCategory =
-  | "Language preservation"
-  | "Education & literacy"
-  | "Customer support & localization"
+  | "Language & localization"
+  | "Education"
   | "Government & public service"
-  | "Media & content"
   | "Developer & API"
-  | "Healthcare & clinical communication"
+  | "Healthcare"
   | "Financial services"
   | "Voice & conversational AI"
+  // Not offered as a filter chip (see getUseCaseCategories) — items keep
+  // this as their category since it doubles as their product-label badge.
   | "Mansa Agent";
 
 /** A line in a demo response: a plain paragraph, a quoted output, or a code block. */
@@ -94,6 +94,10 @@ export type UseCase = {
   title: string;
   summary: string;
   category: UseCaseCategory;
+  /** Short product name shown as the card/detail-page eyebrow (e.g. "Mansa AI",
+   * "Mansa Transcribe"). Falls back to `category` when omitted — this is how
+   * the "Mansa Agent" items already read, since their category IS the product. */
+  productLabel?: string;
   /** Simple glyph shown on the card, consistent with the site's icon style. */
   icon: string;
   challenge: string;

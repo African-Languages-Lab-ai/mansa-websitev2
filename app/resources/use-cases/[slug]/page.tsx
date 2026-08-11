@@ -45,7 +45,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
             <span aria-hidden>{uc.icon}</span>
           </div>
           <span className="mt-6 block text-sm font-medium uppercase tracking-wide text-sunset-3">
-            {uc.category}
+            {uc.productLabel ?? uc.category}
           </span>
           <h1 className="mt-2 text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
             {uc.title}
