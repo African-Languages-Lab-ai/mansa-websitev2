@@ -55,7 +55,11 @@ export type UseCaseCategory =
   | "Customer support & localization"
   | "Government & public service"
   | "Media & content"
-  | "Developer & API";
+  | "Developer & API"
+  | "Healthcare & clinical communication"
+  | "Financial services"
+  | "Voice & conversational AI"
+  | "Mansa Agent";
 
 /** A line in a demo response: a plain paragraph, a quoted output, or a code block. */
 export type DemoResponseLine =
@@ -97,6 +101,12 @@ export type UseCase = {
   solution: string | string[];
   example?: string;
   meta?: UseCaseMeta;
+  /** Optional bullet list under the solution, e.g. "Potential applications include" / "It can:". */
+  applications?: string[];
+  /** Heading for `applications`. Defaults to "Potential applications include" when omitted. */
+  applicationsHeading?: string;
+  /** Optional lead-in sentence shown above the numbered "In practice" steps. */
+  stepsIntro?: string;
   /** Numbered "In practice" walkthrough. Takes priority over `demo` when set. */
   steps?: UseCaseStep[];
   /** Prompt + response rendered as a Mansa chat UI in "In practice" (legacy/fallback). */
@@ -107,6 +117,8 @@ export type UseCase = {
   tryItNext?: string[];
   /** Optional "Tips" bullets. */
   tips?: string[];
+  /** Optional safety/scope disclaimer shown in a highlighted callout. */
+  disclaimer?: string;
   placeholder?: boolean;
 };
 

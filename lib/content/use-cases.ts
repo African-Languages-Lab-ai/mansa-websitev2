@@ -131,12 +131,509 @@ export const useCases: UseCase[] = [
       "Now write the same kind of apologetic reply for a late delivery complaint in Hausa.",
     ],
   },
+  {
+    slug: "media-and-content-localization",
+    title: "Turn one tagline into five versions that don't sound translated",
+    summary:
+      "Mansa AI adapts tone and cultural context when localizing copy, scripts, and captions, so content reads the way a native speaker would actually write it.",
+    category: "Media & content",
+    icon: "◎",
+    meta: {
+      category: "Media, Marketing & Content",
+      languages: "30+ African languages",
+      product: "Mansa AI (Mansa Translate for direct, meaning-preserving translation)",
+    },
+    challenge:
+      "Publishers and creators want to reach African audiences, but localization is usually slow, costly, and out of sync with how fast content actually gets published. Literal, word-for-word translation flattens humor, idiom, and cultural reference points, so a tagline or joke that lands perfectly in English falls flat, or reads strangely, in another language. The result is that huge audiences get a thin, awkward version of a story, or the content skips their language entirely.",
+    solution: [
+      "For Mansa AI chat. Adapting tone, coming up with a warmer alternative, or writing a version aimed at a younger audience is drafting work, so the chat writes each version directly in the target language.",
+      "Mansa Translate is the right tool once you've picked a final version and need it converted into another language exactly as written.",
+    ],
+    steps: [
+      {
+        title: "Describe the task in chat",
+        quote:
+          'Localize this tagline for an East African audience: "Banking made simple." Give me a direct Swahili translation, a warmer conversational alternative, and a third version aimed at a younger, social-media audience.',
+      },
+      {
+        title: "Give Mansa context",
+        bullets: [
+          "The original copy, plus any brand voice notes (playful, formal, aspirational)",
+          "The target region or country, since dialect and slang shift even within one language",
+          "The platform: a billboard tagline and an Instagram caption need different rhythm",
+        ],
+      },
+      {
+        title: "What Mansa returns",
+        body: "Three Swahili versions delivered: a direct translation, a warmer conversational line, and a shorter, punchier version with an English back-translation of each so you can sanity-check tone before approving.",
+      },
+    ],
+    tryItNext: [
+      "Now adapt all three for a Nigerian audience in Ewe, keeping the same three tone options.",
+      "Write subtitle timing cues for the warm version so it fits a 6-second video clip.",
+    ],
+    tips: [
+      "Always ask for an English back-translation alongside the localized copy. It's the fastest way for a non-speaker on your team to sanity-check tone before it ships.",
+      'Give Mansa the platform, not just the message. "Billboard tagline" and "TikTok caption" call for very different sentence rhythm even when the core idea is identical.',
+    ],
+  },
+  {
+    slug: "healthcare-and-clinical-communication",
+    title: "Healthcare & Clinical Communication",
+    summary:
+      "Mansa helps healthcare organizations translate, simplify, and communicate health information in patients' preferred African languages across text and speech.",
+    category: "Healthcare & clinical communication",
+    icon: "✚",
+    challenge:
+      "Healthcare information is often delivered in languages that patients may not fully understand. This can create communication barriers between healthcare professionals, patients, caregivers, and community health workers, particularly where African languages are the primary language of communication.",
+    solution:
+      "Mansa can help healthcare organizations translate, simplify, and communicate health information in patients' preferred African languages across text and speech-based applications.",
+    applications: [
+      "Patient education and health information",
+      "Medication and prescription instructions",
+      "Multilingual communication between health workers and patients",
+      "Community health campaigns",
+      "Health information delivered through voice assistants",
+      "Translation and localization of healthcare content",
+    ],
+    steps: [
+      {
+        title: "Describe the task in chat",
+        quote:
+          "Explain these prescription instructions in Yoruba using simple language that a patient with limited medical knowledge can understand.",
+      },
+      {
+        title: "What Mansa returns",
+        body: "Mansa can generate a localized explanation that can then be reviewed and approved by a qualified healthcare professional before being shared with the patient.",
+      },
+    ],
+    tryItNext: [
+      "Explain the importance of completing a prescribed course of medication in Hausa using simple language.",
+    ],
+    disclaimer:
+      "Mansa is an AI language technology and should not be used as a substitute for qualified medical professionals. Healthcare organizations should have appropriately qualified professionals review and approve medical, clinical, diagnostic, or prescription-related content before it is provided to patients.",
+  },
+  {
+    slug: "financial-services",
+    title: "Financial Services",
+    summary:
+      "Mansa helps financial institutions localize customer communications and explain financial information in customers' preferred languages.",
+    category: "Financial services",
+    icon: "◆",
+    challenge:
+      "Financial products and services can be difficult to understand when customers are required to interact in languages they are not most comfortable with. Banks, fintechs, insurers, microfinance institutions, and other financial organizations need ways to communicate complex information clearly across multiple African languages.",
+    solution:
+      "Mansa can help financial institutions localize customer communications and explain financial information in customers' preferred languages.",
+    applications: [
+      "Customer support",
+      "Financial education and literacy",
+      "Loan and savings information",
+      "Insurance communications",
+      "Mobile money services",
+      "Product explanations and onboarding",
+      "Multilingual notifications and customer communications",
+    ],
+    steps: [
+      {
+        title: "Describe the task in chat",
+        quote:
+          "Explain the key terms of this loan agreement in Yoruba using simple language, while keeping all important financial terms and conditions unchanged.",
+      },
+      {
+        title: "What Mansa returns",
+        body: "Mansa can help produce a localized explanation that makes financial information easier to understand while maintaining the original context.",
+      },
+    ],
+    tryItNext: [
+      "Explain how interest works on a personal loan in Hausa for someone with no financial background.",
+    ],
+    disclaimer:
+      "Mansa should not be relied upon as a substitute for qualified financial, legal, or regulatory advice. Financial institutions should review and approve contracts, financial advice, regulatory communications, and other legally or financially sensitive content before publication or use.",
+  },
+  {
+    slug: "voice-and-conversational-ai",
+    title: "Voice & Conversational AI",
+    summary:
+      "Mansa connects speech recognition, language understanding, and speech generation into a multilingual voice AI workflow for natural African-language experiences.",
+    category: "Voice & conversational AI",
+    icon: "≋",
+    challenge:
+      "Many African-language AI experiences remain text-first, even though speech is the primary way many people interact with technology. Businesses and organizations need voice interfaces that can understand and respond to customers in the languages they actually speak.",
+    solution: [
+      "Mansa can serve as part of a multilingual voice AI workflow, connecting speech recognition, language understanding, and speech generation to create more natural African-language experiences.",
+      "A typical workflow combines ASR (Automatic Speech Recognition), which converts spoken language into text, Mansa, which processes, understands, and generates the appropriate response, and TTS (Text-to-Speech), which converts the response back into spoken language.",
+    ],
+    applications: [
+      "Voice-based customer support",
+      "Interactive voice assistants",
+      "Call-center automation",
+      "Voice search",
+      "Community information services",
+      "Banking and fintech voice interfaces",
+      "Healthcare and public-service information systems",
+    ],
+    stepsIntro: "Example: a customer calls a support line and speaks in Hausa. The system can:",
+    steps: [
+      { title: "Convert the customer's speech to text" },
+      { title: "Process the request using Mansa" },
+      { title: "Generate a response in Hausa" },
+      { title: "Convert the response back into speech" },
+      { title: "Deliver the response to the customer" },
+    ],
+    tryItNext: [
+      "Build a Hausa-speaking customer service assistant that can answer common questions about account registration, opening hours, and available services.",
+    ],
+    disclaimer:
+      "AI-generated voice interactions should be appropriately monitored and tested before deployment in customer-facing environments. For high-stakes applications, organizations should implement human escalation, quality assurance, and appropriate review processes to ensure that AI-generated responses are accurate, safe, and suitable for the intended use.",
+  },
+  {
+    slug: "personal-ai-executive-assistant",
+    title: "Personal AI Executive Assistant",
+    summary:
+      "Mansa Agent acts as a persistent AI assistant that works across connected email, calendar, documents, files, and web research tools.",
+    category: "Mansa Agent",
+    icon: "✎",
+    challenge:
+      "Professionals spend significant time managing emails, calendars, documents, research, and repetitive administrative tasks. Switching between different applications and manually coordinating these tasks can reduce productivity.",
+    solution:
+      "Mansa Agent can act as a persistent AI assistant that works across connected email, calendar, documents, files, and web research tools.",
+    applicationsHeading: "It can:",
+    applications: [
+      "Read, search, and summarize emails",
+      "Draft and send email responses",
+      "Create and manage calendar events",
+      "Research topics and compile findings",
+      "Read and analyze documents and PDFs",
+      "Remember preferences and ongoing tasks across sessions",
+      "Schedule recurring tasks and reminders",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Review my inbox, identify the emails that require a response, draft replies for each, and summarize the items that need my attention.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can review the connected inbox, organize the relevant messages, prepare responses, and present them for review where appropriate.",
+      },
+    ],
+    tryItNext: [
+      "Every weekday at 9 AM, summarize my important emails and today's calendar events and send me a brief priority list.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "research-and-intelligence",
+    title: "Research & Intelligence",
+    summary:
+      "Mansa Agent can conduct web research, extract information from web pages and PDFs, search academic resources, and delegate complex research tasks to sub-agents.",
+    category: "Mansa Agent",
+    icon: "◍",
+    challenge:
+      "Research often requires searching multiple sources, reviewing documents, comparing information, and producing a structured summary. This can take hours when done manually.",
+    solution:
+      "Mansa Agent can conduct web research, extract information from web pages and PDFs, search academic resources, and delegate complex research tasks to sub-agents.",
+    applicationsHeading: "It can:",
+    applications: [
+      "Search and compare multiple sources",
+      "Extract information from web pages and PDFs",
+      "Research academic papers",
+      "Find citations and generate BibTeX references",
+      "Compile research findings",
+      "Delegate large or parallel research tasks",
+      "Maintain context across ongoing research goals",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Research the latest developments in African language AI, review relevant academic papers, identify the major organizations working in the space, and prepare a structured briefing with sources.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can conduct the research, analyze the sources, and organize the findings into a usable report.",
+      },
+    ],
+    tryItNext: [
+      "Find recent academic research on speech recognition for low-resource African languages and summarize the key findings and datasets used.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "business-operations-and-productivity",
+    title: "Business Operations & Productivity",
+    summary:
+      "With connected Google Workspace or email accounts, Mansa Agent can work across documents, spreadsheets, Drive, Gmail, and Calendar.",
+    category: "Mansa Agent",
+    icon: "▦",
+    challenge:
+      "Businesses manage information across email, documents, spreadsheets, calendars, and other systems. Employees often spend valuable time moving information between these tools.",
+    solution:
+      "With connected Google Workspace or email accounts, Mansa Agent can work across documents, spreadsheets, Drive, Gmail, and Calendar.",
+    applications: [
+      "Preparing meeting summaries",
+      "Updating spreadsheets",
+      "Creating documents",
+      "Organizing files",
+      "Preparing reports",
+      "Managing follow-up tasks",
+      "Coordinating meetings",
+      "Monitoring recurring business activities",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Review this week's meeting notes, identify all outstanding action items, update the project tracker in Google Sheets, and draft follow-up emails for the responsible team members.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can work across the connected services to complete the workflow rather than simply telling the user what to do.",
+      },
+    ],
+    tryItNext: [
+      "Create a weekly project status report using the latest information in my Google Drive and project spreadsheet.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "email-and-customer-communication",
+    title: "Email & Customer Communication",
+    summary:
+      "Mansa Agent can read, search, summarize, draft, reply to, and send emails through connected email services.",
+    category: "Mansa Agent",
+    icon: "✉",
+    challenge:
+      "Managing large volumes of email and customer communication can be repetitive and time-consuming, particularly for teams that need to respond consistently and quickly.",
+    solution:
+      "Mansa Agent can read, search, summarize, draft, reply to, and send emails through connected email services.",
+    applicationsHeading: "It can help users:",
+    applications: [
+      "Triage inboxes",
+      "Identify urgent messages",
+      "Draft responses",
+      "Prepare follow-ups",
+      "Summarize long email threads",
+      "Track outstanding communication",
+      "Send approved responses",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Find all emails from potential clients that haven't received a response in the last seven days. Summarize each opportunity and draft a follow-up email.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can identify the relevant conversations, prepare the summaries, and draft the required responses.",
+      },
+    ],
+    tryItNext: [
+      "Review my inbox and create a list of all partnership opportunities that require follow-up.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "software-development-and-engineering",
+    title: "Software Development & Engineering",
+    summary: "When GitHub is connected, Mansa Agent can interact with repositories and development workflows.",
+    category: "Mansa Agent",
+    icon: "⌘",
+    challenge:
+      "Software teams spend significant time reviewing repositories, investigating issues, checking CI status, reviewing pull requests, and performing repetitive development tasks.",
+    solution: "When GitHub is connected, Mansa Agent can interact with repositories and development workflows.",
+    applicationsHeading: "It can:",
+    applications: [
+      "Search repositories",
+      "Read and analyze code",
+      "Create and review GitHub issues",
+      "Review pull requests",
+      "Check CI status",
+      "Execute code and shell commands",
+      "Help investigate technical problems",
+      "Support multi-step engineering tasks",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Review the open pull requests in this repository, identify any potential issues, check their CI status, and summarize which ones are ready for review.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can inspect the repository, analyze the relevant files and pull requests, and provide a structured engineering summary.",
+      },
+    ],
+    tryItNext: [
+      "Review the latest failed CI run, identify the likely cause of the failure, and propose a fix.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "persistent-projects-and-goals",
+    title: "Persistent Projects & Goals",
+    summary:
+      "Mansa Agent maintains persistent memory and can work toward ongoing goals across multiple conversations and sessions.",
+    category: "Mansa Agent",
+    icon: "∞",
+    challenge:
+      "Complex projects rarely fit into a single conversation. Important context can be lost when tasks span multiple sessions or require several stages of work.",
+    solution:
+      "Mansa Agent maintains persistent memory and can work toward ongoing goals across multiple conversations and sessions. Users can give the Agent a goal and continue working with it over time.",
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Track this research project and continue working on it until the literature review is complete. Keep track of the sources you've already reviewed and identify gaps that still need research.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can maintain the context of the project and continue working toward the defined goal.",
+      },
+    ],
+    tryItNext: [
+      "Create a persistent goal to monitor developments in African language AI and prepare a weekly summary of important updates.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "automated-recurring-work",
+    title: "Automated Recurring Work",
+    summary: "Mansa Agent can schedule recurring automations that continue running even when the application is closed.",
+    category: "Mansa Agent",
+    icon: "⟲",
+    challenge:
+      "Many tasks need to happen repeatedly, daily, weekly, or on a defined schedule. Manually performing these tasks creates unnecessary administrative work.",
+    solution: "Mansa Agent can schedule recurring automations that continue running even when the application is closed.",
+    applications: [
+      "Daily inbox summaries",
+      "Weekly research digests",
+      "GitHub PR monitoring",
+      "Recurring reports",
+      "Scheduled information gathering",
+      "Routine administrative workflows",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Every Monday morning, review our GitHub repositories, summarize open pull requests and outstanding issues, and send me a development status report.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "The automation can run according to the configured schedule and deliver the results through notifications.",
+      },
+    ],
+    tryItNext: [
+      "Every weekday morning, give me a summary of my priority emails and today's calendar.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "document-and-file-intelligence",
+    title: "Document & File Intelligence",
+    summary: "Users can attach documents or connect their Google Workspace so Mansa Agent can analyze and work with files.",
+    category: "Mansa Agent",
+    icon: "▤",
+    challenge:
+      "Organizations work with large volumes of PDFs, documents, spreadsheets, and other files. Finding relevant information and turning it into actionable insights can be time-consuming.",
+    solution: "Users can attach documents or connect their Google Workspace so Mansa Agent can analyze and work with files.",
+    applicationsHeading: "It can:",
+    applications: [
+      "Analyze PDFs and office documents",
+      "Extract information",
+      "Summarize documents",
+      "Create new documents",
+      "Update existing documents",
+      "Work with spreadsheets",
+      "Organize information from multiple files",
+    ],
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Review these project documents, identify the key requirements, compare them with the project tracker, and prepare a list of outstanding deliverables.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can analyze the supplied materials and produce a structured output based on the information available.",
+      },
+    ],
+    tryItNext: [
+      "Review these three proposals and create a comparison of their objectives, budgets, timelines, and deliverables.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "multilingual-ai-assistant",
+    title: "Multilingual AI Assistant",
+    summary:
+      "Mansa Agent can interact with users in their preferred language through Mansa's translation pipeline while carrying out its underlying tasks in English.",
+    category: "Mansa Agent",
+    icon: "❖",
+    challenge:
+      "AI assistants often require users to communicate in a limited number of languages, creating barriers for people who prefer African languages.",
+    solution:
+      "Mansa Agent can interact with users in their preferred language through Mansa's translation pipeline while carrying out its underlying tasks in English. This enables users to interact with an AI agent without needing to communicate with it exclusively in English.",
+    steps: [
+      {
+        title: "Describe the task",
+        quote: "Please find all my important emails from this week and summarize them in Yoruba.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Mansa Agent can process the request, work with the connected tools, and return the response in the user's language.",
+      },
+    ],
+    tryItNext: [
+      "Research the latest developments in my industry and give me the summary in Hausa.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
+  {
+    slug: "ai-powered-business-workflows",
+    title: "AI-Powered Business Workflows",
+    summary:
+      "Mansa Agent can combine multiple tools and capabilities to complete multi-step workflows, rather than just explaining how to do them.",
+    category: "Mansa Agent",
+    icon: "▶",
+    challenge:
+      "Many business processes involve multiple steps across different tools, for example researching information, updating a document, sending an email, and scheduling a meeting. Traditional AI chat systems can provide instructions but cannot complete the workflow on the user's behalf.",
+    solution:
+      "Mansa Agent can combine multiple tools and capabilities to complete multi-step workflows, for example: Research → Analyze → Create → Update → Communicate → Schedule.",
+    steps: [
+      {
+        title: "Describe the task",
+        quote:
+          "Research five potential partners, create a comparison in Google Sheets, prepare a short briefing document, and draft an outreach email for each company.",
+      },
+      {
+        title: "What Mansa Agent does",
+        body: "Instead of simply explaining how to perform these steps, Mansa Agent can work through the connected tools to execute the workflow, subject to the required approvals.",
+      },
+    ],
+    tryItNext: [
+      "Find potential partners in the African AI ecosystem, create a shortlist based on their capabilities, and prepare personalized outreach emails.",
+    ],
+    disclaimer:
+      "Mansa Agent can take actions on a user's behalf when the relevant services are connected. Actions with real-world side effects may require user approval, while connected accounts may provide standing authorization for certain actions. Users should review important outputs and actions before relying on them, particularly for sensitive, financial, legal, healthcare, security, or business-critical activities. Mansa Agent does not currently make payments or purchases, control a user's phone or personal device, place calls or send SMS, or provide direct SSH access to its underlying virtual machine.",
+  },
 ];
 
 /* ----------------------------------------------------------------------
  * Retired for now (kept for easy restoration): Government & public service,
- * Media & content, Developer & API. Re-add to `useCases` above to bring
- * them back — content and copy are unchanged.
+ * Developer & API. Re-add to `useCases` above to bring them back — content
+ * and copy are unchanged.
  * ------------------------------------------------------------------- */
 export const retiredUseCases: UseCase[] = [
   {
@@ -183,52 +680,6 @@ export const retiredUseCases: UseCase[] = [
     tips: [
       "Specify the output format up front. A poster line, an SMS, and a radio script all need different lengths and rhythms even when the underlying message is identical.",
       "For anything legally or medically sensitive, ask Mansa to flag any place where an exact literal translation isn't possible so a native-speaking reviewer can check that specific line before publishing.",
-    ],
-  },
-  {
-    slug: "media-and-content-localization",
-    title: "Turn one tagline into five versions that don't sound translated",
-    summary:
-      "Mansa AI adapts tone and cultural context when localizing copy, scripts, and captions, so content reads the way a native speaker would actually write it.",
-    category: "Media & content",
-    icon: "◎",
-    meta: {
-      category: "Media, Marketing & Content",
-      languages: "30+ African languages",
-      product: "Mansa AI (Mansa Translate for literal text conversion)",
-    },
-    challenge:
-      "Publishers and creators want to reach African audiences, but localization is usually slow, costly, and out of sync with how fast content actually gets published. Literal, word-for-word translation flattens humor, idiom, and cultural reference points, so a tagline or joke that lands perfectly in English falls flat, or reads strangely, in another language. The result is that huge audiences get a thin, awkward version of a story, or the content skips their language entirely.",
-    solution: [
-      "Another one for Mansa AI chat. Adapting tone, coming up with a warmer alternative, or writing a version aimed at a younger audience, is drafting work, so the chat writes each version directly in the target language.",
-      "Mansa Translate is the right tool once you've picked a final version and need it converted into another language exactly as written.",
-    ],
-    steps: [
-      {
-        title: "Describe the task, in chat",
-        quote:
-          'Localize this tagline for an East African audience: "Banking made simple." Give me a direct Swahili translation, a warmer conversational alternative, and a third version aimed at a younger, social-media audience.',
-      },
-      {
-        title: "Give Mansa context",
-        bullets: [
-          "The original copy, plus any brand voice notes (playful, formal, aspirational)",
-          "The target region or country, since dialect and slang shift even within one language",
-          "The platform: a billboard tagline and an Instagram caption need different rhythm",
-        ],
-      },
-      {
-        title: "What Mansa returns",
-        body: "Three Swahili versions delivered: a direct translation, a warmer conversational line, and a shorter, punchier version with an English back-translation of each so you can sanity-check tone before approving.",
-      },
-    ],
-    tryItNext: [
-      "Now adapt all three for a Nigerian audience in Yoruba, keeping the same three tone options.",
-      "Write subtitle timing cues for the warm version so it fits a 6-second video clip.",
-    ],
-    tips: [
-      "Always ask for an English back-translation alongside the localized copy. It's the fastest way for a non-speaker on your team to sanity-check tone before it ships.",
-      'Give Mansa the platform, not just the message. "Billboard tagline" and "TikTok caption" call for very different sentence rhythm even when the core idea is identical.',
     ],
   },
   {

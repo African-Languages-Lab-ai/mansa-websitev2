@@ -86,6 +86,18 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                   <p key={i}>{p}</p>
                 ))}
               </div>
+              {uc.applications && (
+                <>
+                  <p className="mt-5 font-semibold text-ink">
+                    {uc.applicationsHeading ?? "Potential applications include:"}
+                  </p>
+                  <ul className="mt-2 list-disc space-y-1.5 pl-5 text-lg leading-relaxed text-ink-muted">
+                    {uc.applications.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </section>
 
             {uc.steps && (
@@ -93,6 +105,9 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                 <h2 className="text-2xl font-bold tracking-tight text-ink">
                   In practice
                 </h2>
+                {uc.stepsIntro && (
+                  <p className="mt-2 text-base leading-relaxed text-ink-muted">{uc.stepsIntro}</p>
+                )}
                 <ol className="mt-5 space-y-6">
                   {uc.steps.map((step, i) => (
                     <li key={step.title} className="flex gap-4">
@@ -176,6 +191,15 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
+              </section>
+            )}
+
+            {uc.disclaimer && (
+              <section className="rounded-2xl border border-sunset-1/40 bg-sunset-1/10 p-6">
+                <h2 className="text-base font-semibold uppercase tracking-wide text-sunset-3">
+                  Important disclaimer
+                </h2>
+                <p className="mt-2 text-base leading-relaxed text-ink-muted">{uc.disclaimer}</p>
               </section>
             )}
           </div>
