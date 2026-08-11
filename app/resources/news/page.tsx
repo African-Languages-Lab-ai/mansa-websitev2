@@ -1,49 +1,32 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ResourceHero } from "@/components/resources/ResourceHero";
-import { NewsList } from "@/components/resources/NewsList";
-import { getPosts, getFeatured, getCategories } from "@/lib/content/posts";
-import { CONTACT_MAILTO } from "@/lib/links";
+import { Pill } from "@/components/ui/Pill";
 
 export const metadata: Metadata = {
   title: "News | Mansa",
   description:
-    "Product launches, partnerships, and press from Mansa and the African Languages Lab.",
+    "Product launches, partnerships, and press from Mansa and the African Languages Lab. Coming soon.",
 };
 
 export default function NewsIndexPage() {
-  const all = getPosts("news");
-  const featured = getFeatured("news");
-  const rest = all.filter((p) => p.slug !== featured?.slug);
-  const categories = getCategories("news");
-
   return (
     <>
       <Navbar solid />
-      <main>
-        <ResourceHero
-          eyebrow="Newsroom"
-          title="News and announcements"
-          subtitle="The latest from Mansa and the African Languages Lab."
-        />
-        <section className="bg-cream pb-24">
-          <div className="container-page">
-            <NewsList featured={featured} items={rest} categories={categories} />
-
-            {/* Press inquiries */}
-            <div className="mt-16 rounded-2xl bg-cream-dark p-6 text-center">
-              <h2 className="text-lg font-semibold text-ink">Press inquiries</h2>
-              <p className="mt-1 text-sm text-ink-muted">
-                For media requests, reach the African Languages Lab team.
-              </p>
-              <a
-                href={CONTACT_MAILTO}
-                className="mt-3 inline-block text-sm font-medium text-accent hover:underline"
-              >
-                info@africanlanguageslab.com
-              </a>
-            </div>
+      <main className="flex min-h-[80vh] items-center bg-cream">
+        <section className="container-page py-24 text-center md:py-32">
+          <div className="mx-auto flex max-w-2xl flex-col items-center">
+            <Pill>Newsroom</Pill>
+            <span className="mt-6 inline-block rounded-full bg-sunset-1/20 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-sunset-3">
+              Coming soon
+            </span>
+            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl md:text-6xl">
+              News and announcements
+            </h1>
+            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink-muted sm:text-xl">
+              We&apos;re building out our newsroom. Product launches, partnerships, and press from
+              Mansa and the African Languages Lab will live here soon.
+            </p>
           </div>
         </section>
       </main>
