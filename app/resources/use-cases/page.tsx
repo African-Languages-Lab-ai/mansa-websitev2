@@ -21,8 +21,7 @@ export default function UseCasesIndexPage() {
       <main>
         <ResourceHero
           eyebrow="Use cases"
-          title="What you can build with Mansa"
-          subtitle="Concrete ways teams and communities put African-language AI to work."
+          title="Here's how individuals and organizations are solving real African-language problems with Mansa."
         />
         <section className="bg-cream pb-24">
           <div className="container-page">
