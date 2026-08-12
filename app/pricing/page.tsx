@@ -11,35 +11,36 @@ const faqs = [
   {
     id: "free",
     title: "What's included in the Free plan?",
-    content: "Mansa Chat with limited monthly credits that reset each billing cycle, no credit card required.",
+    content:
+      "The Free plan includes Mansa Chat with limited monthly credits that reset each billing cycle. No credit card is required to get started.",
   },
   {
     id: "out-of-credits",
     title: "What happens when I run out of monthly credits?",
     content:
-      "Depending on your plan, Chat and Agent can continue using your All Lab balance once your plan credits run out.",
+      "Depending on your plan, you may continue using Chat and Agent through your available account balance once your included monthly credits have been exhausted.",
   },
   {
     id: "change-plan",
-    title: "Can I change plans at any time?",
-    content: "Yes. Upgrade, downgrade, or cancel your plan at any time from your account settings.",
+    title: "Can I change my plan at any time?",
+    content: "Yes. You can upgrade, downgrade, or cancel your plan from your account settings.",
   },
   {
     id: "custom",
     title: "Do you offer custom pricing for large teams?",
     content:
-      "Yes. Contact sales for a custom monthly allowance, dedicated support, and volume pricing for your organization.",
+      "Yes. Contact our sales team for custom plans, higher usage allowances, dedicated support, and volume pricing for your organization.",
   },
   {
     id: "api-usage",
     title: "Is Translate and Transcribe API usage included in my plan?",
     content:
-      "Translate and Transcribe continue to bill against your All Lab balance directly, separate from your monthly Chat and Agent plan credit.",
+      "Translate and Transcribe API usage is billed separately against your available account balance and is not deducted from your monthly Chat and Agent plan credits.",
   },
   {
     id: "rollover",
     title: "Do unused credits roll over?",
-    content: "No. Monthly plan credit resets each billing cycle and does not roll over.",
+    content: "No. Monthly plan credits reset at the end of each billing cycle and do not roll over.",
   },
 ];
 

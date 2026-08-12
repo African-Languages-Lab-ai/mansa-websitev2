@@ -7,10 +7,19 @@
 /** A single block of rich body content, rendered by <ContentBlocks />. */
 export type ContentBlock =
   | { type: "heading"; text: string }
+  | { type: "subheading"; text: string }
   | { type: "paragraph"; text: string }
   | { type: "quote"; text: string; cite?: string }
   | { type: "list"; items: string[] }
-  | { type: "image"; src: string; alt: string; caption?: string };
+  | { type: "image"; src: string; alt: string; caption?: string }
+  | {
+      type: "faq";
+      question: string;
+      /** One or more answer paragraphs, rendered in order. */
+      answer?: string | string[];
+      /** Optional bullet list, rendered after the answer paragraph(s). */
+      list?: string[];
+    };
 
 export type Author = {
   id: string;

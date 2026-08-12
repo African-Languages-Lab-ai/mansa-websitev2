@@ -13,46 +13,52 @@ import { APP_URL, CONTACT_MAILTO, DOCS_URL } from "@/lib/links";
 // General Mansa FAQ, shown on Overview (and Pricing keeps its own pricing FAQ).
 const faqs = [
   {
-    id: "features",
-    title: "What are the core features of Mansa?",
+    id: "what-is-mansa",
+    title: "What is Mansa?",
     content:
-      "Mansa combines AI chat, autonomous agents, translation, transcription, and speech capabilities into one platform designed for African languages and contexts.",
+      "Mansa is an AI platform designed for African languages and contexts, combining conversational AI, autonomous agents, translation, transcription, interpretation, and speech capabilities in one platform.",
+  },
+  {
+    id: "languages",
+    title: "What languages does Mansa support?",
+    content:
+      "Mansa currently supports 30+ African languages, with additional languages and dialects continuously being added. Language availability may vary by product and capability.",
   },
   {
     id: "usage",
     title: "How is Mansa typically used?",
     content:
-      "Teams use Mansa for multilingual customer support, product localization, research analysis, education, and internal operations across the languages their people actually speak.",
+      "Teams use Mansa for multilingual customer support, product localization, research, education, content creation, and internal operations across the languages their people actually speak.",
   },
   {
     id: "benefits",
     title: "What are the benefits of Mansa to my team?",
     content:
-      "You reach more users in their mother tongue, cut translation overhead, and ship language-aware features faster, with responses that feel local rather than machine-translated.",
+      "Mansa helps you reach more users in their preferred languages, reduce translation overhead, and build language-aware products faster, with experiences designed to reflect local linguistic and cultural context.",
   },
   {
     id: "trial",
     title: "Can I try Mansa before deploying it?",
     content:
-      "Yes. You can start free in the app and test the API with a generous trial before rolling Mansa out across your organization.",
+      "Yes. You can start free in the app and test Mansa's capabilities before deploying it across your organization.",
   },
   {
     id: "difference",
-    title: "What makes Mansa different compared to ChatGPT?",
+    title: "What makes Mansa different from ChatGPT and other general-purpose AI models?",
     content:
-      "Mansa is trained on billions of African-language tokens gathered through direct, community-driven research, so it understands nuance and context that general models treat as an afterthought.",
+      "Mansa is built specifically around African languages and contexts, using billions of African-language tokens from proprietary research, partnerships, and community-driven language initiatives. This enables Mansa to better capture the linguistic diversity, nuance, and context of African languages.",
   },
   {
     id: "integrate",
     title: "Can I integrate Mansa into my existing applications?",
     content:
-      "Absolutely. Mansa exposes a simple, well-documented REST API for chat, translation, and speech, with SDKs and examples to get you integrated quickly.",
+      "Absolutely. Mansa provides a simple, well-documented REST API with examples to help developers integrate its AI, translation, and speech capabilities into existing applications and workflows.",
   },
   {
     id: "data",
-    title: "How do you train on data? Is our data private and secure?",
+    title: "How does Mansa handle my data?",
     content:
-      "Your data stays yours. We do not train on customer data without explicit consent, and all requests are encrypted in transit and at rest.",
+      "Your data stays yours. We do not use customer data to train our models without explicit consent. Mansa applies appropriate security controls to protect customer data and access across its services.",
   },
 ];
 

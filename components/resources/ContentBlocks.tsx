@@ -17,6 +17,15 @@ export function ContentBlocks({ blocks }: { blocks: ContentBlock[] }) {
                 {block.text}
               </h2>
             );
+          case "subheading":
+            return (
+              <h3
+                key={i}
+                className="pt-1 text-lg font-semibold tracking-tight text-ink sm:text-xl"
+              >
+                {block.text}
+              </h3>
+            );
           case "paragraph":
             return (
               <p key={i} className="text-lg leading-relaxed text-ink-muted">
@@ -53,6 +62,38 @@ export function ContentBlocks({ blocks }: { blocks: ContentBlock[] }) {
                 ))}
               </ul>
             );
+          case "faq": {
+            const answers = Array.isArray(block.answer)
+              ? block.answer
+              : block.answer
+              ? [block.answer]
+              : [];
+            return (
+              <div key={i} className="space-y-2 pt-1">
+                <h4 className="text-base font-semibold text-ink">{block.question}</h4>
+                {answers.map((a, j) => (
+                  <p key={j} className="text-base leading-relaxed text-ink-muted">
+                    {a}
+                  </p>
+                ))}
+                {block.list && (
+                  <ul className="space-y-1.5 pl-1">
+                    {block.list.map((item, j) => (
+                      <li
+                        key={j}
+                        className="flex gap-3 text-base leading-relaxed text-ink-muted"
+                      >
+                        <span aria-hidden className="mt-1 text-sunset-2">
+                          •
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          }
           case "image":
             return (
               <figure key={i} className="my-2">
